@@ -602,10 +602,14 @@ figure.effect-honey:hover h2 i {
 }
 
 .contact-text{
-  margin-top: 2rem;
+  margin: 2rem;
 }
 
-+
+.contact-icon{
+  margin-top: 1rem;
+}
+
+
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
