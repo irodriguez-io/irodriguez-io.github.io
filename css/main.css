@@ -352,7 +352,7 @@ blockquote {
 }
 
 .tm-testimonial-item img {
-  border-radius: 50%;
+  border-radius: 10%;
   margin-bottom: 35px;
   background-color: whitesmoke;
 }
