@@ -1,458 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>iziRodriguez</title>
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="slick/slick.css">
-  <link rel="stylesheet" href="slick/slick-theme.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/main.css" />
-</head>
-
-<body>
-  <!-- Home section -->
-  <section id="infinite" class="text-white tm-font-big tm-parallax">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
-      <div class="container">
-        <div class="tm-next">
-          <a href="#infinite" class="navbar-brand">iziRodriguez</a>
-        </div>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars navbar-toggler-icon"> &#9776;</i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="#infinite">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="#blog">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>iziRodriguez</title>
+    <meta name="author" content="Isidro Rodriguez" />
+    <meta name="description" content="Information Security, Risk Management, and Business Continuity Professional." />
   
-    <div class="text-center tm-hero-text-container" class="lottie">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
-      <div class="lottie">
-        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css" />
 
-        <dotlottie-player src="https://lottie.host/40e5933f-18e6-443a-aed2-394d88bd7119/de7oMybouy.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
-      </div>
-    </div>
+    <!-- JavaScript -->
+    <script src="js/main.js" defer ></script>    
+</head> 
 
-    <div class="tm-next tm-intro-next">
-      <a href="#about" class="tm-down-arrow">
-        <img src="img/arrow.png" alt="arrow icon">
-      </a>
-    </div>
-  </section>
-  <!-- About -->
-  <section id="about" class="tm-section-pad-top">
-   
-    <div class="container personal-intro">
+<body>    
+    <section  class="hero">
+        <div class="lottie glass">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+            <dotlottie-player src="https://lottie.host/40e5933f-18e6-443a-aed2-394d88bd7119/de7oMybouy.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
+        </div>
+        <div class="hero-content">
+            <h2 class="frame-1">Information Security</h2>
+            <h2 class="frame-2">Risk Management</h2>
+            <h2 class="frame-3">Business Continuity</h2>
+            <h2 class="frame-4">
+                <span>Confidentiality,</span>
+                <span>Integrity,</span>
+                <span>Availability.</span>
+            </h2>
+        </div>
+        <div class="arrows">  
+        
+              <svg viewBox="0 0 60 72"> 
+                  <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                  <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                  <path class="a3" d="M0 40 L30 72 L60 40"></path>
+              </svg>
+        
+        </div>
+    </section>
+    <header class="header">
+                  <section class="header-tittle glass">
+        <a href="index.html" class="nav-logo">iziRodriguez</a>
+        <button class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </section>
+    <nav class="navbar glass">        
+        <ul>
+            <li> <a href="#about" >About Me</a> </li>
+            <li> <a href="#services">Services</a> </li>
+            <li> <a href="#articles" >Articles</a> </li>
+            <li> <a href="#">Contact</a> </li>
+        </ul>
+    </nav>
+    </header>
 
-
-      <div class="row "><!-- first row -->
-        <div class="col-lg-12 col-xl-12">
-          <div class="tm-intro-text-container">
-            <h2 class="tm-text-primary mb-4 tm-section-title">B.S.E. Isidro Rodríguez</h2>
-            <p class="mb-4 tm-intro-text"> A dedicated and versatile Systems Engineer with a strong background in Information Security, Risk Management & Compliance.</p>
-            <p class="mb-4 tm-intro-text"> Additionally, my passion for creativity led me to excel as Web Designer, specializing in Front End development.</p>
-            <p class="mb-4 tm-intro-text"> Combining technical expertise with a strategic mindset, I consistently deliver robust solutions that meet complex business requirements while ensuring data security and compliance.</p>
-            <p class="mb-4 tm-intro-text"> My collaborative nature, analytical prowess, and strong attention to detail enable me to streamline operations, enhance system performance, and drive organizational success. Let's connect and explore how my versatile skill set can add value to your team.</p>
-
+    <main class="main">
+       
+        <section id="about">
+            <div  class="about-content">
+            <figure>
+                <img class="owner-pic"  src="img/me.png">
+            </figure>
+            <article class="description">
+              <h1>B.S. Isidro Rodríguez</h1>
+              <p>A dedicated and versatile Systems Engineer with a strong background in Information Security, Risk Management & Regulatory Compliance.</p>
+              <p>Additionally, my passion for creativity led me to excel as Web Designer, specializing in Front End development.</p>
+              <p>Combining technical expertise with a strategic mindset, I consistently deliver robust solutions that meet complex business requirements while ensuring data security and compliance.</p>
+              <p>My collaborative nature, analytical prowess, and strong attention to detail enable me to streamline operations, enhance system performance, and drive organizational success. Let's connect and explore how my versatile skill set can add value to your team.</p>
+            </article>
+            <button class="linkedin glass">
+                <a href="https://www.linkedin.com/in/izirodriguez/"> View my profile on </a>
+                <img src="img/linkedin.png">
+            </button>
           </div>
-        </div>         
-          <a  class="linkedIn-link" href="https://www.linkedin.com/in/izirodriguez/"><img class="linkedIn" src="img/linkedin.png" alt="linkedIn logo"></a>
-      </div><!-- first row -->
-
-      <div class="row tm-content-box"><!-- second row -->
-        <img class="owner-pic"  src="img/me.png" alt="owners pic">
-      </div><!-- second row -->
-    </div>
-  </section>
-  <!-- Services -->
-  <section id="services" class="tm-section-pad-top tm-parallax-2">
-    <div class="container tm-testimonials-content">
-      <div class="row">
-        <div class="col-lg-12 tm-content-box">
-          <h2 class="text-white text-center mb-4 tm-section-title">Services</h2>
-          <p class="mx-auto tm-section-desc tm-intro-text">Drawing upon a decade of unwavering commitment in the Business Process Outsourcing (BPO) industry and a relentless pursuit of knowledge, I have cultivated a skill set at the intersection of IT security, compliance assurance, and talent acquisition. As a seasoned IT Security Analyst with a proven track record in safeguarding digital landscapes, my expertise extends to intricate realms such as PCI/DSS and HYPAA compliance.</p>
-          <p class="mx-auto tm-section-desc tm-intro-text">Now, I stand poised to share this wealth of experience with your team. Whether it's fortifying your digital defenses, guiding you through risk assessment strategies, or empowering your small business with advanced Excel proficiency, I am here to collaborate and elevate your organization's capabilities..</p>
-          <div class="mx-auto tm-gallery-container tm-gallery-container-2">
-            <div class="tm-testimonials-carousel">
-              <figure class="tm-testimonial-item">
-                <img class="img-fluid mx-auto"   src="img/cyber.svg" alt="logo">
-                 <!-- Stock Videos by Vecteezy -->
-                <figcaption> <strong>Cybersecurity Workshops:</strong></figcaption>
-                <blockquote>Join our cybersecurity workshops to gain insights into threat detection, risk mitigation, and industry best practices. Whether you're a business owner, IT professional, or just curious about staying secure online, our workshops provide a comprehensive understanding of the tools and techniques needed to safeguard your digital presence.</blockquote>
-              </figure>
-
-              <figure class="tm-testimonial-item">
-                <img class="img-fluid mx-auto"   src="img/risk.svg" alt="logo">
-                <!-- Stock Videos by Vecteezy -->
-                <figcaption> <strong>Risk Management Workshops:</strong></figcaption>
-                <blockquote>Explore the intricacies of risk  management through our workshops, where you'll gain practical skills in identifying, analyzing, and addressing potential threats to your business. Whether you're a budding entrepreneur or a seasoned professional, our workshops provide actionable insights to enhance your risk management capabilities.</blockquote>
-              </figure>
-
-              <figure class="tm-testimonial-item">
-                <img class="img-fluid mx-auto"   src="img/appdev.svg" alt="logo">
-                <!-- Stock Videos by Vecteezy --> 
-                <figcaption> <strong>Secure App Design Workshops:</strong></figcaption>
-                <blockquote>Welcome to the Security in App Development Workshop, where we bridge the gap between innovation and resilience. In this immersive experience, discover the crucial principles and best practices that safeguard your applications from digital threats. Join me in navigating the evolving landscape of app security, ensuring your creations stand strong against potential vulnerabilities and cyber challenges.         </blockquote>
-              </figure>
-
+        </section>
+        <section id="services">
+            <div class="services-content">
+            <h1>Services</h1>
+            <p>Drawing upon a decade of unwavering commitment in the Business Process Outsourcing (BPO) industry and a relentless pursuit of knowledge, I have cultivated a skill set at the intersection of IT security, compliance assurance, and talent acquisition. As a seasoned IT Security Analyst with a proven track record in safeguarding digital landscapes, my expertise extends to intricate realms such as PCI/DSS and HYPAA compliance.</p>
+            <p>Now, I stand poised to share this wealth of experience with your team. Whether it's fortifying your digital defenses, guiding you through risk assessment strategies, or empowering your small business with advanced Excel proficiency, I am here to collaborate and elevate your organization's capabilities.</p> 
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="tm-bg-overlay"></div>
-  </section>
-  <!-- Blog -->
-  <section id="blog" class="tm-section-pad-top">
-    <div class="container tm-container-gallery">
-      <div class="row">
-        <div class="text-center col-12">
-          <h2 class="tm-text-primary tm-section-title mb-4">Read Some of my Articles</h2>
-          <p class="mx-auto tm-section-desc">
-            Explore my insights on cybersecurity as I navigate the digital landscape. Delve into a collection of articles that blend practical expertise with an educator's perspective, offering valuable tips on securing digital environments.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="mx-auto tm-gallery-container">
-            <div class="grid tm-gallery">
-              <a href="blog-post01.html">
-                <figure class="effect-honey tm-gallery-item">
-                  <img src="img/gallery-tn-01.jpg" alt="Image 1" class="img-fluid">
-                  <figcaption>
-                    <h2><i>Physical Health <span>Exercise!</span></i></h2>
-                  </figcaption>
-                </figure>
-              </a>
-              <a href="img/gallery-img-02.jpg">
-                <figure class="effect-honey tm-gallery-item">
-                  <img src="img/gallery-tn-02.jpg" alt="Image 2" class="img-fluid">
-                  <figcaption>
-                    <h2><i>Rain on Glass <span>Second Image</span></i></h2>
-                  </figcaption>
-                </figure>
-              </a>
-              <a href="img/gallery-img-03.jpg">
-                <figure class="effect-honey tm-gallery-item">
-                  <img src="img/gallery-tn-03.jpg" alt="Image 3" class="img-fluid">
-                  <figcaption>
-                    <h2><i><span>Sea View</span> Mega City</i></h2>
-                  </figcaption>
-                </figure>
-              </a>
-              <a href="img/gallery-img-04.jpg">
-                <figure class="effect-honey tm-gallery-item">
-                  <img src="img/gallery-tn-04.jpg" alt="Image 4" class="img-fluid">
-                  <figcaption>
-                    <h2><i>Dream Girl <span>Thoughts</span></i></h2>
-                  </figcaption>
-                </figure>
-              </a>
-              <a href="img/gallery-img-05.jpg">
-                <figure class="effect-honey tm-gallery-item">
-                  <img src="img/gallery-tn-05.jpg" alt="Image 5" class="img-fluid">
-                  <figcaption>
-                    <h2><i><span>Workstation</span> Offices</i></h2>
-                  </figcaption>
-                </figure>
-              </a>
-              <a href="img/gallery-img-06.jpg">
-                <figure class="effect-honey tm-gallery-item">
-                  <img src="img/gallery-tn-06.jpg" alt="Image 6" class="img-fluid">
-                  <figcaption>
-                    <h2><i>Just Above <span>The City</span></i></h2>
-                  </figcaption>
-                </figure>
-              </a>
-              <a href="img/gallery-img-01.jpg">
-                <figure class="effect-honey tm-gallery-item">
-                  <img src="img/gallery-tn-01.jpg" alt="Image 7" class="img-fluid">
-                  <figcaption>
-                    <h2><i>Another <span>Exercise Time</span></i></h2>
-                  </figcaption>
-                </figure>
-              </a>
-              <a href="img/gallery-img-02.jpg">
-                <figure class="effect-honey tm-gallery-item">
-                  <img src="img/gallery-tn-02.jpg" alt="Image 8" class="img-fluid">
-                  <figcaption>
-                    <h2><i>Repeated <span>Image Spot</span></i></h2>
-                  </figcaption>
-                </figure>
-              </a>
+            <button class="slide-arrow arrow-prev">
+                &#8249;
+            </button>
+             <button class="slide-arrow arrow-next">
+            &#8250;
+             </button>
+              <ul class="slides-container">
+                <li class="slide">
+                    <img src="img/cyber.svg">
+                    <h2>Cybersecurity Workshops:</h2>
+                    <p>Join our cybersecurity workshops to gain insights into threat detection, risk mitigation, and industry best practices. Whether you're a business owner, IT professional, or just curious about staying secure online, our workshops provide a comprehensive understanding of the tools and techniques needed to safeguard your digital presence.</p>
+                </li>
+                <li class="slide">
+                    <img src="img/risk.svg">
+                    <h2>Risk Management Workshops:</h2>
+                    <p>Explore the intricacies of risk management through our workshops, where you'll gain practical skills in identifying, analyzing, and addressing potential threats to your business. Whether you're a budding entrepreneur or a seasoned professional, our workshops provide actionable insights to enhance your risk management capabilities.</p>
+                </li>
+                <li class="slide">
+                    <img src="img/appdev.svg">
+                    <h2>Secure App Design Workshops:</h2>
+                    <p>Welcome to the Security in App Development Workshop, where we bridge the gap between innovation and resilience. In this immersive experience, discover the crucial principles and best practices that safeguard your applications from digital threats. Join me in navigating the evolving landscape of app security, ensuring your creations stand strong against potential vulnerabilities and cyber challenges.</p>
+                </li>
+                <li class="slide">
+                    <img src="img/workshop.png">
+                    <h2>Web development workshop</h2>
+                    <p>Jumpstart your journey in the world of web development with our interactive workshop! Our course has hands-on experience in crafting responsive and compelling websites. Our participants will learn the fundamentals of HTML, CSS, and JavaScript, and will apply their knowledge to build a functional website from scratch.</p>
+                </li>
+              </ul>
+            </section>
+        </section>
+        <section id="articles">
+            <h1>My Blog</h1>
+            <p>Explore my insights on cybersecurity as I navigate the digital landscape. hunt through a collection of articles that blend practical expertise with an educator's perspective, offering valuable tips on securing digital environments.</p>
+            <div class="article-grid">
+                <div class="article-item"><a href="./blog/article01.html">Cybersecurity is more than just a buzzword </a></div>
+                <div class="article-item"></div>
+                <div class="article-item"></div>
+                <div class="article-item"></div>
+                <div class="article-item"></div>
+                <div class="article-item"></div>
+                <div class="article-item"></div>
+                <div class="article-item"></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Contact -->
-  <section id="contact" class="tm-section-pad-top tm-parallax-2">
+            
+        </section>
 
-    <div class="container tm-container-contact">
+    </main>
 
-      <div class="row">
-
-        <div class="text-center col-12">
-          <h2 class="tm-section-title mb-4">Get in Touch</h2>
-          <h3 class="mb-5">
-            Connect with me to explore how my expertise can benefit your team or business.<br>Reach out via email or WhatsApp for inquiries, collaborations, or consultations.
-          </h3><br>
-
-        </div>
-
-        <div class="col-sm-12 col-md-6">
-          <div class="contact-card">
-            <img class="contact-icon"  src="img/email.png" alt="email icon">
-            <h3 class="contact-text">Drop me a message at iziRodriguez@gmail.com to initiate a conversation. I look forward to hear how can I contribute to your success.</h3>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-6">
-          <div class="contact-card">
-            <img class="contact-icon"  src="img/whatsapp.png" alt="whatsapp icon">
-            <h3 class="contact-text">For a quick and direct chat, feel free to message me on <a href="https://wa.me/message/IEA3D5L4QOLFL1">WhatsApp</a>. Let's start a conversation about your cybersecurity or risk management.</h3>
-          </div>
-        </div>
-
-
-      </div><!-- row ending -->
-
-    </div>
-
-    <footer class="text-center small tm-footer">
-      <p class="mb-0">
-        Copyright &copy; 2024 iziRodriguez
-    </footer>
-
-  </section>
-
-  <script src="js/jquery-1.9.1.min.js"></script>
-  <script src="slick/slick.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/easing.min.js"></script>
-  <script src="js/jquery.singlePageNav.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-
-  <script>
-
-    function getOffSet() {
-      var _offset = 450;
-      var windowHeight = window.innerHeight;
-
-      if (windowHeight > 500) {
-        _offset = 400;
-      }
-      if (windowHeight > 680) {
-        _offset = 300
-      }
-      if (windowHeight > 830) {
-        _offset = 210;
-      }
-
-      return _offset;
-    }
-
-    function setParallaxPosition($doc, multiplier, $object) {
-      var offset = getOffSet();
-      var from_top = $doc.scrollTop(),
-        bg_css = 'center ' + (multiplier * from_top - offset) + 'px';
-      $object.css({ "background-position": bg_css });
-    }
-
-    // Parallax function
-    // Adapted based on https://codepen.io/roborich/pen/wpAsm        
-    var background_image_parallax = function ($object, multiplier, forceSet) {
-      multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-      multiplier = 1 - multiplier;
-      var $doc = $(document);
-      // $object.css({"background-attatchment" : "fixed"});
-
-      if (forceSet) {
-        setParallaxPosition($doc, multiplier, $object);
-      } else {
-        $(window).scroll(function () {
-          setParallaxPosition($doc, multiplier, $object);
-        });
-      }
-    };
-
-    var background_image_parallax_2 = function ($object, multiplier) {
-      multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-      multiplier = 1 - multiplier;
-      var $doc = $(document);
-      $object.css({ "background-attachment": "fixed" });
-
-      $(window).scroll(function () {
-        if ($(window).width() > 768) {
-          var firstTop = $object.offset().top,
-            pos = $(window).scrollTop(),
-            yPos = Math.round((multiplier * (firstTop - pos)) - 186);
-
-          var bg_css = 'center ' + yPos + 'px';
-
-          $object.css({ "background-position": bg_css });
-        } else {
-          $object.css({ "background-position": "center" });
-        }
-      });
-    };
-
-    $(function () {
-      // Hero Section - Background Parallax
-      background_image_parallax($(".tm-parallax"), 0.30, false);
-      background_image_parallax_2($("#contact"), 0.80);
-      background_image_parallax_2($("#services"), 0.80);
-
-      // Handle window resize
-      window.addEventListener('resize', function () {
-        background_image_parallax($(".tm-parallax"), 0.30, true);
-      }, true);
-
-      // Detect window scroll and update navbar
-      $(window).scroll(function (e) {
-        if ($(document).scrollTop() > 120) {
-          $('.tm-navbar').addClass("scroll");
-        } else {
-          $('.tm-navbar').removeClass("scroll");
-        }
-      });
-
-      // Close mobile menu after click 
-      $('#tmNav a').on('click', function () {
-        $('.navbar-collapse').removeClass('show');
-      })
-
-      // Scroll to corresponding section with animation
-      $('#tmNav').singlePageNav({
-        'easing': 'easeInOutExpo',
-        'speed': 600
-      });
-
-      // Add smooth scrolling to all links
-      // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-      $("a").on('click', function (event) {
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 600, 'easeInOutExpo', function () {
-            window.location.hash = hash;
-          });
-        } // End if
-      });
-
-      // Pop up
-      $('.tm-gallery').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        gallery: { enabled: true }
-      });
-
-      $('.tm-testimonials-carousel').slick({
-        dots: true,
-        prevArrow: false,
-        nextArrow: false,
-        infinite: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-
-      // Gallery
-      $('.tm-gallery').slick({
-        dots: true,
-        infinite: false,
-        slidesToShow: 5,
-        slidesToScroll: 2,
-        responsive: [
-          {
-            breakpoint: 1199,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 2
-            }
-          },
-          {
-            breakpoint: 991,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 2
-            }
-          },
-          {
-            breakpoint: 767,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
-      });
-    });
-  </script>
 </body>
 
 </html>
