@@ -1,0 +1,232 @@
+/*** The new CSS Reset  ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+    all: unset;
+    display: revert;
+  }
+  
+  /* Preferred box-sizing value */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /*
+    Remove list styles (bullets/numbers)
+    in case you use it with normalize.css
+  */
+  ol, ul {
+    list-style: none;
+  }
+  
+  /* For images to not be able to exceed their container */
+  img {
+    max-width: 100%;
+  }
+  
+  /* Removes spacing between cells in tables */
+  table {
+    border-collapse: collapse;
+  }
+  
+  /* Revert the 'white-space' property for textarea elements on Safari */
+  textarea {
+    white-space: revert;
+  }
+
+/*** Variables ***/
+
+:root{
+  --FontColor: whitesmoke;
+  --BGcolor1: darkblue;
+  --BGcolor2: slateblue;
+  --Circle: #877ad7;
+  --Shadow1: black;
+}
+
+/*** Utily Classes ***/
+
+.glass {
+  background: rgba(109, 103, 228, 0.5);
+  border: 1px solid rgba(109, 103, 228, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+
+}
+
+.border{
+  border: 1px solid rgba(109, 103, 228);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/*** Main CSS Styles  ***/
+
+html {
+  scroll-behavior: smooth;
+  font: 1rem "ubuntu", san-serif;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  color: var(--FontColor);
+}
+
+body {
+  min-height: 100vh; 
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background: linear-gradient(45deg, var(--BGcolor1), var(--BGcolor2));
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95vw;
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 1.5rem;
+  position:fixed;
+}
+
+header ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+header li{
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+header li:hover, header li:focus{
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+main{
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+h1{
+  font-size: 20px;
+  margin: 2rem 1rem;
+}
+
+h2{
+  font-size: 18px;
+  margin: 1rem;
+}
+
+h3{
+  margin: 1rem;
+  font-size: 17px;
+  line-height: 1.5rem;
+  font-weight: bold;
+}
+p{
+  margin: 0.5rem 1rem;
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+
+em{
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.nav-logo {
+  width: 40px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+
+.nav-logo:hover, .nav-logo:focus {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+article{
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 10vh;
+  max-width: 800px;
+}
+
+img{
+  margin: 0 auto;
+}
+
+article ul{
+  margin: 1rem;
+  line-height: 1.5rem;
+}
+
+article ul li{
+  margin-bottom: 1rem;  
+}
+
+article ul li:before {
+  content: '';
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  background-image: url('../img/list.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+hr{
+  height: 2rem;
+}
+/*** Footer Section ***/
+
+footer{
+  text-align: center;
+  margin-top: 3rem;
+}
+
+footer img{
+  border-radius: 50%;
+  border: 1px solid var(--FontColor);
+  width: 20vw;
+  max-width: 100px;
+  height: auto;
+}
+
+.decoLine{
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--FontColor);
+  opacity: 0.6;
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  bottom: 4em;
+  z-index: -1;
+}
+
+@media (min-width: 700px) {
+
+  .decoLine{
+  bottom: 2.5em;
+  }
+
+  p{
+  font-size: 16px;
+  line-height: 1.2rem;
+  }
+  h3{
+  line-height: 1.3rem;
+  }
+
+  ul li{
+    font-size: 16px;
+  }
+}
