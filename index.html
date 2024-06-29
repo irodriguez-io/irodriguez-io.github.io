@@ -2,17 +2,17 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <title>iziRodriguez</title>
+    <meta charset = "utf-8" />
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+    <link rel="shortcut icon" href="img/logo-dark.png" type="image/x-icon">
+    <title>isidro consulting</title>
     <meta name="author" content="Isidro Rodriguez" />
     <meta name="description" content="Information Security, Risk Management, and Business Continuity Professional." />
   
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/main.css" />
@@ -21,57 +21,45 @@
     <script src="js/main.js" defer ></script>    
 </head> 
 
-<body>    
-    <section  class="hero">
+<body>
+    <section  class="hero flexy">
         <div class="lottie glass">
             <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
             <dotlottie-player src="https://lottie.host/40e5933f-18e6-443a-aed2-394d88bd7119/de7oMybouy.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
         </div>
         <div class="hero-content">
-            <h2 class="frame-1">Information Security</h2>
-            <h2 class="frame-2">Risk Management</h2>
-            <h2 class="frame-3">Business Continuity</h2>
-            <h2 class="frame-4">
-                <span>Confidentiality,</span>
-                <span>Integrity,</span>
-                <span>Availability.</span>
-            </h2>
+              <p><span class="text"></span><span class="cursor">|</span></p>
         </div>
         <div class="arrows">  
-        
               <svg viewBox="0 0 60 72"> 
                   <path class="a1" d="M0 0 L30 32 L60 0"></path>
                   <path class="a2" d="M0 20 L30 52 L60 20"></path>
                   <path class="a3" d="M0 40 L30 72 L60 40"></path>
               </svg>
-        
         </div>
     </section>
     <header class="header">
-                  <section class="header-tittle glass">
-        <a href="index.html" class="nav-logo">iziRodriguez</a>
-        <button class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-    </section>
-    <nav class="navbar glass">        
-        <ul>
-            <li> <a href="#about" >About Me</a> </li>
-            <li> <a href="#services">Services</a> </li>
-            <li> <a href="#contact">Contact</a> </li>
-        </ul>
-    </nav>
+        <section class="header-tittle glass">
+            <a href="index.html" class="nav-logo"> <img src="img/logo-dark.png"></a> 
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </section>
+        <nav class="navbar glass">        
+            <ul class="flexy">
+                <li> <a href="#about" >About Me</a> </li>
+                <li> <a href="#services">Services</a> </li>
+                <li> <a href="#articles" >Articles</a> </li>
+                <li> <a href="#contact">Contact</a> </li>
+            </ul>
+        </nav>
     </header>
-
     <main class="main">
-       
-        <section id="about">
-            <div  class="about-content">
-            <figure>
-                <img class="owner-pic"  src="img/me.png">
-            </figure>
+
+        <section id="about" class= "flexy">
+             <img class="owner-pic border"  alt="Isidro's picture" src="img/me.png">
             <article class="description">
               <h1>B.S. Isidro Rodríguez</h1>
               <p>A dedicated and versatile Systems Engineer with a strong background in Information Security, Risk Management & Regulatory Compliance.</p>
@@ -80,71 +68,107 @@
               <p>My collaborative nature, analytical prowess, and strong attention to detail enable me to streamline operations, enhance system performance, and drive organizational success. Let's connect and explore how my versatile skill set can add value to your team.</p>
             </article>
             <button class="linkedin glass">
-                <a href="https://www.linkedin.com/in/izirodriguez/"> View my profile on </a>
+                <a href="https://www.linkedin.com/in/izirodriguez/"> Visit my profile</a>
                 <img src="img/linkedin.png">
             </button>
-          </div>
         </section>
         <section id="services">
-            <div class="services-content">
+            <article class="services-content">
             <h1>Services</h1>
             <p>Drawing upon a decade of unwavering commitment in the Business Process Outsourcing (BPO) industry and a relentless pursuit of knowledge, I have cultivated a skill set at the intersection of IT security, compliance assurance, and talent acquisition. As a seasoned IT Security Analyst with a proven track record in safeguarding digital landscapes, my expertise extends to intricate realms such as PCI/DSS and HYPAA compliance.</p>
             <p>Now, I stand poised to share this wealth of experience with your team. Whether it's fortifying your digital defenses, guiding you through risk assessment strategies, or empowering your small business with advanced Excel proficiency, I am here to collaborate and elevate your organization's capabilities.</p> 
-            </div>
-            <button class="slide-arrow arrow-prev">
-                &#8249;
+            </article>
+            <button class="slide-arrow arrow-next">
+            &#8249;
             </button>
-             <button class="slide-arrow arrow-next">
-            &#8250;
-             </button>
-              <ul class="slides-container">
-                <li class="slide">
+            <button class="slide-arrow arrow-prev">
+                &#8250;
+            </button>
+              <ul class="slides-container glass">
+                <li class="slide border">
                     <img src="img/cyber.svg">
+                    <div>
                     <h2>Cybersecurity Workshops:</h2>
                     <p>Join our cybersecurity workshops to gain insights into threat detection, risk mitigation, and industry best practices. Whether you're a business owner, IT professional, or just curious about staying secure online, our workshops provide a comprehensive understanding of the tools and techniques needed to safeguard your digital presence.</p>
+                    </div>
                 </li>
-                <li class="slide">
+                <li class="slide border">
                     <img src="img/risk.svg">
+                    <div>
                     <h2>Risk Management Workshops:</h2>
                     <p>Explore the intricacies of risk management through our workshops, where you'll gain practical skills in identifying, analyzing, and addressing potential threats to your business. Whether you're a budding entrepreneur or a seasoned professional, our workshops provide actionable insights to enhance your risk management capabilities.</p>
+                    </div>
                 </li>
-                <li class="slide">
+                <li class="slide border">
                     <img src="img/appdev.svg">
+                    <div>
                     <h2>Secure App Design Workshops:</h2>
                     <p>Welcome to the Security in App Development Workshop, where we bridge the gap between innovation and resilience. In this immersive experience, discover the crucial principles and best practices that safeguard your applications from digital threats. Join me in navigating the evolving landscape of app security, ensuring your creations stand strong against potential vulnerabilities and cyber challenges.</p>
+                    </div>
                 </li>
-                <li class="slide">
+                <li class="slide border">
                     <img src="img/workshop.png">
+                    <div>
                     <h2>Web development workshop</h2>
                     <p>Jumpstart your journey in the world of web development with our interactive workshop! Our course has hands-on experience in crafting responsive and compelling websites. Our participants will learn the fundamentals of HTML, CSS, and JavaScript, and will apply their knowledge to build a functional website from scratch.</p>
+                    </div>
                 </li>
               </ul>
             </section>
+        <section id="articles">
+            <h1>My Articles</h1>
+            <p>Explore my insights on cybersecurity as I navigate the digital landscape. hunt through a collection of articles that blend practical expertise with an educator's perspective, offering valuable tips on securing digital environments.</p>
+            <div class="article-grid">
+                <div class="article-item"><a href="blog/article01.html">Cybersecurity is more than just a Buzzword.</a></div>
+                <div class="article-item"><a href="blog/article02.html">Emerging Cybersecurity Threats in the AI Era.</a></div>
+                <div class="article-item"><a href="blog/article03.html">Understanding the XZ Backdoor.</a></div>
+                <div class="article-item"><a href="blog/article04.html">The Eight Domains of Cybersecurity.</a></div>
+                <div class="article-item"><a href="blog/article05.html">The NIST CyberSecurity Framework.</a></div>
+                <div class="article-item"><a href="blog/article06.html">The NIST Risk Management Framework.</a></div>
+            </div>  
         </section>
-        <section id="contact">
-<h2>Contact Form</h2>
-<form method="post" name="Contact Form">
-<p>
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name">
-</p>
-<p>
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email">
-</p>
-<p>
-    <label for="comments">Comments:</label><br/>
-    <textarea name="comments" id="comments"></textarea>
-</p>
-<p>
-    <input type="submit">
-</p>
-</form>
+        <section id="contact" class="contact-section glass">
+              <div class="contact-intro">
+                <h2 class="contact-title">Get in Touch</h2>
+                <p class="contact-description">
+                  Connect with me to explore how my expertise can benefit your team or business. Reach out via email for inquiries, collaborations, or consultations.
+                </p>
+                  </div>
             
+              <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            
+                <input type="hidden" name="access_key" value="0930297a-ed42-4661-8532-7e6227a284f7" />
+                <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+                <input type="hidden" name="from_name" value="My Website" />
+                <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+            
+                <div class="form-group-container">
+                  <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+                  </div>
+                  <div class="form-group">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
+                  </div>
+                  <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+                  </div>
+                </div>
+                <button class="form-submit" type="submit">Send Message</button>
+              </form>
         </section>
-
     </main>
-
+    <footer>
+        <img src="img/me2.jpg">
+        <div class="decoLine"></div>
+        <h3>Systems Engineer | InfoSec Specialist | Web Developer</h3>
+    </footer>
 </body>
 
 </html>
