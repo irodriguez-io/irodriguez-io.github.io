@@ -1,22 +1,38 @@
-/*** navMenu ***/
+/*** Lock Potrait Mode ***/
 
+  function lockOrientation() {
+      // Check if the screen orientation API is supported
+      if (screen.orientation) {
+          screen.orientation.lock("portrait").catch(function(error) {
+              console.log("Orientation lock failed: ", error);
+          });
+      } else {
+          console.warn("Screen Orientation API not supported");
+      }
+  }
+
+// Lock orientation on page load
+window.addEventListener("load", lockOrientation);
+
+// Optionally lock orientation on orientation change
+window.addEventListener("orientationchange", lockOrientation);
+
+/*** navMenu ***/
+const navMenu = document.querySelector (".navbar")
 const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".navbar");
-const arrows = document.querySelector (".arrows")
+const arrows = document.querySelector (".arrows");
+const about = document.querySelector ("#about");
 
 hamburger.addEventListener("click", mobileMenu);
 arrows.addEventListener("click", Scroll);
 
-function mobileMenu() {
-    let v = navMenu.getBoundingClientRect();   
-    if (v.top > 100) navMenu.scrollIntoView();
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+function mobileMenu() { 
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
 }
 
 function Scroll() {
-    let z = arrows.getBoundingClientRect();
-    if (z.top > 100) navMenu.scrollIntoView();
+  about.scrollIntoView();
 }
 
 const navLink = document.querySelectorAll(".navbar a");
@@ -50,6 +66,84 @@ setInterval (function(){
     lines ();
 },200) 
 
+
+/*** Text Animation ***/
+
+//speed at which text appears and disappears
+const TEXT_UPDATING_SPEED = 55
+
+//duration of type cursor blink animation
+const BLINK_ANIM_DURATION = 2400
+
+//text array to show & loop through
+const textArr = [
+  "Cyber Security",
+  "Risk Management",
+  "Business Continuity",
+    "Regulatory Compliance",
+    "Web Developement",
+]
+
+let currentTextIndex = -1
+
+const myText = document.querySelector(".text")
+const typeCursor = document.querySelector(".cursor")
+
+const addLetter = (letterIndex) => {
+  //if reached the end of the text stop adding letters and animate cursor blink
+  if (letterIndex >= textArr[currentTextIndex].length) {
+    blinkTypeCursor()
+    return
+  }
+  setTimeout(() => {
+    //logic behind adding text
+    myText.textContent += textArr[currentTextIndex][letterIndex]
+    //recursion: call addLetter to add the next letter in the text
+    addLetter(letterIndex + 1)
+  }, TEXT_UPDATING_SPEED)
+}
+
+//remove letter with recursion
+const removeLetter = (letterIndex) => {
+  //if removed all stop removing letters and call updateText to start animating the next text
+  if (letterIndex < 0) {
+    updateText()
+    return
+  }
+  setTimeout(() => {
+    //logic behind removing text with slice
+    myText.textContent = textArr[currentTextIndex].slice(0, letterIndex)
+    //recursion: call removeLetter to remove the previous letter in the text
+    removeLetter(letterIndex - 1)
+  }, TEXT_UPDATING_SPEED)
+}
+
+//blink the cursor when not updating text
+const blinkTypeCursor = () => {
+  //add blink by adding blink animation class from css
+  typeCursor.classList.add("blinkAnim")
+  setTimeout(() => {
+    //stop blinking by removing blink class 
+    typeCursor.classList.remove("blinkAnim")
+    // call removeLetter to start removing letter
+    removeLetter(textArr[currentTextIndex].length)
+  }, BLINK_ANIM_DURATION)
+}
+
+const updateText = () => {
+  //change current text index to switch to next text
+  currentTextIndex++
+  //loop back if reached the end
+  if (currentTextIndex === textArr.length) {
+    currentTextIndex = 0
+  }
+  //call addLetter
+  addLetter(0)
+}
+
+//initial text update after 1 seconds
+setTimeout(() => updateText(), 1000)
+
 /*** carrousel ***/
 
 const slidesContainer = document.querySelector(".slides-container");
@@ -61,13 +155,13 @@ nextButton.addEventListener("click", foward)
                             
 function foward() {
   const slideWidth = slide.clientWidth;
-  slidesContainer.scrollLeft += slideWidth;
+  slidesContainer.scrollLeft -= slideWidth;
 }
 
 prevButton.addEventListener("click", backward)
     
 function backward(){
   const slideWidth = slide.clientWidth;
-  slidesContainer.scrollLeft -= slideWidth;
+  slidesContainer.scrollLeft += slideWidth;
 };
 
