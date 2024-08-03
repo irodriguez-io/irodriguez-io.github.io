@@ -141,9 +141,10 @@ em{
 }
 
 .nav-logo {
-  width: 40px;
   padding-left: 5px;
   cursor: pointer;
+  font-family: "Sacramento", cursive;
+  
 }
 
 
@@ -228,5 +229,9 @@ footer img{
 
   ul li{
     font-size: 16px;
+  }
+
+  .nav-logo{
+    font-size: 1rem;
   }
 }

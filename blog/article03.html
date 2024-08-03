@@ -1,73 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="shortcut icon" href="../img/logo-dark.png" type="image/x-icon">
-        <title>isidro consultoring | article</title>
-        <meta name="author" content="Isidro Rodriguez"/>
-        <meta name="description" content="Information Security, Risk Management, and Business Continuity Professional."/>
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
-        <!-- CSS -->
-        <link rel="stylesheet" href="../css/article.css"/>
-    </head>
-    <body>
-        <header class="header glass">
-            <a href="../index.html" class="nav-logo">
-                <img src="../img/logo-dark.png">
-            </a>
-            <ul>
-                <li>
-                    <a href="../index.html#articles">Back</a>
-                </li>
-                <li>
-                    <a href="#">Spanish</a>
-                </li>
-            </ul>
-        </header>
-        <main>
-            <article>
-                <img class="border" width="500px" height="500px" src="../img/art03.png">
-                <h1>Understanding the XZ Backdoor: A Layman's Guide to the Latest Cyber Threat.</h1>
-                <p>A recent discovery has reminded us of the perennial truth: security is a never-ending battle. The latest frontier in this battle is the 'XZ Backdoor' vulnerability, a critical issue that has managed to slip under the radar until its recent unmasking. </p>
-                <h2>What is the XZ Backdoor Vulnerability?</h2>
-                <p>In simple terms, the XZ Backdoor is like an illicit secret passage into what should be a fortress of your digital systems. It's a severe weakness within the XZ Utils software, a tool used for compressing and decompressing files on Linux and other Unix-like systems. This vulnerability grants unauthorized access to a system, much like leaving the backdoor of your house unlocked, only in this case, you didn't even know there was a door there.</p>
-                <p>The back door part comes into play with one of the main ways xz is used - SSH. SSH is an encrypted protocol between two machines where text commands can be exchanged, allowing a user to interact with a server. It’s a very common utility in the Linux world and the security of this communication is critical. The back door means that the connection is no longer private and could allow an attacker to insert their own text commands into the secure connection.</p>
-                <h2>How Did It Come to Be?</h2>
-                <p>Imagine a community garden where everyone adds plants and helps it grow – this is akin to open-source software development. XZ Utils, maintained for years by only one dedicated individual, suffered when someone introduced a toxic plant, so to speak. This "plant" grew over time, unnoticed due to its clever camouflage, until it spread its roots deep into the system.</p>
-                <p>A new developer, "Jia Tan", took advantage of the open and trusting nature of the open-source community to implement this backdoor. By submitting seemingly innocent patches over 2 years and manipulating community dynamics, this individual gained trust and eventually critical access to the project.</p>
-                <h2>A Brief Timeline Description</h2>
-                <p>
-                    <em>2021:</em>
-                    JiaT75 (Jia Tan) creates their GitHub account. The first commits they make are not to xz, but they are deeply suspicious. The code he submits does a little more than it says. 
-                </p>
-                <p>In April 2022, Jia Tan submitted a patch via a mailing list. The contents of the patch are not relevant, but the events that follow are. A new persona — Jigar Kumar — enters the conversation and begins pressuring for this patch to be merged. This is when JiaT75 makes their first commit to xz. Since this commit, they become a regular contributor to xz. </p>
-                <p>On Jan 7, 2023 JiaT75 merges their first commit into the xz repository, which gives us a good indication of when they fully gain trust. Testing infrastructure that will be used in this exploit is committed.</p>
-                <p>By early 2024 a commit containing the final steps required to execute this backdoor is added to the repository.</p>
-                <p>This vulnerability was discovered by a vigilant Microsoft employee in March 2024 and was subsequently given the identifier CVE-2024-3094.</p>
-                <h2>Ensuring Your Systems Are Protected.</h2>
-                <p>
-                    To safeguard your personal and business systems, it’s imperative to:<br>
-                    <<em>Check for the vulnerability:</em>
-                        Tools such as the one provided by security firm Binary can help you identify if your system is compromised.<br>
-                        <em>Patch immediately:</em>
-                        If the vulnerability is detected, apply patches released by your Linux distribution provider without delay.<br>
-                        <em>Remain informed:</em>
-                        Subscribe to security advisories for the latest information on vulnerabilities and patches.
-                </p>
-                <h2>A Call for Vigilance in Cybersecurity.</h2>
-                <p>This event is a stark reminder that complacency in cybersecurity can have dire consequences. While the open-source model promotes collaboration and innovation, it also demands vigilance and a proactive approach to security.</p>
-                <p>As an information security analyst, my message is clear: never underestimate the importance of a vigilant mindset. In cybersecurity, the enemy is often invisible, the tactics ever evolving, and the battle unending. This is not to induce fear, but to encourage awareness and action. Stay educated, patch diligently, and fortify your digital domain. Remember, a single unattended backdoor can compromise the safety of the entire structure.</p>
-                <p>In an age where digital security is paramount, let's not allow our guards to slip. It's our shared responsibility to protect the integrity of our systems, for the sake of our personal safety, our businesses, and the trust of those we serve. Keep the doors locked, the windows bolted, and the watch constant.</p>
-            </article>
-        </main>
-        <footer>
-            <img src="../img/me2.jpg">
-            <div class="decoLine"></div>
-            <h3>Systems Engineer | InfoSec Specialist | Web Developer</h3>
-        </footer>
-    </body>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="../img/logo-dark.png" type="image/x-icon">
+    <title>isidro consultoring | article</title>
+    <meta name="author" content="Isidro Rodriguez"/>
+    <meta name="description" content="Information Security, Risk Management, and Business Continuity Professional."/>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/article.css"/>
+  </head>
+  <body>
+    <header class="header glass">
+      <a href="../index.html" class="nav-logo">iziRodriguez</a>
+      <ul>
+        <li>
+          <a href="../index.html#articles">Back</a>
+        </li>
+        <li>
+          <a href="article03es.html">Spanish</a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <article>
+        <img class="border" width="500px" height="500px" src="../img/art03.png">
+        <h1>Understanding the XZ Backdoor: A Layman's Guide to the Latest Cyber Threat.</h1>
+        <p>A recent discovery has reminded us of the perennial truth: security is a never-ending battle. The latest frontier in this battle is the 'XZ Backdoor' vulnerability, a critical issue that has managed to slip under the radar until its recent unmasking. </p>
+        <h2>What is the XZ Backdoor Vulnerability?</h2>
+        <p>In simple terms, the XZ Backdoor is like an illicit secret passage into what should be a fortress of your digital systems. It's a severe weakness within the XZ Utils software, a tool used for compressing and decompressing files on Linux and other Unix-like systems. This vulnerability grants unauthorized access to a system, much like leaving the backdoor of your house unlocked, only in this case, you didn't even know there was a door there.</p>
+        <p>The back door part comes into play with one of the main ways xz is used - SSH. SSH is an encrypted protocol between two machines where text commands can be exchanged, allowing a user to interact with a server. It’s a very common utility in the Linux world and the security of this communication is critical. The back door means that the connection is no longer private and could allow an attacker to insert their own text commands into the secure connection.</p>
+        <h2>How Did It Come to Be?</h2>
+        <p>Imagine a community garden where everyone adds plants and helps it grow – this is akin to open-source software development. XZ Utils, maintained for years by only one dedicated individual, suffered when someone introduced a toxic plant, so to speak. This "plant" grew over time, unnoticed due to its clever camouflage, until it spread its roots deep into the system.</p>
+        <p>A new developer, "Jia Tan", took advantage of the open and trusting nature of the open-source community to implement this backdoor. By submitting seemingly innocent patches over 2 years and manipulating community dynamics, this individual gained trust and eventually critical access to the project.</p>
+        <h2>A Brief Timeline Description</h2>
+        <p>
+          <em>2021:</em>
+          JiaT75 (Jia Tan) creates their GitHub account. The first commits they make are not to xz, but they are deeply suspicious. The code he submits does a little more than it says. 
+                
+                
+        </p>
+        <p>In April 2022, Jia Tan submitted a patch via a mailing list. The contents of the patch are not relevant, but the events that follow are. A new persona — Jigar Kumar — enters the conversation and begins pressuring for this patch to be merged. This is when JiaT75 makes their first commit to xz. Since this commit, they become a regular contributor to xz. </p>
+        <p>On Jan 7, 2023 JiaT75 merges their first commit into the xz repository, which gives us a good indication of when they fully gain trust. Testing infrastructure that will be used in this exploit is committed.</p>
+        <p>By early 2024 a commit containing the final steps required to execute this backdoor is added to the repository.</p>
+        <p>This vulnerability was discovered by a vigilant Microsoft employee in March 2024 and was subsequently given the identifier CVE-2024-3094.</p>
+        <h2>Ensuring Your Systems Are Protected.</h2>
+        <p>
+          To safeguard your personal and business systems, it’s imperative to:<br>
+          <<em>Check for the vulnerability:</em>
+            Tools such as the one provided by security firm Binary can help you identify if your system is compromised.<br>
+            <em>Patch immediately:</em>
+            If the vulnerability is detected, apply patches released by your Linux distribution provider without delay.<br>
+            <em>Remain informed:</em>
+            Subscribe to security advisories for the latest information on vulnerabilities and patches.
+                
+                
+        </p>
+        <h2>A Call for Vigilance in Cybersecurity.</h2>
+        <p>This event is a stark reminder that complacency in cybersecurity can have dire consequences. While the open-source model promotes collaboration and innovation, it also demands vigilance and a proactive approach to security.</p>
+        <p>As an information security analyst, my message is clear: never underestimate the importance of a vigilant mindset. In cybersecurity, the enemy is often invisible, the tactics ever evolving, and the battle unending. This is not to induce fear, but to encourage awareness and action. Stay educated, patch diligently, and fortify your digital domain. Remember, a single unattended backdoor can compromise the safety of the entire structure.</p>
+        <p>In an age where digital security is paramount, let's not allow our guards to slip. It's our shared responsibility to protect the integrity of our systems, for the sake of our personal safety, our businesses, and the trust of those we serve. Keep the doors locked, the windows bolted, and the watch constant.</p>
+      </article>
+    </main>
+    <footer>
+      <img src="../img/me2.jpg">
+      <div class="decoLine"></div>
+      <h3>Systems Engineer | InfoSec Specialist | Web Developer</h3>
+    </footer>
+  </body>
 </html>
