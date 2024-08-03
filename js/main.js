@@ -75,14 +75,29 @@ const TEXT_UPDATING_SPEED = 55
 //duration of type cursor blink animation
 const BLINK_ANIM_DURATION = 2400
 
-//text array to show & loop through
-const textArr = [
+// chabge textArr depending on document language
+
+const Docu = document.querySelector ("html")
+
+const Lang = Docu.getAttribute("lang")
+
+let textArr = []
+
+if (Lang == "en-US") {
+  textArr = [
   "Cyber Security",
   "Risk Management",
   "Business Continuity",
-    "Regulatory Compliance",
-    "Web Developement",
-]
+  "Regulatory Compliance",
+  "Web Developement",
+  ]
+  }else { textArr = [
+  "Cyber Seguridad",
+  "Gestion de Riesgo",
+  "Continuidad del Negocio",
+  "Cumplimiento Normativo",
+  "Desarrollo Web",
+  ]}
 
 let currentTextIndex = -1
 

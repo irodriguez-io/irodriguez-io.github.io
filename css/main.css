@@ -72,7 +72,11 @@ p{
   font-size: clamp (16px, 1.5vw, 18px);
   line-height: 2rem;
   margin-bottom: 1rem;
-  text-indent: 5%;
+}
+
+em{
+  font-weight: bold;
+  font-size: 17px;
 }
 
 /*** Background Animation ***/
@@ -205,10 +209,10 @@ p{
 }
 
 .nav-logo {
-  width: 40px;
-  height: auto;
   padding-left: 5px;
   cursor: pointer;
+  font-family: "Sacramento", cursive;
+  font-size: 2rem;
 }
 
 .nav-logo:hover, .nav-logo:focus {
@@ -357,6 +361,10 @@ p{
   align-self:start;
 }
 
+.description h1{
+  margin-top: 0.5rem;
+}
+
 .description p:last-child{
   margin-bottom: 0;
 }
@@ -386,7 +394,7 @@ p{
 
 .slides-container {
   display: flex;
-  overflow: scroll;
+  overflow: hidden;
   scroll-behavior: smooth;
   margin: 0;
 }
@@ -394,7 +402,7 @@ p{
 .slide-arrow {
   position: absolute;
   display: flex;
-  bottom: -1000px;
+  bottom: 100px;
   margin: auto;
   height: 4rem;
   width: 2rem;
@@ -475,11 +483,12 @@ p{
   padding: 10px;
   cursor: pointer;
   border-radius: 20px;
+  transition: transform 0.5s ease-in-out;
+  backface-visibility: hidden;
 }
 
 .article-item:hover, article-item:focus{
-  transition: all 1.5s;
-  transform: rotatex(360deg);
+  transform: scale(110%);  
 }
 
 .article-item:nth-child(even){
@@ -572,6 +581,7 @@ p{
 footer{
   text-align: center;
   margin: 2rem 0;
+  position: relative;
 }
 
 footer img{
@@ -586,10 +596,10 @@ footer img{
   padding-bottom: 10px;
   border-bottom: 2px solid var(--FontColor);
   opacity: 0.6;
-  position: relative;
+  position: absolute;
   margin: 0 auto;
-  width: 80%;
-  bottom: 4em;
+  width: 100%;
+  top: 50%;
   z-index: -1;
 }
 
@@ -617,7 +627,7 @@ footer img{
   }
 
   .slide-arrow {
-  bottom: -400px;
+  bottom: -500px;
   }
 
   .arrow-next{
@@ -640,10 +650,6 @@ footer img{
   .slides-container{
     overflow:hidden;
     margin: 0 auto;
-  }
-
-  .decoLine{
-  bottom: 5em;
   }
   
 }
