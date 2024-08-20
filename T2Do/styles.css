@@ -1,0 +1,227 @@
+/*** The new CSS Reset  ***/
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+textarea {
+  white-space: revert;
+}
+
+/*** Variables ***/
+:root {
+  --FontColor: blue;
+  --InputColor: darkblue;
+  --deleteButton: red;
+  --BGcolor1: slategray;
+  --BGcolor2: darkgray;
+  --GlassBgColor: rgba(190,190,190,0.5);
+  --RadioColor1: #whitesmoke;
+  --RadioColor2: #slateblue;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../css/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Sacramento";
+  src: url("../css/Sacramento.ttf");
+}
+
+/*** Utily Classes ***/
+.glass {
+  background: var(--GlassBgColor);
+  border: 1px solid #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/*** Main CSS Styles  ***/
+html {
+  scroll-behavior: smooth;
+  font: 1rem "ubuntu", san-serif;
+  color: var(--FontColor);
+  background: linear-gradient(45deg, var(--BGcolor1), var(--BGcolor2));
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background-image: url("bg.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vh, 3rem);
+  margin: 2rem 0;
+  white-space: nowrap;
+  color: whitesmoke;
+}
+
+form {
+  position: fixed;
+  padding: 0.5rem;
+  bottom: 4rem;
+}
+
+input {
+  margin-left: 5px;
+  color: var(--InputColor);
+  border-radius: 10px;
+  box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+  padding-left: 10px;
+}
+
+#dueDate {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+#addButton {
+  border-left: solid white;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.filters {
+  border-top: 1px solid whitesmoke;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.radio {
+  appearance: none;
+  position: relative;
+  right: 0px;
+  width: 5px;
+  height: 15px;
+  box-sizing: content-box;
+  border: 1px solid whitesmoke;
+  border-radius: 50%;
+  vertical-align: text-bottom;
+  margin: auto;
+  margin-left: 10px;
+}
+
+.radio:checked{
+  background-color:darkblue;
+  transition: background-color 1s linear;
+}
+
+section {
+  overflow: auto;
+  border-radius: 6px;
+  max-height: 70vh;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+td {
+  padding: 5px 0;
+  vertical-align: middle
+}
+
+.taskText {
+  width: 70vw;
+  border-left: solid white;
+  border-right: solid white;
+  margin-left: 10px;
+  padding-left: 10px;
+  color: blue;
+}
+
+button:hover:focus {
+  color: var(--InputColor);
+}
+
+.deleteButton {
+  margin: auto 10px;
+}
+
+.checkbox {
+  appearance: none;
+  position: relative;
+  right: 0px;
+  font-size: inherit;
+  width: 2em;
+  height: 1em;
+  box-sizing: content-box;
+  border: 1px solid;
+  border-radius: 1em;
+  vertical-align: text-bottom;
+  margin: auto;
+  margin-left: 10px;
+}
+
+.checkbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  box-sizing: border-box;
+  width: 0.7em;
+  height: 0.7em;
+  margin: 0 0.15em;
+  border: 1px solid;
+  border-radius: 50%;
+  background: slateblue;
+  transition: left 1s ease-out, background 1s ease-out;
+}
+
+.checkbox:checked::before {
+  left: 1.6em;
+  background: gray;
+  transition: left 1s ease-out, background 1s ease-out; 
+}
+
+footer{
+  position: fixed;
+  bottom: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+  color: blue;
+}
+
+footer a{
+  font: 1.5rem "Sacramento", san-serif;
+  
+}
+
+footer a:hover{
+  color: red;
+}

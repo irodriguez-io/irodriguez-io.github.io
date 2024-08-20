@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Things 2Do by iziRodriguez</title>
+    <link rel='icon' type='image/x-icon' href='favicon.svg'>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <h1>Things 2Do</h1>
+    <section class='glass'>
+      <table>
+        <tbody id='taskTable'></tbody>
+      </table>
+    </section>
+    <form id='formI' class="glass">
+      <label for='dueDate'>Due Date:</label>
+      <input type='date' id='dueDate' required>
+      <button id='addButton' type="submit">Add</button>
+      <br>
+      <label for='newTask'>Add Task:</label>
+      <input type="text" id="newTask" placeholder="write here" required></input>
+      <div class='filters'>
+        <input type='radio' id="allTask" name="taskStatus" value="all" checked class='radio'>
+        <label for='allTask'>All Tasks</label>
+        <input type='radio' id="pendingTask" name="taskStatus" value="pending" class='radio'>
+        <label for='pendingTask'>Pending Tasks</label>
+        <input type='radio' id="completedTask" name="taskStatus" value="completed" class='radio'>
+        <label for='allTask'>Completed Tasks</label>
+      </div>
+      <div class='filters'>
+        <input type='radio' id="thisWeek" name="taskDueDate" value="thisWeek" class='radio'>
+        <label for='pendingTask'>This Week</label>
+        <input type='radio' id="nextMonth" name="taskDueDate" value="nextMonth" class='radio'>
+        <label for='allTask'>Next Month</label>
+        <input type='radio' id="anyDate" name="taskDueDate" value="nextWeek" checked class='radio'>
+        <label for='allTask'>Any Date</label>
+      </div>
+    </form>
+    <footer class="glass">Developed by <a href="../index.html">iziRodriguez</a></footer>
+  </body>
+</html>
