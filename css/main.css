@@ -37,11 +37,21 @@
   --Shadow1: black;
 }
 
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../css/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Sacramento";
+  src: url("../css/Sacramento.ttf");
+}
+
 /*** Main CSS Styles  ***/
 
 html {
   scroll-behavior: smooth;
-  font: 1rem "ubuntu", san-serif;
+  font: 1rem "Ubuntu", san-serif;
   color: var(--FontColor);
 }
 
@@ -448,6 +458,78 @@ em{
   padding: 1rem 2rem;
 }
 
+/*** Portfolio ***/
+
+#portfolio{
+  scroll-margin-top: 10vh;
+  position: relative;
+  width: 100vw;
+  max-width: 900px;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.cardContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem;
+}
+
+.appCard{
+  height: 215px;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid whitesmoke;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: right / contain no-repeat url(../img/toDo.webp);
+  cursor: pointer;
+}
+
+.appCard:hover {
+   transform: scale(1.035, 1.035);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.appCard a{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#portfolio img{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#portfolio h3{
+  color: whitesmoke;
+  font-size: 24px;
+  text-align: left;
+  margin: 10px 0 10px 10px;
+}
+
+#portfolio p{
+  color: whitesmoke;
+  font-size: 16px;
+  text-align: left;
+  letter-spacing: 0.5px;
+  padding-top: 10px;
+  margin: 0 100px 0 10px;
+}
+
 /*** Article Grid ***/
 
 #articles {
@@ -599,7 +681,7 @@ footer img{
   position: absolute;
   margin: 0 auto;
   width: 100%;
-  top: 50%;
+  top: 40%;
   z-index: -1;
 }
 
