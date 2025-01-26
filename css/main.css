@@ -133,7 +133,7 @@ em{
   background: linear-gradient( var(--Circle), transparent);
 }
 
-/*** Utily Classes ***/
+/*** Utilities Classes ***/
 
 .glass {
   background: rgba(109, 103, 228, 0.5);
@@ -353,7 +353,7 @@ em{
   scroll-margin-top: 10vh;
   display: grid;
   grid-template-areas: "owner-pic" "description" "linkedin";
-  max-width: 900px;
+  max-width: 1500px;
   margin-top: 2rem;
 }
 
@@ -394,7 +394,7 @@ em{
 #services {
   scroll-margin-top: 10vh;
   width: 100vw;
-  max-width: 900px;
+  max-width: 1500px;
   position: relative;
 }
 
@@ -464,7 +464,7 @@ em{
   scroll-margin-top: 10vh;
   position: relative;
   width: 100vw;
-  max-width: 900px;
+  max-width: 1500px;
   text-align: center;
   margin: 2rem 0;
 }
@@ -536,22 +536,22 @@ em{
   scroll-margin-top: 10vh;
   position: relative;
   width: 100vw;
-  max-width: 900px;
+  max-width: 1500px;
 }
 
 #articles h1{
   margin-top: 2rem;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
 }
 
 #articles p{
-  padding: 0 5%;
   margin-bottom: 1rem;
+  max-width: 1500px;
 }
 
 .article-grid{
   display: grid;
-  max-width: 1000px;
+  max-width: 1500px;
   margin: 2rem auto;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 1rem;
