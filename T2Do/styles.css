@@ -108,9 +108,8 @@ input {
 }
 
 #addButton {
-  border-left: solid white;
-  padding-left: 10px;
-  margin-left: 10px;
+  padding: 0 5px;
+  margin: 0 auto 
 }
 
 .filters {
