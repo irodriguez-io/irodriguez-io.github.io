@@ -1,5 +1,5 @@
 // Get data from form elements
-const dueDate = document.querySelector('#dueDate');
+  //const dueDate = document.querySelector('#dueDate');
 const newTask = document.querySelector('#newTask');
 const addButton = document.querySelector('#addButton');
 const Lang = document.documentElement.lang;
@@ -10,9 +10,9 @@ let taskList = [];
 // This is the object that represents each individual task
 const Task = {
   task: '',
-  dueOn: '',
+  //dueOn: '',
   status: '',
-  strDate: '',
+  //strDate: '',
 };
 
 // Save task list to local storage
@@ -30,8 +30,7 @@ function retrieveFromLocalStorage() {
 
 // OnClick event for the Add button
 addButton.addEventListener('click', (event)=>{
-  event.preventDefault();
-  // Prevents page reload
+  event.preventDefault(); // Prevents page reload
 
   // Run validation before adding a new task
   if (validateForm()) {
@@ -45,7 +44,7 @@ addButton.addEventListener('click', (event)=>{
 // Document loaded event to set date restriction, load saved data, check filters, and draw the table if needed. 
 // it will also do some styling on the document
 document.addEventListener('DOMContentLoaded', ()=>{
-  // Makes sure the table with task doesnt expand beyond the form 
+  // Makes sure the table with task doesn't expand beyond the form 
   const section = document.querySelector('section.glass');
   const form = document.getElementById('formI');
 
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // Adjust on resize
 
   // Set min date to today, so you can't set a task to be due in the past
-  dueDate.min = new Date().toISOString().split("T")[0];
+  //dueDate.min = new Date().toISOString().split("T")[0];
 
   // Retrieve task list from local storage
   retrieveFromLocalStorage();
@@ -83,7 +82,7 @@ filterRadios.forEach(radio=>{
 );
 
 // Date format function
-function formatDate(dateString) {
+/* function formatDate(dateString) {
   const [year,month,day] = dateString.split('-').map(Number);
   const date = new Date(year,month - 1,day);
   const options = {
@@ -91,19 +90,19 @@ function formatDate(dateString) {
     day: 'numeric'
   };
   return date.toLocaleDateString('en-US', options);
-}
+} */
 
 // Input fields validation function
 function validateForm() {
-  const dueDateValue = dueDate.value.trim();
+  //const dueDateValue = dueDate.value.trim();
   const newTaskValue = newTask.value.trim();
 
   // Check if the due date is empty
-  if (!dueDateValue) {
+  /* if (!dueDateValue) {
     alert("Please select a due date.");
     return false;
     // Prevent the form submission
-  }
+  } */
 
   // Check if the new task field is empty
   if (!newTaskValue) {
@@ -122,7 +121,7 @@ function addNewTask() {
   // Creates the individual task with the information collected from the form elements
   const taskObject = Object.create(Task);
   taskObject.task = newTask.value.trim();
-  taskObject.dueOn = dueDate.value;
+  //taskObject.dueOn = dueDate.value;
   taskObject.status = 'pending';
   taskObject.strDate = formatDate(dueDate.value)
 
@@ -133,7 +132,7 @@ function addNewTask() {
   saveToLocalStorage();
 
   // Clear the input elements
-  dueDate.value = '';
+  //dueDate.value = '';
   newTask.value = '';
 
   // Draw the table with the updated task list
@@ -165,25 +164,25 @@ function changeStatus(index) {
 }
 
 // Check if a task is due within a certain number of days
-function isTaskDueWithinDays(taskDate, days) {
+/* function isTaskDueWithinDays(taskDate, days) {
   const currentDate = new Date();
   const dueDate = new Date(taskDate);
   const timeDiff = dueDate - currentDate;
   const daysDiff = timeDiff / (1000 * 60 * 60 * 24);
   return daysDiff <= days;
-}
+} */
 
 // Draw the task table
 function drawTable(tasks) {
   const taskTable = document.getElementById('taskTable');
-  taskTable.innerHTML = '';
-  // Clear the existing table rows
+  
+  taskTable.innerHTML = ''; // Clear the existing table rows
 
   // Determine which status filter is selected
   const selectedStatusFilter = document.querySelector('.filters input[name="taskStatus"]:checked').value;
 
   // Determine which due date filter is selected
-  const selectedDueDateFilter = document.querySelector('.filters input[name="taskDueDate"]:checked').value;
+  //const selectedDueDateFilter = document.querySelector('.filters input[name="taskDueDate"]:checked').value;
 
   // Filter tasks based on the selected status filter
   let filteredTasks = tasks;
@@ -194,11 +193,11 @@ function drawTable(tasks) {
   }
 
   // Further filter tasks based on the selected due date filter
-  if (selectedDueDateFilter === 'thisWeek') {
+  /* if (selectedDueDateFilter === 'thisWeek') {
     filteredTasks = filteredTasks.filter(task=>isTaskDueWithinDays(task.dueOn, 7));
   } else if (selectedDueDateFilter === 'nextMonth') {
     filteredTasks = filteredTasks.filter(task=>isTaskDueWithinDays(task.dueOn, 30));
-  }
+  } */
 
   filteredTasks.forEach((task,index)=>{
     // Create table row
@@ -227,7 +226,8 @@ function drawTable(tasks) {
     const tdTaskText = document.createElement('td');
     const pTaskText = document.createElement('p');
     pTaskText.className = 'taskText';
-    pTaskText.textContent = `${task.task}, ${dueText}: ${task.strDate}`;
+    pTaskText.textContent = `${task.task}`;
+    // pTaskText.textContent = `${task.task}, ${dueText}: ${task.strDate}`; // Backup line
 
     // Set initial style based on task status
     if (task.status === 'completed') {
