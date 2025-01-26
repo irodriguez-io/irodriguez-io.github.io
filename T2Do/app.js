@@ -31,14 +31,14 @@ function retrieveFromLocalStorage() {
 // OnClick event for the Add button
 addButton.addEventListener('click', (event)=>{
   event.preventDefault(); // Prevents page reload
-
+  
   // Run validation before adding a new task
-  if (validateForm()) {
-    console.log("its working");
+   if (validateForm()) {
+    //console.log("its working");
     addNewTask();
     // Add the new task if validation passes
   }
-}
+} 
 );
 
 // Document loaded event to set date restriction, load saved data, check filters, and draw the table if needed. 
@@ -123,7 +123,7 @@ function addNewTask() {
   taskObject.task = newTask.value.trim();
   //taskObject.dueOn = dueDate.value;
   taskObject.status = 'pending';
-  taskObject.strDate = formatDate(dueDate.value)
+  //taskObject.strDate = formatDate(dueDate.value)
 
   // Add individual task to the list
   taskList.push(taskObject);
@@ -214,7 +214,7 @@ function drawTable(tasks) {
     tdCheckbox.appendChild(checkbox);
     tr.appendChild(tdCheckbox);
 
-    //cambiar texto dependiendo del idioma del documento
+    //changes text based on document language
     DueText = '';
     if (Lang === 'en-US') {
       dueText = 'due on'
