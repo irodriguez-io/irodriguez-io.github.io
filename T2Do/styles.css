@@ -124,6 +124,9 @@ form button:hover{
 }
 
 .filters {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
   border-top: 1px solid whitesmoke;
   margin-top: 10px;
   padding-top: 10px;
