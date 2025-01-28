@@ -18,16 +18,18 @@
     <form id='formI' class="glass">
 <!--       <label for='dueDate'>Due Date:</label>
       <input type='date' id='dueDate' required> -->
-      <label for='newTask'>Add Task:</label>
-      <input type="text" id="newTask" placeholder="write task here" required></input>
-      <button id='addButton' class="glass" type="submit">Add</button>
+      <div class="input-text">
+      <label for='newTask'></label>
+      <input type="text" id="newTask" placeholder="Write task here" required></input>
+      <button id='addButton' class="glass" type="submit">Add Task</button>
+    </div>
       <div class='filters'>
         <input type='radio' id="allTask" name="taskStatus" value="all" checked class='radio'>
-        <label for='allTask'>All Tasks</label>
+        <label for='allTask'>All</label>
         <input type='radio' id="pendingTask" name="taskStatus" value="pending" class='radio'>
-        <label for='pendingTask'>Pending Tasks</label>
+        <label for='pendingTask'>Pending</label>
         <input type='radio' id="completedTask" name="taskStatus" value="completed" class='radio'>
-        <label for='allTask'>Completed Tasks</label>
+        <label for='allTask'>Completed</label>
       </div>
 
 <!--       <div class='filters'>
