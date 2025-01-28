@@ -102,6 +102,11 @@ input {
   padding-left: 10px;
 }
 
+.input-text{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #dueDate {
   margin-left: 10px;
   margin-bottom: 10px;
@@ -109,7 +114,13 @@ input {
 
 #addButton {
   padding: 0 5px;
-  margin: 0 auto 
+  margin: 0 10px; 
+}
+
+form button:hover{
+  background-color: lightskyblue;
+  color: white;
+  transition: background-color 1s linear;
 }
 
 .filters {
