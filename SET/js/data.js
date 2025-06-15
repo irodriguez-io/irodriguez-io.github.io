@@ -45,11 +45,12 @@ export function deleteCategory(id) {
 }
 
 //Sub Categories Table.
-
+/*
 {
   name: string,
   categoryId: number   // foreign key to Categories
 }
+  */
 
 // Payees Table.
 
