@@ -88,14 +88,14 @@ if (Lang == "en-US") {
   "Enterprise automation, built secure by default.",
   "Identity, secured. Workflows, automated.",
   "Most automation breaks on security. I do the opposite.",
-  "19 years of systems. 10 years of identity.",
+  "19 years of experience. 10 years on identity.",
   "Built for SMBs that can't afford to be insecure.",
   ]
   }else { textArr = [
   "Automatización empresarial, segura desde el primer día.",
   "Identidad protegida. Flujos automatizados.",
   "La mayoría de automatizaciones se rompen en la seguridad. Yo hago lo contrario.",
-  "19 años en sistemas. 10 años en identidad.",
+  "19 años de experiencia. 10 años en identidad.",
   "Construido para PYMES que no pueden permitirse ser inseguras.",
   ]}
 
@@ -108,6 +108,16 @@ const addLetter = (letterIndex) => {
   //if reached the end of the text stop adding letters and animate cursor blink
   if (letterIndex >= textArr[currentTextIndex].length) {
     blinkTypeCursor()
+    return
+  }
+  //blink the cursor during the 1s pause before the first character appears
+  if (letterIndex === 0) {
+    typeCursor.classList.add("blinkAnim")
+    setTimeout(() => {
+      typeCursor.classList.remove("blinkAnim")
+      myText.textContent += textArr[currentTextIndex][letterIndex]
+      addLetter(letterIndex + 1)
+    }, 1000)
     return
   }
   setTimeout(() => {
