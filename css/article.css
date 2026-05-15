@@ -143,14 +143,44 @@ em{
 .nav-logo {
   padding-left: 5px;
   cursor: pointer;
-  font-family: "Sacramento", cursive;
-  
+  font-family: "Ubuntu", cursive;
 }
 
 
 .nav-logo:hover, .nav-logo:focus {
   transform: scale(1.1);
   transition: all 0.3s;
+}
+
+/*** Brand wordmark typewriter effect (article pages) ***/
+
+.brand-type {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  white-space: nowrap;
+  border-right: 2px solid var(--FontColor);
+  width: 0;
+  animation:
+    brand-type-in 1.4s steps(10, end) 0.4s forwards,
+    brand-type-blink 0.85s step-end infinite;
+}
+
+@keyframes brand-type-in {
+  from { width: 0; }
+  to   { width: 10ch; }
+}
+
+@keyframes brand-type-blink {
+  50% { border-color: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-type {
+    animation: none;
+    width: auto;
+    border-right: none;
+  }
 }
 
 article{

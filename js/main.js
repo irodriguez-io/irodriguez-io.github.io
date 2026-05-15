@@ -85,18 +85,18 @@ let textArr = []
 
 if (Lang == "en-US") {
   textArr = [
-  "Cyber Security",
-  "Risk Management",
-  "Business Continuity",
-  "Regulatory Compliance",
-  "Web Developement",
+  "Enterprise automation, built secure by default.",
+  "Identity, secured. Workflows, automated.",
+  "Most automation breaks on security. I do the opposite.",
+  "19 years of systems. 10 years of identity.",
+  "Built for SMBs that can't afford to be insecure.",
   ]
   }else { textArr = [
-  "Cyber Seguridad",
-  "Gestion de Riesgo",
-  "Continuidad del Negocio",
-  "Cumplimiento Normativo",
-  "Desarrollo Web",
+  "Automatización empresarial, segura desde el primer día.",
+  "Identidad protegida. Flujos automatizados.",
+  "La mayoría de automatizaciones se rompen en la seguridad. Yo hago lo contrario.",
+  "19 años en sistemas. 10 años en identidad.",
+  "Construido para PYMES que no pueden permitirse ser inseguras.",
   ]}
 
 let currentTextIndex = -1
