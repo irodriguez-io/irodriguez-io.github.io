@@ -296,7 +296,14 @@ em{
   margin: 2rem auto;
   color: var(--FontColor);
   font-size: 2rem;
-  white-space: nowrap;
+}
+
+.hero-content p {
+  max-width: calc(100vw - 20px);
+  margin-inline: auto;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .cursor {
