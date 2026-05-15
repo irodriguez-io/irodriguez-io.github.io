@@ -230,6 +230,41 @@ em{
   transition: all 0.3s;
 }
 
+/*** Brand wordmark typewriter effect ***/
+/* Applies wherever .brand-type wraps the "iRodriguez" wordmark.
+   CSS-only: animates width from 0 to full text width using steps(),
+   with a blinking border-right serving as the typing cursor. */
+
+.brand-type {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  white-space: nowrap;
+  border-right: 2px solid var(--FontColor);
+  width: 0;
+  animation:
+    brand-type-in 1.4s steps(10, end) 0.4s forwards,
+    brand-type-blink 0.85s step-end infinite;
+}
+
+@keyframes brand-type-in {
+  from { width: 0; }
+  to   { width: 10ch; }
+}
+
+@keyframes brand-type-blink {
+  50% { border-color: transparent; }
+}
+
+/* Respect users who prefer reduced motion — show the wordmark instantly. */
+@media (prefers-reduced-motion: reduce) {
+  .brand-type {
+    animation: none;
+    width: auto;
+    border-right: none;
+  }
+}
+
 .navbar li {
   text-align: center;
   padding: 0.5rem;
@@ -456,78 +491,6 @@ em{
 
 .slide p{
   padding: 1rem 2rem;
-}
-
-/*** Portfolio ***/
-
-#portfolio{
-  scroll-margin-top: 10vh;
-  position: relative;
-  width: 100vw;
-  max-width: 1500px;
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.cardContainer{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-  grid-gap: 2rem;
-  margin: 2rem;
-}
-
-.appCard{
-  height: 215px;
-  position: relative;
-  overflow: hidden;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid whitesmoke;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  display: grid;
-  grid-template-rows: 2fr 1fr;
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  background: right / contain no-repeat url(../img/toDo.webp);
-  cursor: pointer;
-}
-
-.appCard:hover {
-   transform: scale(1.035, 1.035);
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-}
-
-.appCard a{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-#portfolio img{
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-#portfolio h3{
-  color: whitesmoke;
-  font-size: 24px;
-  text-align: left;
-  margin: 10px 0 10px 10px;
-}
-
-#portfolio p{
-  color: whitesmoke;
-  font-size: 16px;
-  text-align: left;
-  letter-spacing: 0.5px;
-  padding-top: 10px;
-  margin: 0 100px 0 10px;
 }
 
 /*** Article Grid ***/

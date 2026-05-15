@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="{{ '/img/logo-dark.png' | relative_url }}" type="image/x-icon">
+    <title>{{ page.title | escape }} — iRodriguez</title>
+    <meta name="author" content="Isidro Rodriguez"/>
+    <meta name="description" content="{{ page.description | default: site.description | strip_newlines | escape }}"/>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/css/article.css' | relative_url }}"/>
+  </head>
+  <body>
+    <header class="header glass">
+      <a href="{{ '/' | relative_url }}" class="nav-logo brand-type" data-text="iRodriguez">iRodriguez</a>
+      <ul>
+        <li>
+          <a href="{{ '/#articles' | relative_url }}">Back</a>
+        </li>
+        {% if page.translation %}
+        <li>
+          <a href="{{ page.translation | relative_url }}">Español</a>
+        </li>
+        {% endif %}
+      </ul>
+    </header>
+    <main>
+      <article>
+        {% if page.image %}
+        <img class="border" width="500" height="500" src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}">
+        {% endif %}
+        <h1>{{ page.title }}</h1>
+        {% if page.date %}
+        <p style="opacity: 0.7; font-size: 0.9rem; margin: 0 1rem 1rem;">
+          <em>{{ page.date | date: "%B %-d, %Y" }}</em>
+        </p>
+        {% endif %}
+        {{ content }}
+      </article>
+    </main>
+    <footer>
+      <img src="{{ '/img/me2.jpg' | relative_url }}">
+      <div class="decoLine"></div>
+      <h3>Identity &amp; Access · Secure Automation · Plain Language</h3>
+    </footer>
+  </body>
+</html>
