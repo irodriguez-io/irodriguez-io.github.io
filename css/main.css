@@ -242,6 +242,9 @@ em{
   white-space: nowrap;
   border-right: 2px solid var(--FontColor);
   width: 0;
+}
+
+.brand-type.is-typing {
   animation:
     brand-type-in 1.4s steps(10, end) 0.4s forwards,
     brand-type-blink 0.85s step-end infinite;
