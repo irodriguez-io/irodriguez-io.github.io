@@ -247,7 +247,7 @@ em{
 .brand-type.is-typing {
   animation:
     brand-type-in 1.4s steps(10, end) 0.4s forwards,
-    brand-type-blink 0.85s step-end infinite;
+    brand-type-blink 0.85s step-end 1.8s 3 forwards;
 }
 
 @keyframes brand-type-in {
@@ -256,7 +256,9 @@ em{
 }
 
 @keyframes brand-type-blink {
-  50% { border-color: transparent; }
+  0%   { border-color: var(--FontColor); }
+  50%  { border-color: transparent; }
+  100% { border-color: transparent; }
 }
 
 /* Respect users who prefer reduced motion — show the wordmark instantly. */
