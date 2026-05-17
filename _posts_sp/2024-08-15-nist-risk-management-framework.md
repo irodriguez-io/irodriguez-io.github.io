@@ -1,151 +1,175 @@
 ---
-title: "El marco de gestión de riesgos del NIST"
+title: "El Marco de Gestión de Riesgos del NIST"
 date: 2024-08-15
 slug: nist-risk-management-framework
 lang: es
 image: /img/art06.jpg
-description: "Cómo el marco de gestión de riesgos del NIST (RMF) complementa al CSF — categorizar, seleccionar, implementar, evaluar, autorizar, monitorear."
+description: "Cómo el NIST Risk Management Framework (RMF) complementa al CSF: categorizar, seleccionar, implementar, evaluar, autorizar, monitorear."
 translation: "/blog/2024/08/nist-risk-management-framework/"
 ---
 
-El NIST-RMF proporciona un proceso estructurado que integra actividades de seguridad de la información y gestión de riesgos en el ciclo de vida del desarrollo del sistema.
+El NIST Risk Management Framework (NIST-RMF) es un proceso estructurado que integra la seguridad de la información y las actividades de gestión de riesgos en el ciclo de vida del desarrollo de sistemas. Es la contraparte operativa del Cybersecurity Framework (CSF): el CSF te dice *qué* tienes que lograr, y el RMF te dice *cómo* llegar ahí en un sistema concreto.
 
-Es importante priorizar los requisitos de seguridad y asignar recursos a las necesidades de seguridad y privacidad de la información. Esta toma de decisiones se facilita mediante un Marco de Gestión de Riesgos (RMF) integral. Del mismo modo, el NIST-RMF ayudará a promover el desarrollo y la difusión de políticas y procedimientos de seguridad y privacidad.
+El marco ayuda a la organización a priorizar sus requisitos de seguridad, asignar recursos a las necesidades de seguridad y privacidad, y desarrollar y difundir las políticas y procedimientos que respaldan esas decisiones. Si eres responsable del riesgo operativo de algún sistema, el RMF te da una manera defendible de tomar y documentar las decisiones que vas a tomar de todas formas.
 
-La gestión de riesgos es un proceso integral que requiere que las organizaciones:
+## Las cuatro actividades de gestión de riesgos
 
-**Enmarquen el Riesgo:** Establezcan un contexto de riesgo describiendo el entorno en el que se toman decisiones basadas en riesgo y produzcan una estrategia de gestión de riesgos.
+La gestión de riesgos a nivel organizacional se divide en cuatro actividades continuas:
 
-**Evalúen el Riesgo:** Identifiquen fuentes de amenazas y vulnerabilidades para la organización, el impacto potencial en la misión/negocio, la probabilidad y la incertidumbre de ocurrencia.
+**Encuadrar el riesgo (Frame).** Establece el contexto de riesgo describiendo el entorno en el que se toman las decisiones basadas en riesgo, y produce una estrategia de gestión de riesgos.
 
-**Respondan al Riesgo:** Proporcionen una respuesta coherente a nivel organizacional desarrollando y evaluando cursos de acción alternativos, determinando el curso de acción adecuado e implementando la respuesta al riesgo.
+**Evaluar el riesgo (Assess).** Identifica las fuentes de amenaza y las vulnerabilidades, el impacto potencial en la misión y el negocio, y la probabilidad e incertidumbre de ocurrencia.
 
-**Monitoreen el Riesgo:** Verifiquen que las medidas de respuesta al riesgo planificadas estén implementadas, determinen la efectividad continua de la respuesta al riesgo y cómo se monitorea el riesgo a lo largo del tiempo.
+**Responder al riesgo (Respond).** Da una respuesta consistente a nivel organizacional: desarrolla cursos de acción alternativos, elige uno e impleméntalo.
 
-Una clave para implementar un programa de gestión de riesgos exitoso en toda la organización es obtener el apoyo de la alta dirección. Para obtener este apoyo, puedes enfatizar que el objetivo principal del NIST-RMF es permitir que la organización lleve a cabo sus operaciones diarias y cumpla con sus misiones sin interrupciones.
+**Monitorear el riesgo (Monitor).** Verifica que las medidas de respuesta planeadas se hayan implementado, determina si siguen siendo efectivas, y registra cómo cambia el riesgo en el tiempo.
 
-El Marco de Gestión de Riesgos proporciona a las organizaciones varios beneficios clave:
+## Conseguir el apoyo del liderazgo
 
-Un proceso estructurado pero flexible para gestionar el riesgo relacionado con la operación de la organización. Guía para determinar la mitigación de riesgos adecuada necesaria para proteger los sistemas y la infraestructura que apoyan la misión y los procesos empresariales de la organización. Una metodología repetible que equilibra objetivos comerciales clave y prioridades organizacionales con requisitos de seguridad y directrices políticas. Un proceso para resultados de monitoreo continuo y mejora continua de la postura de seguridad de la organización. Una metodología neutral en cuanto a tecnología que puede aplicarse a cualquier tipo de sistema de información sin modificaciones.
+Un programa de gestión de riesgos exitoso a nivel organizacional necesita patrocinio desde arriba. El argumento que funciona con la gerencia no es el cumplimiento. Es la continuidad: el objetivo del NIST-RMF es permitirle a la organización operar día a día y cumplir su misión sin interrupciones. Plantea el RMF como una forma de mantener el negocio funcionando, y el apoyo llega.
 
-**Hay siete pasos en el NIST-RMF:** un paso preparatorio para asegurar que las organizaciones estén listas para ejecutar el proceso y seis pasos principales. Los pasos del NIST-RMF se enumeran en orden secuencial, pero los pasos que siguen al paso de Preparación pueden llevarse a cabo en un orden no secuencial. Las organizaciones tienen flexibilidad en cómo se implementan cada uno de los pasos y tareas del NIST-RMF, siempre que cumplan con todos los requisitos aplicables y gestionen efectivamente el riesgo de seguridad y privacidad.
+## Por qué usar el RMF
 
-Los siete pasos son esenciales para la ejecución exitosa del NIST-RMF.
+El Risk Management Framework le da a una organización:
 
-**1. Preparar:** realizar actividades esenciales para ayudar a preparar a la organización para gestionar sus riesgos de seguridad y privacidad utilizando el NIST-RMF.
+1. Un proceso estructurado pero flexible para gestionar el riesgo relacionado con sus operaciones.
+2. Una guía para determinar el nivel adecuado de mitigación de riesgos que protege los sistemas y la infraestructura que soportan los procesos de misión y negocio.
+3. Una metodología repetible que balancea los objetivos del negocio y las prioridades de la organización con los requisitos de seguridad y las políticas.
+4. Un ciclo de monitoreo continuo que mejora la postura de seguridad con el tiempo.
+5. Un enfoque neutral con respecto a la tecnología, que aplica a cualquier sistema de información sin necesidad de modificarlo.
 
-**1.1 - Establecer Roles de Gestión de Riesgos:** identificar y asignar a personas a roles específicos asociados con la gestión de riesgos de seguridad y privacidad.
+## Los siete pasos
 
-**1.2 - Establecer una Estrategia de Gestión de Riesgos:** establecer una estrategia de gestión de riesgos para la organización que incluya una determinación de la tolerancia al riesgo.
+El NIST-RMF tiene siete pasos: un paso preparatorio más seis pasos principales. Los pasos están listados en orden, pero todo lo que viene después de **Prepare** se puede ejecutar de manera no secuencial. La organización tiene flexibilidad para implementar cada paso, siempre que cumpla los requisitos aplicables y gestione el riesgo de manera efectiva.
 
-**1.3 - Evaluación de Riesgos – Organización:** evaluar el riesgo de seguridad y privacidad a nivel organizacional y actualizar los resultados de la evaluación de riesgos de manera continua.
+Los siete pasos son esenciales.
 
-**1.4 - Baselines de Control y Perfiles del CSF Adaptados a la Organización (opcional):** establecer, documentar y publicar baselines de control adaptados a la organización y/o perfiles del marco de ciberseguridad.
+### 1. Preparar (Prepare)
 
-**1.5 - Identificación de Controles Comunes:** identificar, documentar y publicar controles comunes a nivel organizacional que estén disponibles para ser heredados por los sistemas de la organización.
+Ejecuta las actividades esenciales para dejar a la organización lista para gestionar sus riesgos de seguridad y privacidad usando el NIST-RMF.
 
-**1.6 - Priorización de Nivel de Impacto:** priorizar los sistemas organizacionales dentro del mismo nivel de impacto.
+**1.1 Establecer los roles de gestión de riesgos.** Identifica y asigna personas a roles específicos en la gestión de riesgos de seguridad y privacidad.
 
-**1.7 - Estrategia de Monitoreo Continuo – Organización:** desarrollar e implementar una estrategia a nivel organizacional para monitorear continuamente la efectividad del control.
+**1.2 Establecer una estrategia de gestión de riesgos.** Documenta la estrategia de gestión de riesgos de la organización, incluyendo la determinación de la tolerancia al riesgo.
 
-**1.8 - Enfoque en la Misión o el Negocio:** identificar las misiones, funciones empresariales y procesos de misión/negocio que el sistema está destinado a apoyar.
+**1.3 Evaluación de riesgos, organización.** Evalúa el riesgo de seguridad y privacidad a nivel organizacional y mantén los resultados actualizados.
 
-**1.9 - Stakeholders del Sistema:** identificar a los interesados que tienen interés en el diseño, desarrollo, implementación, evaluación, operación, mantenimiento o disposición del sistema.
+**1.4 Líneas base de control y perfiles del CSF adaptados a la organización (opcional).** Establece, documenta y publica líneas base de control adaptadas y perfiles del Cybersecurity Framework.
 
-**1.10 - Identificación de Activos:** identificar los activos que requieren protección.
+**1.5 Identificación de controles comunes.** Identifica, documenta y publica los controles comunes a nivel organizacional que pueden ser heredados por los sistemas.
 
-**1.11 - Límite de Autorización:** determinar el límite de autorización del sistema.
+**1.6 Priorización por nivel de impacto.** Prioriza los sistemas organizacionales dentro del mismo nivel de impacto.
 
-**1.12 - Tipos de Información:** identificar los tipos de información que serán procesados, almacenados o transmitidos por el sistema.
+**1.7 Estrategia de monitoreo continuo, organización.** Desarrolla e implementa una estrategia organizacional para monitorear la efectividad de los controles de manera continua.
 
-**1.13 - Ciclo de Vida de la Información:** identificar y comprender todas las etapas del ciclo de vida de la información para cada tipo de información procesada, almacenada o transmitida por el sistema.
+**1.8 Enfoque de misión o negocio.** Identifica las misiones, las funciones de negocio y los procesos de negocio que el sistema soporta.
 
-**1.14 - Evaluación de Riesgos – Sistema:** realizar una evaluación de riesgos a nivel de sistema y actualizar los resultados de la evaluación de riesgos de manera continua.
+**1.9 Stakeholders del sistema.** Identifica a las partes interesadas con interés en el diseño, desarrollo, implementación, evaluación, operación, mantenimiento o disposición del sistema.
 
-**1.15 - Definición de Requisitos:** definir los requisitos de seguridad y privacidad para el sistema y el entorno de operación.
+**1.10 Identificación de activos.** Identifica los activos que requieren protección.
 
-**1.16 - Arquitectura Empresarial:** determinar la ubicación del sistema dentro de la arquitectura empresarial.
+**1.11 Límite de autorización.** Determina el límite de autorización del sistema.
 
-**1.17 - Asignación de Requisitos:** asignar requisitos de seguridad y privacidad al sistema y al entorno de operación.
+**1.12 Tipos de información.** Identifica los tipos de información que el sistema va a procesar, almacenar o transmitir.
 
-**1.18 - Registro del Sistema:** registrar el sistema en oficinas de programas o de gestión organizacionales.
+**1.13 Ciclo de vida de la información.** Identifica y entiende cada etapa del ciclo de vida de la información para cada tipo de dato procesado, almacenado o transmitido por el sistema.
 
-**2. Categorizar:** Informar los procesos y tareas de gestión de riesgos organizacionales determinando el impacto adverso de la pérdida de confidencialidad, integridad y disponibilidad de los sistemas e información organizacionales para la organización.
+**1.14 Evaluación de riesgos, sistema.** Lleva a cabo una evaluación de riesgos a nivel del sistema y mantenla actualizada.
 
-**2.1 - Descripción del Sistema:** documentar las características del sistema.
+**1.15 Definición de requisitos.** Define los requisitos de seguridad y privacidad para el sistema y su entorno de operación.
 
-**2.2 - Categorización de Seguridad: categorizar el sistema y documentar los resultados de la categorización de seguridad.**
+**1.16 Arquitectura empresarial.** Determina dónde encaja el sistema dentro de la arquitectura empresarial.
 
-**2.3 - Revisión y Aprobación de la Categorización de Seguridad:** revisar y aprobar los resultados y la decisión de la categorización de seguridad.
+**1.17 Asignación de requisitos.** Asigna los requisitos de seguridad y privacidad al sistema y a su entorno de operación.
 
-**3. Seleccionar:** adaptar, seleccionar y documentar los controles necesarios para proteger el sistema y la organización de acuerdo con el riesgo para las operaciones y activos organizacionales, individuos y la Nación.
+**1.18 Registro del sistema.** Registra el sistema con la oficina de programa o de gestión correspondiente.
 
-**3.1 - Selección de Controles:** seleccionar los controles para el sistema y el entorno de operación.
+### 2. Categorizar (Categorize)
 
-**3.2 - Adaptación de Controles:** adaptar los controles seleccionados para el sistema y el entorno de operación.
+Informa los procesos de gestión de riesgos de la organización determinando el impacto adverso de perder la confidencialidad, integridad o disponibilidad de los sistemas y la información.
 
-**3.3 - Asignación de Controles:** asignar controles de seguridad y privacidad al sistema y al entorno de operación.
+**2.1 Descripción del sistema.** Documenta las características del sistema.
 
-**3.4 - Documentación de Implementaciones de Control Planeadas:** documentar los controles para el sistema y el entorno de operación en planes de seguridad y privacidad.
+**2.2 Categorización de seguridad.** Categoriza el sistema y documenta el resultado de la categorización.
 
-**3.5 - Estrategia de Monitoreo Continuo – Sistema:** desarrollar e implementar una estrategia a nivel de sistema para monitorear la efectividad de los controles que sea coherente con y complemente la estrategia de monitoreo continuo organizacional.
+**2.3 Revisión y aprobación de la categorización de seguridad.** Revisa y aprueba el resultado y la decisión de la categorización.
 
-**3.6 - Revisión y Aprobación de Planes:** revisar y aprobar los planes de seguridad y privacidad para el sistema y el entorno de operación.
+### 3. Seleccionar (Select)
 
-**4. Implementar:** realizar las actividades necesarias para traducir los controles de seguridad y privacidad identificados en el plan de seguridad del sistema en una implementación efectiva.
+Adapta, selecciona y documenta los controles necesarios para proteger el sistema y la organización, en proporción al riesgo para las operaciones, los activos, las personas y la Nación.
 
-**4.1 - Implementación de Controles:** implementar los controles según lo especificado en los planes de seguridad y privacidad.
+**3.1 Selección de controles.** Selecciona los controles para el sistema y su entorno de operación.
 
-**4.2 - Actualizar Información de Implementación de Controles:** documentar cambios en las implementaciones de control planeadas basados en el estado implementado de los controles.
+**3.2 Adaptación de controles.** Adapta los controles seleccionados para el sistema y su entorno.
 
-**5. Evaluar:** determinar si los controles seleccionados para la implementación están implementados correctamente, operan como se pretende y producen el resultado deseado con respecto a cumplir con los requisitos de seguridad y privacidad para el sistema y la organización.
+**3.3 Asignación de controles.** Asigna los controles de seguridad y privacidad al sistema y al entorno de operación.
 
-**5.1 - Selección de Evaluadores:** seleccionar al evaluador apropiado o equipo de evaluación para el tipo de evaluación de control que se realizará.
+**3.4 Documentar las implementaciones planeadas de controles.** Documenta los controles para el sistema en los planes de seguridad y privacidad.
 
-**5.2 - Plan de Evaluación:** desarrollar, revisar y aprobar planes para evaluar los controles implementados.
+**3.5 Estrategia de monitoreo continuo, sistema.** Desarrolla una estrategia de monitoreo a nivel del sistema que sea consistente con, y complemente, la estrategia organizacional.
 
-**5.3 - Evaluaciones de Controles:** evaluar los controles de seguridad de acuerdo con los procedimientos de evaluación definidos en el plan de evaluación de seguridad.
+**3.6 Revisión y aprobación del plan.** Revisa y aprueba los planes de seguridad y privacidad para el sistema y su entorno de operación.
 
-**5.4 - Informes de Evaluación:** preparar los informes de evaluación que documenten los hallazgos y recomendaciones de las evaluaciones de control.
+### 4. Implementar (Implement)
 
-**5.5 - Acciones de Remediación:** realizar acciones de remediación iniciales en los controles y reevaluar los controles remediados.
+Traduce los controles de seguridad y privacidad identificados en el plan de seguridad del sistema en una implementación real y funcional.
 
-**5.6 - Plan de Acción y Cronograma:** preparar el plan de acción y cronograma basado en los hallazgos y recomendaciones de los informes de evaluación.
+**4.1 Implementación de controles.** Implementa los controles tal como se especifican en los planes de seguridad y privacidad.
 
-**6. Autorizar:** proporcionar responsabilidad al exigir que un alto funcionario de la gerencia determine si el riesgo de seguridad y privacidad para las operaciones y activos organizacionales es aceptable.
+**4.2 Actualizar la información de la implementación de controles.** Documenta cualquier cambio entre el estado planeado y el estado tal como fue implementado.
 
-**6.1 - Paquete de Autorización:** ensamblar el paquete de autorización y enviarlo al oficial autorizante para una decisión de autorización.
+### 5. Evaluar (Assess)
 
-**6.2 - Análisis y Determinación de Riesgo:** analizar y determinar el riesgo de la operación o uso del sistema o la provisión de controles comunes.
+Determina si los controles seleccionados para la implementación están operando correctamente, funcionando como se espera y produciendo el resultado deseado frente a los requisitos de seguridad y privacidad.
 
-**6.3 - Respuesta al Riesgo:** identificar e implementar un curso de acción preferido en respuesta al riesgo determinado.
+**5.1 Selección del evaluador.** Selecciona al evaluador o al equipo de evaluación adecuado para el tipo de evaluación de controles.
 
-**6.4 - Decisión de Autorización:** determinar si el riesgo de la operación o uso del sistema o la provisión o uso de controles comunes es aceptable.
+**5.2 Plan de evaluación.** Desarrolla, revisa y aprueba los planes para evaluar los controles implementados.
 
-**6.5 - Informe de Autorización:** informar sobre la decisión de autorización y cualquier deficiencia en los controles que represente un riesgo significativo de seguridad o privacidad.
+**5.3 Evaluaciones de controles.** Evalúa los controles de seguridad siguiendo los procedimientos definidos en el plan de evaluación.
 
-**7. Monitorear:** mantener una conciencia situacional continua sobre la postura de seguridad y privacidad del sistema y la organización en apoyo de las decisiones de gestión de riesgos.
+**5.4 Reportes de evaluación.** Prepara los reportes que documentan los hallazgos y recomendaciones de las evaluaciones.
 
-**7.1 - Cambios en el Sistema y el Entorno:** monitorear el sistema y su entorno de operación en busca de cambios que afecten la postura de seguridad y privacidad del sistema.
+**5.5 Acciones de remediación.** Ejecuta las acciones iniciales de remediación sobre los controles y vuelve a evaluar los controles remediados.
 
-**7.2 - Evaluaciones Continuas:** evaluar los controles implementados dentro e inherentes al sistema de acuerdo con la estrategia de monitoreo continuo.
+**5.6 Plan de acción e hitos.** Prepara el plan de acción y los hitos a partir de los hallazgos y recomendaciones de los reportes de evaluación.
 
-**7.3 - Respuesta Continua al Riesgo:** responder al riesgo basado en los resultados de actividades de monitoreo continuo, evaluaciones de riesgos y elementos pendientes en los planes de acción y cronogramas.
+### 6. Autorizar (Authorize)
 
-**7.4 - Actualizaciones del Paquete de Autorización:** actualizar planes, informes de evaluación y planes de acción y cronogramas basados en los resultados del proceso de monitoreo continuo.
+Provee rendición de cuentas exigiendo que un oficial de gerencia senior determine si el riesgo de seguridad y privacidad para las operaciones y los activos de la organización es aceptable.
 
-**7.5 - Informe de Seguridad y Privacidad:** informar sobre el estado de seguridad del sistema (incluyendo la efectividad de los controles de seguridad empleados dentro e inherentes al sistema) a los funcionarios organizacionales apropiados de manera continua de acuerdo con la estrategia de monitoreo definida por la organización.
+**6.1 Paquete de autorización.** Ensambla el paquete de autorización y entrégalo al oficial autorizante para la decisión de autorización.
 
-**7.6 - Autorización Continua:** revisar el estado de seguridad informado del sistema (incluyendo la efectividad de los controles de seguridad empleados dentro e inherentes al sistema) de manera continua de acuerdo con la estrategia de monitoreo para determinar si el riesgo para las operaciones, activos organizacionales, individuos, otras organizaciones o la Nación sigue siendo aceptable.
+**6.2 Análisis y determinación del riesgo.** Analiza y determina el riesgo de operar o usar el sistema, o de proveer controles comunes.
 
-**7.7 - Eliminación del Sistema:** implementar una estrategia de desmantelamiento del sistema que ejecute las acciones requeridas cuando un sistema sea retirado del servicio.
+**6.3 Respuesta al riesgo.** Identifica e implementa el curso de acción preferido frente al riesgo determinado.
 
-## Conclusión.
+**6.4 Decisión de autorización.** Decide si el riesgo de operar o usar el sistema, o de proveer o usar controles comunes, es aceptable.
 
-Entender qué constituye el riesgo y cómo se puede abordar y gestionar utilizando el NIST-RMF te permitirá hacer tu parte para asegurar la integridad y confiabilidad de los sistemas de tu organización.
+**6.5 Reporte de autorización.** Reporta la decisión de autorización y cualquier deficiencia en los controles que represente un riesgo significativo de seguridad o privacidad.
 
-El NIST-RMF no es un proceso que se realiza solo una vez; la gestión de riesgos es una actividad continua que apoya la misión organizacional y las funciones empresariales. Esta es una metodología neutral en cuanto a tecnología que puede aplicarse a cualquier tipo de sistema sin modificaciones.
+### 7. Monitorear (Monitor)
 
-Implementar el Marco de Gestión de Riesgos de NIST puede fortalecer significativamente la seguridad de las pequeñas y medianas empresas. Estos marcos proporcionan un enfoque estructurado pero flexible para identificar, proteger, detectar, responder y recuperarse de amenazas de ciberseguridad. Al integrar estas mejores prácticas en sus operaciones diarias, las PYMEs no solo pueden proteger sus valiosos activos, sino también generar confianza con sus clientes y socios.
+Mantén conciencia situacional permanente sobre la postura de seguridad y privacidad del sistema y de la organización para soportar las decisiones de gestión de riesgos.
 
-Como profesional de ciberseguridad, mi misión es ayudar a las empresas a navegar estos marcos complejos y adaptarlos a sus necesidades únicas. Con las estrategias y herramientas adecuadas en su lugar, incluso la empresa más pequeña puede lograr una resiliencia robusta en ciberseguridad.
+**7.1 Cambios en el sistema y el entorno.** Monitorea el sistema y su entorno de operación para detectar cambios que afecten su postura de seguridad y privacidad.
+
+**7.2 Evaluaciones continuas.** Evalúa los controles implementados dentro del sistema y heredados por el sistema, de acuerdo con la estrategia de monitoreo continuo.
+
+**7.3 Respuesta continua al riesgo.** Responde al riesgo a partir de los resultados del monitoreo continuo, las evaluaciones de riesgo y los pendientes en los planes de acción e hitos.
+
+**7.4 Actualizaciones al paquete de autorización.** Actualiza los planes, los reportes de evaluación y los planes de acción e hitos a partir de los resultados del monitoreo continuo.
+
+**7.5 Reporte de seguridad y privacidad.** Reporta el estado de seguridad del sistema, incluyendo la efectividad de los controles empleados dentro de él y heredados por él, a los oficiales correspondientes, de manera continua, conforme a la estrategia de monitoreo definida por la organización.
+
+**7.6 Autorización continua.** Revisa el estado de seguridad reportado de manera continua y determina si el riesgo para las operaciones, los activos, las personas, otras organizaciones o la Nación sigue siendo aceptable.
+
+**7.7 Disposición del sistema.** Implementa una estrategia de desmantelamiento que ejecute las acciones necesarias cuando un sistema sale de servicio.
+
+## Cierre
+
+Entender qué es el riesgo y cómo se gestiona con el NIST-RMF te permite hacer tu parte para mantener sanos los sistemas de tu organización. El RMF no es un proyecto que se hace una sola vez. Es una actividad continua que soporta la misión y las funciones de negocio de la organización, y la metodología es neutral en cuanto a tecnología, así que aplica a cualquier sistema sin necesidad de modificarla.
+
+Para las pequeñas y medianas empresas, el RMF te da una manera estructurada pero flexible de identificar, proteger, detectar, responder y recuperar. También te da la documentación que vas a necesitar la primera vez que un cliente, un socio o un regulador te pregunte cómo gestionas el riesgo.
+
+Si estás adoptando el NIST-RMF por primera vez, empieza por **Prepare**. El trabajo que haces ahí define el techo de todo lo que viene después. Si quieres ayuda para adaptar estos pasos a tu entorno, ese es el trabajo que hago.

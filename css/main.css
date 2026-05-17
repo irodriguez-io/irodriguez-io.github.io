@@ -459,8 +459,7 @@ em{
 .slide-arrow {
   position: absolute;
   display: flex;
-  bottom: 100px;
-  margin: auto;
+  bottom: 1rem;
   height: 4rem;
   width: 2rem;
   background-color: var(--BGcolor1);
@@ -479,14 +478,12 @@ em{
 
 .arrow-prev {
   left: 50%;
-  top: 30%;
   padding-left: 0.25rem;
   border-radius: 0 2rem 2rem 0;
 }
 
 .arrow-next {
   right: 50%;
-  top: 30%;
   padding-left: 0.75rem;
   border-radius: 2rem 0 0 2rem;
 }
@@ -681,18 +678,6 @@ footer img{
   .services-content{
     padding: 0;
     margin-top: 2rem;
-  }
-
-  .slide-arrow {
-  bottom: -500px;
-  }
-
-  .arrow-next{
-    right: 5%;
-  }
-
-  .arrow-prev{
-    left: 95%;
   }
 
   .slide {
