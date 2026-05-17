@@ -44,6 +44,21 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 
+/*** Brand wordmark typewriter — fire once when wordmark is fully visible
+     (i.e. the sticky header has reached its pinned position at the top). ***/
+const brandType = document.querySelectorAll(".brand-type");
+if (brandType.length && "IntersectionObserver" in window) {
+  const brandObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-typing");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 1 });
+  brandType.forEach(el => brandObserver.observe(el));
+}
+
 /*** rain effect ***/
 
 function lines (){
@@ -88,14 +103,12 @@ if (Lang == "en-US") {
   "Enterprise automation, built secure by default.",
   "Identity, secured. Workflows, automated.",
   "Most automation breaks on security. I do the opposite.",
-  "19 years of experience. 10 years on identity.",
   "Built for SMBs that can't afford to be insecure.",
   ]
   }else { textArr = [
   "Automatización empresarial, segura desde el primer día.",
   "Identidad protegida. Flujos automatizados.",
   "La mayoría de automatizaciones se rompen en la seguridad. Yo hago lo contrario.",
-  "19 años de experiencia. 10 años en identidad.",
   "Construido para PYMES que no pueden permitirse ser inseguras.",
   ]}
 
