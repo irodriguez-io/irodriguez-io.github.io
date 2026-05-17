@@ -1,55 +1,53 @@
 ---
-title: "The Eight Domains of Cybersecurity"
+title: "Los ocho dominios de la ciberseguridad"
 date: 2024-05-15
 slug: eight-domains-cybersecurity
-lang: en
+lang: es
 image: /img/art04.jpg
-description: "A practical tour of the (ISC)² CISSP common body of knowledge — eight domains and how they map to real work."
-translation: "/blog-es/2024/05/eight-domains-cybersecurity/"
+description: "Un recorrido práctico por el cuerpo común de conocimiento del CISSP de (ISC)²: los ocho dominios y cómo se aplican al trabajo real."
+translation: "/blog/2024/05/eight-domains-cybersecurity/"
 ---
 
-Cybersecurity professionals are tasked with understanding and mitigating a wide array of threats. To help with this in In June 1988, a conference was hosted by the National Institutes of Standards and Technology (NIST) and the Federal Information Systems Security Educators Association (FISSEA) at Idaho State University in Pocatello, Idaho to address the need for standardized curriculum for the information security professional.
+El CISSP agrupa el trabajo de seguridad en ocho dominios. No son ocho trabajos distintos. Son ocho ángulos del mismo problema: cómo proteger los datos, los sistemas y a las personas sin romper el negocio que depende de ellos.
 
-From this conference the International Information System Security Certification Consortium (ISC2) was formed in mid-1989 as a non-profit organization with the goal of creating a standardized and vendor-neutral certification program that provided structure and demonstrated competence in the field of IT security. The ISC2 has been described as the "world's largest IT security organization, and the most widely known certification offered by ISC2 is the Certified Information Systems Security Professional (CISSP) certification.
+Un poco de historia primero. El International Information System Security Certification Consortium, *(ISC)²*, se formó en 1989 al unir varios grupos de profesionales de seguridad informática que querían un estándar neutral, no atado a un proveedor, para una disciplina emergente. El primer Common Body of Knowledge (CBK) se finalizó en 1992. La certificación Certified Information Systems Security Professional (CISSP) se lanzó en 1994. Hoy (ISC)² tiene su sede en Alexandria, Virginia, y los ocho dominios que siguen son la estructura que utiliza para definir qué se espera que sepa un CISSP.
 
-The Certified Information Systems Security Professional (CISSP) certification delineates eight key domains. These domains not only establish a framework for understanding security measures but also guide security professionals in their career development by highlighting different areas of specialization. Let's explore these eight domains in detail and their relevance in today's cybersecurity landscape.
+A continuación cada dominio, qué cubre en realidad y el tipo de trabajo que produce en el día a día.
 
-## 1. Security and Risk Management.
+## 1. Seguridad y gestión de riesgos
 
-Security and Risk Management is foundational, involving the identification of security goals and objectives, risk assessment, regulatory compliance, and ensuring business continuity. This domain mandates a keen understanding of laws and regulations, such as the Health Insurance Portability and Accountability Act (HIPAA) or the Payment Card Industry Data Security Standard (PCI-DSS). Analysts operating in this domain might be responsible for updating company policies to align with new compliance requirements and mitigating potential risks that could disrupt business operations.
+Esta es la capa de políticas y gobierno. Cubre la evaluación de riesgos, el cumplimiento regulatorio, la continuidad del negocio y los objetivos de seguridad contra los cuales se mide el resto del programa. En el día a día, este es el dominio que tiene la respuesta a "¿qué exige HIPAA?", "¿qué exige PCI-DSS?" y "si este control falla, ¿cuál es el impacto al negocio?". Cuando aparece una nueva regulación, este es el dominio que la traduce en política interna.
 
-## 2. Asset Security.
+## 2. Seguridad de activos
 
-Asset Security focuses on the protection of both digital and physical assets. This includes data storage, maintenance, retention, and destruction. Security analysts must ensure that outdated equipment is disposed of securely to prevent data breaches from discarded devices. Effective asset security practices are crucial for safeguarding an organization’s valuable information and physical infrastructure.
+La seguridad de activos trata sobre los datos y el equipo que los contiene. Clasificación, retención, almacenamiento y disposición final viven aquí. Desechar una laptop dada de baja no es un problema logístico, es un problema de datos: si el disco sale sin borrarse, los datos salen con él. La misma lógica aplica a los respaldos, a los recursos compartidos y a cualquier sistema que contenga registros de los que la organización es responsable.
 
-## 3. Security Architecture and Engineering.
+## 3. Arquitectura e ingeniería de seguridad
 
-This domain emphasizes the optimization of data security through well-designed tools, systems, and processes. Security architecture and engineering require implementing robust security measures like firewalls, which monitor and filter network traffic to prevent cyber-attacks. By ensuring that security infrastructure is effectively configured, analysts help maintain the integrity and productivity of organizational systems.
+Este dominio diseña los controles. Segmentación de red, reglas de firewall, cifrado en reposo y en tránsito, proxies con conciencia de identidad, imágenes base endurecidas. La meta es que el camino seguro sea el camino por defecto, para que la organización no dependa de que cada usuario tome la decisión correcta cada vez. El trabajo de arquitectura también es donde se decide qué *no* construir, porque cada sistema adicional es superficie de ataque adicional.
 
-## 4. Communication and Network Security.
+## 4. Seguridad de comunicaciones y redes
 
-Focusing on securing both physical and wireless networks, this domain addresses threats that arise from insecure communication channels. Analysts must scrutinize user behavior and enforce policies that secure network usage, such as prohibiting connections to unsecured wireless hotspots. By doing so, they protect the organization from potential exposure and cyber-attacks.
+La seguridad de red cubre los canales: cableados, inalámbricos, VPN y todo lo que mueve tráfico entre sistemas. El trabajo se divide entre endurecer la infraestructura (segmentación, TLS, monitoreo) y moldear el comportamiento del usuario (no conectar equipos corporativos a wifi abiertas, no exponer servicios internos mediante herramientas personales). Ambos importan. La red puede estar sólida, y aun así un usuario pegando una credencial en el formulario equivocado te compromete.
 
-## 5. Identity and Access Management.
+## 5. Gestión de identidades y accesos
 
-Identity and Access Management (IAM) is crucial for safeguarding data by controlling and managing access to physical and digital assets. This involves validating employee identities and defining access roles, ensuring that only authorized personnel can access sensitive information. Security analysts in this domain may oversee the implementation of access controls like keycard systems for physical spaces and permissions for digital networks.
+Este es el dominio en el que trabajo, así que tengo una opinión clara aquí. IAM es el plano de control de quién puede hacer qué. Cubre la verificación de identidad, la autenticación, la autorización y todo el ciclo de vida de una cuenta desde la contratación hasta la terminación. Single sign-on, aprovisionamiento por SCIM, accesos por grupo, MFA y revisiones de acceso viven en este dominio. Hecho bien, IAM es invisible: la gente recibe los accesos que necesita el primer día, los pierde el día que se va, y nada en el medio queda huérfano. Hecho mal, IAM es por donde las brechas consiguen su primer punto de apoyo.
 
-## 6. Security Assessment and Testing.
+## 6. Evaluación y pruebas de seguridad
 
-In this domain, security analysts conduct regular testing and audits to identify vulnerabilities and ensure that security controls are effective. By continuously monitoring and analyzing data, they can detect and respond to threats before they escalate. Regular audits of user permissions, for instance, help ensure that only authorized individuals can access sensitive information, mitigating the risk of internal and external breaches.
+Este es el dominio que pregunta "¿está funcionando realmente el control que pusimos?". Escaneo de vulnerabilidades, pruebas de penetración, revisiones de acceso, recolección de evidencia para auditoría. El trabajo es repetitivo a propósito. Un control que funcionó el trimestre pasado puede dejar de funcionar este trimestre porque se actualizó un sistema, se agregó un permiso o cambió un proceso. La única manera de saberlo es probarlo otra vez.
 
-## 7. Security Operations.
+## 7. Operaciones de seguridad
 
-Security Operations involves real-time monitoring and response to security incidents. Analysts must be prepared to investigate alerts, such as the detection of unknown devices on the network and implement measures to neutralize threats. This proactive approach is essential for maintaining organizational security and preventing potential breaches.
+Operaciones de seguridad es el lado en vivo: monitoreo, detección, respuesta a incidentes y el trabajo que ocurre cuando suena una alerta a las 2 a. m. Este dominio es dueño del SIEM, del EDR, de los playbooks y de la rotación on-call. Su medida de éxito es qué tan rápido un incidente pasa de "algo se ve mal" a "lo contuvimos y sabemos qué pasó".
 
-## 8. Software Development Security.
+## 8. Seguridad en el desarrollo de software
 
-This domain integrates security practices into the software development life cycle. Security analysts collaborate with development teams to ensure that secure coding practices are followed, thereby creating applications and services that are resilient to attacks. For instance, they might advise on implementing strong password policies for a new mobile app to protect user data.
+La seguridad en el desarrollo de software integra los otros siete dominios al ciclo de vida del software. Modelado de amenazas en la etapa de diseño, estándares de codificación segura, revisión de dependencias, manejo de secretos y pruebas de seguridad como parte del CI. La meta es mover los hallazgos de seguridad lo más a la izquierda posible, porque una vulnerabilidad detectada en revisión de código cuesta mucho menos arreglar que la misma vulnerabilidad detectada en producción.
 
-Mastering the eight domains outlined by the CISSP certification is paramount for any aspiring or seasoned cybersecurity professional. These domains provide a structured approach to understanding and addressing the myriad of risks that organizations face today. From ensuring compliance and managing risk, to safeguarding both physical and digital assets, each domain offers specialized knowledge that collectively fortifies an organization’s security posture.
+---
 
-By delving into Security and Risk Management, professionals can navigate the legal and regulatory landscapes to maintain business continuity. Asset Security ensures that both physical and digital valuables are protected against breaches. Security Architecture and Engineering focuses on designing robust systems to fend off attacks, while Communication and Network Security ensures that organizational communication remains secure and uncompromised.
+Los ocho dominios son un mapa, no una lista de tareas. La mayoría de los profesionales de seguridad trabajan a profundidad en uno o dos y se mantienen conversacionales en el resto. Lo que el marco del CISSP te da es un vocabulario compartido, para que cuando el equipo de red, el equipo de IAM y el equipo de seguridad de aplicaciones estén en la misma revisión de incidente, usen las mismas palabras para describir el mismo problema.
 
-Identity and Access Management is key in controlling who has access to what, thereby preventing unauthorized access. Security Assessment and Testing is vital for regularly identifying and addressing vulnerabilities, ensuring that security measures remain effective. Security Operations encompasses the proactive measures required to respond to incidents in real-time, and Software Development Security integrates best practices in coding to protect applications from inherent vulnerabilities.
-
-Ultimately, understanding these domains not only enriches one’s skill set but also enhances the ability to safeguard organizations against evolving cyber threats. Continuous education and practical application of these principles will help cybersecurity professionals stay ahead in the battle against cyber adversaries, contributing to a more secure digital world.
+Si estás empezando, escoge el dominio que se ajuste al trabajo que tienes enfrente y profundiza ahí. Los otros siete entrarán en escena tan pronto comiences a coordinar entre equipos, que en la práctica es la mayor parte del trabajo.

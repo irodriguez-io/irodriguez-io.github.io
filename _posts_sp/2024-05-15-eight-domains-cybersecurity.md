@@ -4,52 +4,50 @@ date: 2024-05-15
 slug: eight-domains-cybersecurity
 lang: es
 image: /img/art04.jpg
-description: "Un recorrido práctico por el conocimiento común CISSP de (ISC)² — ocho dominios y cómo se traducen al trabajo real."
+description: "Un recorrido práctico por el cuerpo común de conocimiento del CISSP de (ISC)²: los ocho dominios y cómo se aplican al trabajo real."
 translation: "/blog/2024/05/eight-domains-cybersecurity/"
 ---
 
-Los profesionales de la ciberseguridad tienen la tarea de entender y mitigar una amplia gama de amenazas. Para ayudar con esto, en junio de 1988, se realizó una conferencia organizada por el Instituto Nacional de Estándares y Tecnología (NIST) y la Asociación de Educadores de Seguridad de Sistemas de Información Federal (FISSEA) en la Universidad Estatal de Idaho en Pocatello, Idaho, para abordar la necesidad de un currículo estandarizado para el profesional de la seguridad de la información.
+El CISSP agrupa el trabajo de seguridad en ocho dominios. No son ocho trabajos distintos. Son ocho ángulos del mismo problema: cómo proteger los datos, los sistemas y a las personas sin romper el negocio que depende de ellos.
 
-De esta conferencia surgió, a mediados de 1989, el Consorcio Internacional de Certificación de Seguridad de Sistemas de Información (ISC2) como una organización sin fines de lucro con el objetivo de crear un programa de certificación estandarizado y neutral en cuanto a proveedores que proporcionara estructura y demostrara competencia en el campo de la seguridad de TI. El ISC2 ha sido descrito como la "organización de seguridad de TI más grande del mundo", y la certificación más conocida que ofrece el ISC2 es la certificación de Profesional Certificado en Seguridad de Sistemas de Información (CISSP).
+Un poco de historia primero. El International Information System Security Certification Consortium, *(ISC)²*, se formó en 1989 al unir varios grupos de profesionales de seguridad informática que querían un estándar neutral, no atado a un proveedor, para una disciplina emergente. El primer Common Body of Knowledge (CBK) se finalizó en 1992. La certificación Certified Information Systems Security Professional (CISSP) se lanzó en 1994. Hoy (ISC)² tiene su sede en Alexandria, Virginia, y los ocho dominios que siguen son la estructura que utiliza para definir qué se espera que sepa un CISSP.
 
-La certificación de Profesional Certificado en Seguridad de Sistemas de Información (CISSP) delimita ocho dominios clave. Estos dominios no solo establecen un marco para entender las medidas de seguridad, sino que también guían a los profesionales de seguridad en su desarrollo profesional al resaltar diferentes áreas de especialización. Exploremos estos ocho dominios en detalle y su relevancia en el panorama de la ciberseguridad de hoy.
+A continuación cada dominio, qué cubre en realidad y el tipo de trabajo que produce en el día a día.
 
-## 1. Gestión de Seguridad y Riesgo.
+## 1. Seguridad y gestión de riesgos
 
-La Gestión de Seguridad y Riesgo es fundamental, involucrando la identificación de objetivos y metas de seguridad, evaluación de riesgos, cumplimiento regulatorio y aseguramiento de la continuidad del negocio. Este dominio requiere una comprensión clara de leyes y regulaciones, como la Ley de Portabilidad y Responsabilidad de Seguros de Salud (HIPAA) o el Estándar de Seguridad de Datos de la Industria de Tarjetas de Pago (PCI-DSS). Los analistas que operan en este dominio podrían ser responsables de actualizar las políticas de la empresa para alinearlas con nuevos requisitos de cumplimiento y mitigar los riesgos potenciales que podrían interrumpir las operaciones comerciales.
+Esta es la capa de políticas y gobierno. Cubre la evaluación de riesgos, el cumplimiento regulatorio, la continuidad del negocio y los objetivos de seguridad contra los cuales se mide el resto del programa. En el día a día, este es el dominio que tiene la respuesta a "¿qué exige HIPAA?", "¿qué exige PCI-DSS?" y "si este control falla, ¿cuál es el impacto al negocio?". Cuando aparece una nueva regulación, este es el dominio que la traduce en política interna.
 
-## 2. Seguridad de los Activos.
+## 2. Seguridad de activos
 
-La Seguridad de los Activos se enfoca en la protección de activos tanto digitales como físicos. Esto incluye el almacenamiento de datos, mantenimiento, retención y destrucción. Los analistas de seguridad deben asegurarse de que el equipo obsoleto se deseche de manera segura para prevenir brechas de datos a partir de dispositivos desechados. Las prácticas efectivas de seguridad de activos son cruciales para salvaguardar la valiosa información y la infraestructura física de una organización.
+La seguridad de activos trata sobre los datos y el equipo que los contiene. Clasificación, retención, almacenamiento y disposición final viven aquí. Desechar una laptop dada de baja no es un problema logístico, es un problema de datos: si el disco sale sin borrarse, los datos salen con él. La misma lógica aplica a los respaldos, a los recursos compartidos y a cualquier sistema que contenga registros de los que la organización es responsable.
 
-## 3. Arquitectura e Ingeniería de Seguridad.
+## 3. Arquitectura e ingeniería de seguridad
 
-Este dominio enfatiza la optimización de la seguridad de datos a través de herramientas, sistemas y procesos bien diseñados. La arquitectura e ingeniería de seguridad requieren implementar medidas de seguridad robustas como cortafuegos, que monitorean y filtran el tráfico de red para prevenir ciberataques. Al asegurar que la infraestructura de seguridad esté configurada de manera efectiva, los analistas ayudan a mantener la integridad y productividad de los sistemas organizacionales.
+Este dominio diseña los controles. Segmentación de red, reglas de firewall, cifrado en reposo y en tránsito, proxies con conciencia de identidad, imágenes base endurecidas. La meta es que el camino seguro sea el camino por defecto, para que la organización no dependa de que cada usuario tome la decisión correcta cada vez. El trabajo de arquitectura también es donde se decide qué *no* construir, porque cada sistema adicional es superficie de ataque adicional.
 
-## 4. Seguridad de la Comunicación y Redes.
+## 4. Seguridad de comunicaciones y redes
 
-Enfocado en asegurar tanto redes físicas como inalámbricas, este dominio aborda amenazas que surgen de canales de comunicación inseguros. Los analistas deben escrutar el comportamiento del usuario y hacer cumplir políticas que aseguren el uso de la red, como prohibir conexiones a puntos de acceso inalámbrico no seguros. Al hacerlo, protegen a la organización de posibles exposiciones y ciberataques.
+La seguridad de red cubre los canales: cableados, inalámbricos, VPN y todo lo que mueve tráfico entre sistemas. El trabajo se divide entre endurecer la infraestructura (segmentación, TLS, monitoreo) y moldear el comportamiento del usuario (no conectar equipos corporativos a wifi abiertas, no exponer servicios internos mediante herramientas personales). Ambos importan. La red puede estar sólida, y aun así un usuario pegando una credencial en el formulario equivocado te compromete.
 
-## 5. Gestión de Identidad y Acceso.
+## 5. Gestión de identidades y accesos
 
-La Gestión de Identidad y Acceso (IAM) es crucial para proteger datos mediante el control y la gestión del acceso a activos físicos y digitales. Esto implica validar las identidades de los empleados y definir roles de acceso, asegurando que solo el personal autorizado pueda acceder a información sensible. Los analistas de seguridad en este dominio pueden supervisar la implementación de controles de acceso como sistemas de tarjetas de identificación para espacios físicos y permisos para redes digitales.
+Este es el dominio en el que trabajo, así que tengo una opinión clara aquí. IAM es el plano de control de quién puede hacer qué. Cubre la verificación de identidad, la autenticación, la autorización y todo el ciclo de vida de una cuenta desde la contratación hasta la terminación. Single sign-on, aprovisionamiento por SCIM, accesos por grupo, MFA y revisiones de acceso viven en este dominio. Hecho bien, IAM es invisible: la gente recibe los accesos que necesita el primer día, los pierde el día que se va, y nada en el medio queda huérfano. Hecho mal, IAM es por donde las brechas consiguen su primer punto de apoyo.
 
-## 6. Evaluación y Pruebas de Seguridad.
+## 6. Evaluación y pruebas de seguridad
 
-En este dominio, los analistas de seguridad realizan pruebas y auditorías regulares para identificar vulnerabilidades y asegurar que los controles de seguridad sean efectivos. Al monitorear y analizar datos continuamente, pueden detectar y responder a amenazas antes de que se escalen. Las auditorías regulares de permisos de usuario, por ejemplo, ayudan a asegurar que solo individuos autorizados puedan acceder a información sensible, mitigando el riesgo de brechas internas y externas.
+Este es el dominio que pregunta "¿está funcionando realmente el control que pusimos?". Escaneo de vulnerabilidades, pruebas de penetración, revisiones de acceso, recolección de evidencia para auditoría. El trabajo es repetitivo a propósito. Un control que funcionó el trimestre pasado puede dejar de funcionar este trimestre porque se actualizó un sistema, se agregó un permiso o cambió un proceso. La única manera de saberlo es probarlo otra vez.
 
-## 7. Operaciones de Seguridad.
+## 7. Operaciones de seguridad
 
-Las Operaciones de Seguridad involucran la monitorización y respuesta en tiempo real a incidentes de seguridad. Los analistas deben estar preparados para investigar alertas, como la detección de dispositivos desconocidos en la red, e implementar medidas para neutralizar amenazas. Este enfoque proactivo es esencial para mantener la seguridad organizacional y prevenir brechas potenciales.
+Operaciones de seguridad es el lado en vivo: monitoreo, detección, respuesta a incidentes y el trabajo que ocurre cuando suena una alerta a las 2 a. m. Este dominio es dueño del SIEM, del EDR, de los playbooks y de la rotación on-call. Su medida de éxito es qué tan rápido un incidente pasa de "algo se ve mal" a "lo contuvimos y sabemos qué pasó".
 
-## 8. Seguridad en el Desarrollo de Software.
+## 8. Seguridad en el desarrollo de software
 
-Este dominio integra prácticas de seguridad en el ciclo de vida del desarrollo de software. Los analistas de seguridad colaboran con los equipos de desarrollo para asegurar que se sigan prácticas de codificación segura, creando así aplicaciones y servicios que sean resistentes a ataques. Por ejemplo, pueden asesorar sobre la implementación de políticas de contraseñas fuertes para una nueva aplicación móvil para proteger los datos del usuario.
+La seguridad en el desarrollo de software integra los otros siete dominios al ciclo de vida del software. Modelado de amenazas en la etapa de diseño, estándares de codificación segura, revisión de dependencias, manejo de secretos y pruebas de seguridad como parte del CI. La meta es mover los hallazgos de seguridad lo más a la izquierda posible, porque una vulnerabilidad detectada en revisión de código cuesta mucho menos arreglar que la misma vulnerabilidad detectada en producción.
 
-Dominar los ocho dominios delineados por la certificación CISSP es fundamental para cualquier profesional de ciberseguridad, ya sea aspirante o experimentado. Estos dominios proporcionan un enfoque estructurado para entender y abordar la miríada de riesgos que enfrentan las organizaciones hoy en día. Desde asegurar el cumplimiento y la gestión de riesgos, hasta proteger activos físicos y digitales, cada dominio ofrece conocimientos especializados que, colectivamente, fortalecen la postura de seguridad de una organización.
+---
 
-Al profundizar en la Gestión de Seguridad y Riesgo, los profesionales pueden navegar por los paisajes legales y regulatorios para mantener la continuidad del negocio. La Seguridad de los Activos asegura que los valores tanto físicos como digitales estén protegidos contra brechas. La Arquitectura e Ingeniería de Seguridad se enfoca en diseñar sistemas robustos para defenderse de ataques, mientras que la Seguridad de la Comunicación y Redes asegura que la comunicación organizacional permanezca segura y sin compromisos.
+Los ocho dominios son un mapa, no una lista de tareas. La mayoría de los profesionales de seguridad trabajan a profundidad en uno o dos y se mantienen conversacionales en el resto. Lo que el marco del CISSP te da es un vocabulario compartido, para que cuando el equipo de red, el equipo de IAM y el equipo de seguridad de aplicaciones estén en la misma revisión de incidente, usen las mismas palabras para describir el mismo problema.
 
-La Gestión de Identidad y Acceso es clave para controlar quién tiene acceso a qué, previniendo así accesos no autorizados. La Evaluación y Pruebas de Seguridad son vitales para identificar y abordar regularmente las vulnerabilidades, asegurando que las medidas de seguridad permanezcan efectivas. Las Operaciones de Seguridad engloban las medidas proactivas requeridas para responder a incidentes en tiempo real, y la Seguridad en el Desarrollo de Software integra las mejores prácticas en codificación para proteger las aplicaciones de vulnerabilidades inherentes.
-
-En última instancia, entender estos dominios no solo enriquece el conjunto de habilidades de uno, sino que también mejora la capacidad para proteger a las organizaciones contra amenazas cibernéticas en evolución. La educación continua y la aplicación práctica de estos principios ayudarán a los profesionales de ciberseguridad a mantenerse a la vanguardia en la batalla contra los adversarios cibernéticos, contribuyendo a un mundo digital más seguro.
+Si estás empezando, escoge el dominio que se ajuste al trabajo que tienes enfrente y profundiza ahí. Los otros siete entrarán en escena tan pronto comiences a coordinar entre equipos, que en la práctica es la mayor parte del trabajo.
