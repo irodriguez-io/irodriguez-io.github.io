@@ -2,8 +2,8 @@
 title: "Cybersecurity is more than just a buzzword"
 date: 2024-01-15
 slug: cybersecurity-buzzword
+topic: cybersec
 lang: en
-image: /img/art01.png
 description: "Why cybersecurity is foundational for small businesses and independent professionals, not a passing trend."
 translation: "/blog-es/2024/01/cybersecurity-buzzword/"
 ---

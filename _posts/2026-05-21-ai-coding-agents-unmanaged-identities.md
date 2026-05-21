@@ -2,8 +2,8 @@
 title: "AI coding agents are unmanaged identities"
 date: 2026-05-21
 slug: ai-coding-agents-unmanaged-identities
+topic: iam
 lang: en
-image: /img/art03.png
 description: "AI coding agents like Cursor, Claude Code, and Copilot are non-human identities operating under human credentials — with no joiner-mover-leaver, no session controls, and a built-in exfiltration path. The fix is the IAM playbook we already know."
 translation: "/blog-es/2026/05/ai-coding-agents-unmanaged-identities/"
 ---
