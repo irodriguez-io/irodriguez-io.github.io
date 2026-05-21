@@ -31,9 +31,7 @@
     </header>
     <main>
       <article>
-        {% if page.image %}
-        <img class="border" width="500" height="500" src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}">
-        {% endif %}
+        {% include post-hero.html %}
         <h1>{{ page.title }}</h1>
         {% if page.date %}
         <p style="opacity: 0.7; font-size: 0.9rem; margin: 0 1rem 1rem;">
