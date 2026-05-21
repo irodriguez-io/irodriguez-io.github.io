@@ -2,8 +2,8 @@
 title: "Implementing the NIST Cybersecurity Framework"
 date: 2024-07-01
 slug: nist-cybersecurity-framework
+topic: cybersec
 lang: en
-image: /img/art05.jpg
 description: "Govern, Identify, Protect, Detect, Respond, Recover. Applying NIST CSF 2.0 to a small or mid-sized business."
 translation: "/blog-es/2024/07/nist-cybersecurity-framework/"
 ---

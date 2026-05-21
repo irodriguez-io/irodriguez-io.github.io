@@ -2,8 +2,8 @@
 title: "Implementando el Marco de Ciberseguridad del NIST"
 date: 2024-07-01
 slug: nist-cybersecurity-framework
+topic: cybersec
 lang: es
-image: /img/art05.jpg
 description: "Gobernar, Identificar, Proteger, Detectar, Responder, Recuperar. Aplicando el NIST CSF 2.0 a una pequeña o mediana empresa."
 translation: "/blog/2024/07/nist-cybersecurity-framework/"
 ---

@@ -2,8 +2,8 @@
 title: "The NIST Risk Management Framework"
 date: 2024-08-15
 slug: nist-risk-management-framework
+topic: infosec
 lang: en
-image: /img/art06.jpg
 description: "How the NIST Risk Management Framework (RMF) complements the CSF: categorize, select, implement, assess, authorize, monitor."
 translation: "/blog-es/2024/08/nist-risk-management-framework/"
 ---
