@@ -2,8 +2,8 @@
 title: "Los agentes de IA para programar son identidades sin gobernar"
 date: 2026-05-21
 slug: ai-coding-agents-unmanaged-identities
+topic: iam
 lang: es
-image: /img/art03.png
 description: "Los agentes de IA para programar como Cursor, Claude Code y Copilot son identidades no humanas que operan con credenciales humanas — sin alta-cambio-baja (JML), sin controles de sesión y con una vía de exfiltración incorporada. La solución es el manual de IAM que ya conocemos."
 translation: "/blog/2026/05/ai-coding-agents-unmanaged-identities/"
 ---

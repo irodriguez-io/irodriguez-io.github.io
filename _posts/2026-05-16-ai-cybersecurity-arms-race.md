@@ -2,8 +2,8 @@
 title: "The AI cybersecurity arms race"
 date: 2026-05-16
 slug: ai-cybersecurity-arms-race
+topic: cybersec
 lang: en
-image: /img/art02.png
 description: "How the same generative AI now protects organizations and attacks them, what Mythos and MDASH actually change, and what smaller businesses can do about it."
 translation: "/blog-es/2026/05/ai-cybersecurity-arms-race/"
 ---

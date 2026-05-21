@@ -2,8 +2,8 @@
 title: "Los ocho dominios de la ciberseguridad"
 date: 2024-05-15
 slug: eight-domains-cybersecurity
+topic: cybersec
 lang: es
-image: /img/art04.jpg
 description: "Un recorrido práctico por el cuerpo común de conocimiento del CISSP de (ISC)²: los ocho dominios y cómo se aplican al trabajo real."
 translation: "/blog/2024/05/eight-domains-cybersecurity/"
 ---

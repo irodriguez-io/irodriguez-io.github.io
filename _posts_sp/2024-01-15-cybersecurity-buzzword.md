@@ -2,8 +2,8 @@
 title: "La ciberseguridad es más que una palabra de moda"
 date: 2024-01-15
 slug: cybersecurity-buzzword
+topic: cybersec
 lang: es
-image: /img/art01.png
 description: "Por qué la ciberseguridad es fundamental para pequeñas empresas y profesionales independientes, no una moda pasajera."
 translation: "/blog/2024/01/cybersecurity-buzzword/"
 ---

@@ -2,8 +2,8 @@
 title: "La carrera armamentista de la IA en ciberseguridad"
 date: 2026-05-16
 slug: ai-cybersecurity-arms-race
+topic: cybersec
 lang: es
-image: /img/art02.png
 description: "Cómo la misma IA generativa hoy protege y ataca a las organizaciones, qué cambian realmente Mythos y MDASH, y qué pueden hacer las empresas más pequeñas al respecto."
 translation: "/blog/2026/05/ai-cybersecurity-arms-race/"
 ---
