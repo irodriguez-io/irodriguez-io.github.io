@@ -1,0 +1,164 @@
+[root] /Users/isidro.rodriguez/Documents/Projects/Personal Brand/irodriguez-io.github.io
+[out ] /Users/isidro.rodriguez/Documents/Projects/Personal Brand/irodriguez-io.github.io/img/blog-hero
+
+[search] 'identity authentication'                -> ['iam']
+[search] 'login fingerprint'                      -> ['iam']
+[search] 'biometric access control'               -> ['iam']
+[search] 'cybersecurity padlock'                  -> ['infosec', 'cybersec', 'data-security']
+[search] 'encryption shield'                      -> ['infosec', 'cybersec', 'data-security']
+[search] 'hacker security'                        -> ['infosec', 'cybersec']
+[search] 'data security'                          -> ['data-security', 'infosec']
+[search] 'automation code'                        -> ['automation']
+[search] 'terminal programming'                   -> ['automation']
+[search] 'workflow gears'                         -> ['automation']
+[search] 'server datacenter'                      -> ['networking']
+[search] 'network cloud computing'                -> ['networking']
+[search] 'ethernet infrastructure'                -> ['networking']
+[search] 'technology abstract'                    -> ['generic']
+[search] 'circuit board digital'                  -> ['generic']
+
+[pool] 69 unique images after dedup
+
+[fetch] 5946820 <- https://pixabay.com/get/g79a145ac6902e2191decf1542582aec7d982af23a7fcfa6b920aa21ab58d8a786bd33a4d9406624fe14127c9adac1a2611e546bf0815512180591d00d4ba274b_1280.jpg
+  -> 1200x795, webp q=85 (62 KB)
+[fetch] 7262808 <- https://pixabay.com/get/g017323b0fae7bc519abd53418b857e17c95a179224e0668c69c162d1d1470d23519fef929b4a706cf04fd6b7fc65e1a447751d9d37f045c953cfbe3490d50e45_1280.jpg
+  -> 1200x799, webp q=85 (146 KB)
+[fetch] 2260989 <- https://pixabay.com/get/gda13a9bde7e362cbdef960039bbbf96ab3b2f6feda74789007a072b839d68ec8359cb715eb3853dd32771d728864efa1d855039ea73fe8e9e6f53b6cbdee93d0_1280.jpg
+  -> 1200x900, webp q=80 (140 KB)
+[fetch] 2530814 <- https://pixabay.com/get/gf0c364699ec5055289fe0a256d352c733f860bdffbd20b0f04ac4d007512e05f6d798af2f7fd10e7a0946e29f1484eb129ebe426f6c78c946c521a9323a3d33f_1280.jpg
+  -> 1200x517, webp q=85 (44 KB)
+[fetch] 1051697 <- https://pixabay.com/get/gd32343aa0e456d91afe8ca7538cd2a966ed1cfd7f8281f93810d8e1130e73d265fe649ea72c6b1bb1e83ecf7d27f529929cc183a178bf68577acf7b9ddaf373c_1280.jpg
+  -> 1200x799, webp q=65 (142 KB)
+[fetch] 763731 <- https://pixabay.com/get/gbf0e740923625efc493816d34284991389606cba329b34430970bb336a3528776af10ea98e3035808676e4abc5531cddf60b088285e23297d48f771c3c00791a_1280.jpg
+  -> 1200x796, webp q=85 (113 KB)
+[fetch] 1590455 <- https://pixabay.com/get/g983fb12c41461300ef1c81590c0265d88020caeeac68bd75f23b14926359ed3dda0ffaa7882a0aae6e6053987630dda7518d608cd0db10d7af22e40d5f59f551_1280.jpg
+  -> 1200x810, webp q=85 (90 KB)
+[fetch] 506986 <- https://pixabay.com/get/g4b531a39c8c535776373517d38bc58ec9da31602a71d280465db69d7a04ede8cf8cf1c99309aadaa64ab764bdc8950ea93b89e51d1a664cb82cf8b2badf8f490_1280.jpg
+  -> 1200x797, webp q=45 (241 KB)
+[fetch] 3237871 <- https://pixabay.com/get/g2fcbc4d58915fe563d3d758280fb68ebd574721e9e19f57470f4690d6facdc853efe7d4cb7ceba93b287fb19affa486199dfd6a180395d9d6a1e0ce645da6380_1280.jpg
+  -> 1200x771, webp q=45 (227 KB)
+[fetch] 1202985 <- https://pixabay.com/get/g44fd9089021165bf14765203a1b47933726436765b3df2b951b41ec9ff50fbcf7e75c4e12d9c8f1f115070e93d3f4db3ea862f37c9735b6e41b3923b3f6ed287_1280.jpg
+  -> 1200x799, webp q=45 (161 KB)
+[fetch] 1006671 <- https://pixabay.com/get/gb4258fa56e321ca5c8eb3bf95fdcf0c94903eb51e1ede3fbc01ad5951c0df14875bce222305fdfab9478ec256d672470e3d6739827000a971d4aac5025aee89b_1280.jpg
+  -> 1200x1200, webp q=85 (72 KB)
+[fetch] 4703841 <- https://pixabay.com/get/g9aedd99a8540eb222f5f70464369b2adf33a8d5155abd76aa2dd7e44b9608b1842be748fd4955fa336a854e3a925ed9fb7c9c79b7383199a0212d9d90d5420fa_1280.jpg
+  -> 1200x799, webp q=85 (112 KB)
+[fetch] 4027989 <- https://pixabay.com/get/gf138c2b01a96f998b74f52502e384c4266fc7ab161174a3d326f3a0bae0b32ca25a2008dc685656e5fdb19f3b2d25af3cf735e6bae1998d1059cc612e2664b46_1280.jpg
+  -> 1200x675, webp q=85 (31 KB)
+[fetch] 1006670 <- https://pixabay.com/get/g43a998eadb7d62cce6e64da55d4bc7d06c9d4977b215e09990ba1d9dd85102d77eda3cf05559b7d600bbf7287d36a6ad6d207b51878a3535a394d0c6f9357911_1280.jpg
+  -> 1200x1200, webp q=85 (85 KB)
+[fetch] 1853330 <- https://pixabay.com/get/g03000d4b57d2208b54add1aeb7c08806c3417f5240a55e162ec0d51095910c5345d390789779b71f2b27e8fed67f77e3ff5a49b0c91451abdbd1fe9331a93f2b_1280.jpg
+  -> 1200x799, webp q=85 (83 KB)
+[fetch] 3194286 <- https://pixabay.com/get/g6a8af50607e802985bd91d1d3057e7c01094ab7beba3d1a3552ada03aed3126b49aca358f3c774a665f050eaeb2f5019e9f5b020e4167662472b120b2fcd3fdd_1280.jpg
+  -> 1200x720, webp q=75 (125 KB)
+[fetch] 4398478 <- https://pixabay.com/get/ga8ffec2c9c2103f76094758600d8e1f88071fda68aa13fb03b52b5523a897ef99de64ead84700bb456080b5773ced57a3387820819a18f6143adc0417567229e_1280.jpg
+  -> 1200x799, webp q=85 (24 KB)
+[fetch] 4398479 <- https://pixabay.com/get/g0f6904b6ec358d000089faec8cc3ef8a3dbd3f07c188ef905be3fbb41000262257e3a870cc6e13990e9d79d008d0f8966c45d0badd14cba7c4e89e027b96756b_1280.jpg
+  -> 1200x799, webp q=85 (46 KB)
+[fetch] 10092768 <- https://pixabay.com/get/gaa2337f2a33563c8a24dc53fa29d8d5fa71edccce21add2371c82b3151aeca6e9f0db9c8be60d9baa8f7fd07f31f607ba494c7cc92562a2f4f57648fccc5e06e_1280.jpg
+  -> 1200x777, webp q=85 (118 KB)
+[fetch] 1587863 <- https://pixabay.com/get/g085fbe978d065e6cc8f1b50fc7ac569bf85fb30c1d225524a0f52338897e8ff1a1a68e0f7695f84c97e1579e4aecb67b71071de4a14556e810361548ab7445be_1280.jpg
+  -> 1200x799, webp q=80 (140 KB)
+[fetch] 3777666 <- https://pixabay.com/get/gde75e61a7893a29b837980e297ffde55635e6ec7a8908913639679a51f884f8defafb70c8bff2e2d5e301e849964a10fbc60f5fb8444f768a51bda347a4bf618_1280.jpg
+  -> 1200x816, webp q=85 (88 KB)
+[fetch] 3616 <- https://pixabay.com/get/g3458c169475b8fe924cea4ea07905c503a1e91805482f927f005589c402883514cbd8544ea6203fbbdd0c93187bb75c3_1280.jpg
+  -> 1200x900, webp q=85 (76 KB)
+[fetch] 8146623 <- https://pixabay.com/get/gea4027b306aebd075d88e43daf8f7f023d6c418a1c1132616bb67ac0985836b939ee5534e2818936beb6a1a3531d42a0d0d32cbe8a0e8410cfa16029df5e3447_1280.jpg
+  -> 1200x799, webp q=85 (49 KB)
+[fetch] 2011140 <- https://pixabay.com/get/g4fb4b7edb7f404b1e2bb229c69f7cc0f1bd2c87965f434c326261fec9ec8d901c252c1939d4dc54ceda1bbc9b13b68f3f9228e180fe719f20287167d21b6c7aa_1280.jpg
+  -> 1200x799, webp q=85 (84 KB)
+[fetch] 8772016 <- https://pixabay.com/get/g263242702c2f58a494e57a430eeae6e9eef778d7fb8227db653c11a8744b4b5ec02beca9ce6366035a3676f8750655050d74811a68b9f0139bccfe76f92bda7a_1280.jpg
+  -> 1200x799, webp q=85 (41 KB)
+[fetch] 1841550 <- https://pixabay.com/get/g4368c6cdb1e9629573d056862755afe7653b6909c3e91ef6764ba424f4b22521eebdd24709f87dd3bd7833f457fead5999bb94917dd2122fd47889c4b40f955d_1280.jpg
+  -> 1200x799, webp q=85 (93 KB)
+[fetch] 1591018 <- https://pixabay.com/get/g8dd3820a2572265fd2380159fe5f08d52ab6a1a884ccaf3341f49bf6405625fc45f27da2d24006ae7c990dead2fbcc1ed5421e7b82c95ed69ded8f7d2270cbae_1280.jpg
+  -> 1200x784, webp q=85 (44 KB)
+[fetch] 4523097 <- https://pixabay.com/get/g3cb304cbafaf3031aa655692bea00d4d7f0d78d4df83f8735c8ff835d8dd9f9f31250a314ce6ea3e286c3b2f88c89c8e19d8d9f5f3f1539f30bba4ce87c293b1_1280.jpg
+  -> 1200x675, webp q=85 (24 KB)
+[fetch] 9145391 <- https://pixabay.com/get/g4aa0e6e44c9fdcb0873edcc81e3c8379bb4e1ea6d842dd7de014f068312c30b8e51923d56cd0ba4fce6fd05fe07a3b7a0e4a115acac6394f95b8c104f502c032_1280.jpg
+  -> 1200x1200, webp q=85 (113 KB)
+[fetch] 319668 <- https://pixabay.com/get/gcbd493a5acb289d8e71ae41b3b19831d8179aa5611477006f6ba08155592637379da60b6452b58c265460678b711dad720993fb21ad53b60b59dd4169612bc49_1280.jpg
+  -> 1200x795, webp q=85 (119 KB)
+[fetch] 4552639 <- https://pixabay.com/get/gffdf5f4e358b3b07c1222b277d93adb13bc19ac449adc38a7e1120050523c46810ff2b150b8586c4708e41a65b4f4bd3c5197d0eb2ea6d3876e80090c98fde31_1280.jpg
+  -> 1200x1200, webp q=85 (20 KB)
+[fetch] 445153 <- https://pixabay.com/get/g45b4742515c9a31ec958cb6805e1b7cbe5ec18b0c6e736672f58794bf0e02e78501ac487bf7b07d5bd297f210de765a84532540f20c38c0ad1a2794be3d37596_1280.jpg
+  -> 1200x900, webp q=85 (67 KB)
+[fetch] 3970681 <- https://pixabay.com/get/ge0918b3990be8c6cbd20d6769dcb972dc6edb103f3a1e01f7c76bf2d795464bcca1602b65b09fdab7ecaabbc4c643569a53ebb6a30d26b81416a32fb0505f670_1280.jpg
+  -> 1200x682, webp q=85 (62 KB)
+[fetch] 1006677 <- https://pixabay.com/get/gd9d67b3208a69bb21ec1cc3456d131cad6167fe0ddad9e9355510a102f68111a209f5ae4c54d6dda46d4652ee5fef34f6c114c135ad0e691d0205b0cb801184f_1280.jpg
+  -> 1200x1200, webp q=85 (81 KB)
+[fetch] 3155972 <- https://pixabay.com/get/g0499471833297ef4ce984fd803459aac0a239d588fe10906e199e854504477db8d7d2d41fc7af8f1aca9f0163a78c27006232d5030fac0767e1bbcfc337318d3_1280.jpg
+  -> 1200x534, webp q=85 (41 KB)
+[fetch] 3148408 <- https://pixabay.com/get/g83b99f8e3914f33f79a2d42f55a481e45155e98d501dc96d5eb1545c92bec1f1f4a2a9716cb1af15bb3e030f09a3edd699cb5c304e60b3323e8815c66b5a51b3_1280.jpg
+  -> 1200x720, webp q=85 (95 KB)
+[fetch] 1873854 <- https://pixabay.com/get/g2e4600ff0f24c349d14477631b9446ceb64e476ce72c85cdd268c17c5489b7305957dc6da227b1bb63ab7396d99bbacbd37a8e76fe7e35de39d0f862bba88a05_1280.png
+  -> 1200x660, webp q=85 (99 KB)
+[fetch] 5440620 <- https://pixabay.com/get/g50275b2802b3a83de3a0cc034e0bf66039fa51f957d8856cd291fd151f86198493d5a29ae76ed3bf0f8568dafa9ae13511a563dc26f5e0c403c419c47993523e_1280.jpg
+  -> 1200x799, webp q=85 (82 KB)
+[fetch] 1685092 <- https://pixabay.com/get/gbcce08ba937c72951d93885dbedc65d2beef9a9daa2351770b713b2ba5dc018526fe1691dd1a1e25df6393ea121046eebab1a3de9d90d327cc79e6cdb5e3e1d7_1280.jpg
+  -> 1200x900, webp q=85 (107 KB)
+[fetch] 1346074 <- https://pixabay.com/get/g969e5046838f068f4095a246b857f43b33ced4831297ce730429235328150145e93fda45ec80c99a8506bc47427f1a51aa4d17fa1a27136d8630e3aa32feb77b_1280.jpg
+  -> 1200x799, webp q=80 (122 KB)
+[fetch] 1346066 <- https://pixabay.com/get/g2b7c257cdbd4126ed70a6d376cc13d199f26319e8c6adec63b957e0ea9e82ba0b12be8f501f6e567027e96552f56cd2b714c2f099228cdc8378ec4ce55bc2e2f_1280.jpg
+  -> 1200x799, webp q=85 (101 KB)
+[fetch] 1346071 <- https://pixabay.com/get/gb99fcb77557ef97150e1f735883292c7c4d72652663b79094b8c645caa34ac24c6b9d40d9aff562cc3f44e7e54e17cd764598c6b2830db339a819618e09fba8b_1280.jpg
+  -> 1200x799, webp q=80 (146 KB)
+[fetch] 594164 <- https://pixabay.com/get/g5e9b9e9d676749bcf04f821251ac214e9e4bb17ad07a2dd08dd58b121aa71b6575d465ca5728c8d06923839826ce11c36a9a914b649563a9cf9ea6eb9a929307_1280.jpg
+  -> 1200x799, webp q=85 (88 KB)
+[fetch] 1127518 <- https://pixabay.com/get/g92ad0defab964501d12d32b1a4b429fa948d238bf9c29b1f1b0cd31121057ab22e2f5f4fa2152f4f0067a8b1d10f6f847888068e5ebfaf4d6eaf0f2c5386bdc2_1280.png
+  -> 1200x900, webp q=80 (144 KB)
+[fetch] 1572408 <- https://pixabay.com/get/g02797720855c0c04fcd5037359cc29289dc0fefa52067eebcc1fc08aebcae066ebd8d9a10f643e5c5e4a6f8736b4b4b2ca3536a9d41950216e6858506b7c923e_1280.jpg
+  -> 1200x799, webp q=45 (179 KB)
+[fetch] 1270101 <- https://pixabay.com/get/gc00e5868ec6f048d4ff2d65512ebc58c18e21675a5642c20538088e59a42f233b90b130a1c2687c25204e4ca0372053d4480a361c1e6f4f53a4aaf7dd9303b0d_1280.jpg
+  -> 1200x799, webp q=85 (54 KB)
+[fetch] 2031021 <- https://pixabay.com/get/ge1ba4590781f637540dbfd5f6d78390a0c96a8b3d1a0d82717b46612f266cc01e943230b11d7350f660d84e4103d5bb277a427f655e272087fe6e921c02234b4_1280.jpg
+  -> 1200x675, webp q=85 (24 KB)
+[fetch] 2402637 <- https://pixabay.com/get/gf56dbb300847ac70081d99bf299f7f2a17e88ebce41f5d7d690e3fc77cc2f17efd1d7c021e8ee8ee47587b38896071342471cc8a848f9f1ae5891fbaf299f08d_1280.jpg
+  -> 1200x675, webp q=85 (67 KB)
+[fetch] 4605834 <- https://pixabay.com/get/gf5824b9431efdb75b0092e2f15ddf8b9e01c2b29c9b4f225df2a71d9750dd6323a9620d736cccdac8ccbf7b8deb970017ad3172f6689aa65d0fac7191cb74402_1280.jpg
+  -> 1200x799, webp q=85 (38 KB)
+[fetch] 286386 <- https://pixabay.com/get/gc86139dbac95f783e88b365088fd4c2c0aad4db838f8ef8fcfa7b762856d8f1bdc19ba885bc8c76e35b131d133e9784b42b895741f0de86d5d266a8f6c9ccab7_1280.jpg
+  -> 1200x900, webp q=80 (120 KB)
+[fetch] 90389 <- https://pixabay.com/get/ga1733ebf4d541e0441e1ed413927be4783a171985f784fd1b16f0732b3a4dfc5d94022d6e5b51913c1095faadb527432_1280.jpg
+  -> 1200x799, webp q=85 (113 KB)
+[fetch] 915569 <- https://pixabay.com/get/g33fdfd047aecd23c72b3a1ef7341b0c9b55fffa058c36adb20ded333f1fc85e27015c9d5a879f4a5d37c9c48685e53f1c0eeb65275377796d46d9dc1de8d5004_1280.jpg
+  -> 1200x795, webp q=85 (75 KB)
+[fetch] 6181051 <- https://pixabay.com/get/gc2a7c313aedad7f2c86bfdbd4a146bbd6ec0c9c89c97acb217b543e3537f23b26ae9105618ffe5a1388faf427e0a7cbbd040c6a3a78d3f75cbad77f69924e825_1280.jpg
+  -> 1200x791, webp q=85 (55 KB)
+[fetch] 2891812 <- https://pixabay.com/get/g738f92993ea54a0187c115ab91544c03c0881c6e50d0763606da71b9d206b0119addeb689a0a94b2c3a13f9c37cc983caab393ba5a893e8194bd5d9145e50b78_1280.jpg
+  -> 1200x900, webp q=85 (21 KB)
+[fetch] 2570383 <- https://pixabay.com/get/ge52bae3a4b023aeddc11831e7306a26e5512743be9bf03249de53ef5b69015ab86ac10d41f975c793dd81e0f90aecce3386f1b176b02a4b20a3ebe0d97134537_1280.jpg
+  -> 1200x359, webp q=85 (22 KB)
+[fetch] 8598424 <- https://pixabay.com/get/g54595c25f144ec91344558ff84523ec5e590433723c22743035e404f75202eaa35746a984f386957b4b8ba9601c24fd44996510d51a05acb0bdb552d92ac072c_1280.jpg
+  -> 1200x799, webp q=85 (57 KB)
+[fetch] 2784907 <- https://pixabay.com/get/g48fe33ba65d932d3d569430bf5500f5cf34e01c7c2a5b9102ee2fbe73aee6c8fd6961c56065ebeec38cd9223fe2c055c4598316d6b910b8779025230d2de0afe_1280.jpg
+  -> 1200x799, webp q=85 (65 KB)
+[fetch] 1302083 <- https://pixabay.com/get/g9644354cc52a03d71d8df45ac54059305766fbe08a9da0c0a2ca78c2e5c8e4ae94e17ac16bc815d345d0dae37477257e5cfef344e0a8af20585abc1be59cbab0_1280.jpg
+  -> 1200x795, webp q=85 (27 KB)
+[fetch] 9786819 <- https://pixabay.com/get/g4ce5fd9e23d6282006ec2de0f6a64c3c62eba3881020000cb8d045eb7367b8f31c912dfc33298c34fd157e4dc731ef967e3a231c79faf5a6aa5e188e7bf3733e_1280.jpg
+  -> 1200x799, webp q=85 (143 KB)
+[fetch] 1245122 <- https://pixabay.com/get/g268d41faf26f111ecc4704e33850442868a69fb47d70cdd74277bf88d7e8e835f8b2c64a1fdb4e79cea02ddfe3ccfc0cdf70358fcdd3e62f9415db3108f9b157_1280.jpg
+  -> 1200x799, webp q=85 (139 KB)
+[fetch] 2815248 <- https://pixabay.com/get/g83d368d5d25f27a816b5d71a874b8267b76bdc0c82a35ca95f6c35375fe3e6a661fd596d1c63bffc77d527b53d27c52850117a0209292d772d88d470a528068a_1280.jpg
+  -> 1200x799, webp q=85 (32 KB)
+[fetch] 1419275 <- https://pixabay.com/get/g70efe45489bc21941a25b1e66c98525f151159dfec5ca9b3aa2854a6fe910b84c9e535e0cd560acc17c9bec1c7367f4d9758d9551323ade64c840ee950605132_1280.jpg
+  -> 1200x375, webp q=85 (65 KB)
+[fetch] 1834289 <- https://pixabay.com/get/gdc40b328d93d3d09fe733814284335f47731ff5ffa5ac15bb0103ce1dfba25938e312b29aaaf5d4bb15d95875c94c808a1cb85ca05a94e41fd4896c7e6a67128_1280.jpg
+  -> 1200x799, webp q=80 (128 KB)
+[fetch] 8332732 <- https://pixabay.com/get/ge57ac7736392b74577872fb832a204e506488c24324c09987191e024f0b049a3699a52aa509e1b5edfbb0053be6d92a06cb55b3a2628336dbff9378e7d9c7ac0_1280.jpg
+  -> 1200x900, webp q=45 (203 KB)
+[fetch] 430619 <- https://pixabay.com/get/ga8203e4ff9bd1713f4f20e81b7cea9e538d24dcd3595c8d473485da0351690e96573be4fd3fe04a5f5ecd5e5ca67b67a72330e31b534a545f7617e51a2a0627f_1280.jpg
+  -> 1200x799, webp q=85 (134 KB)
+[fetch] 3010309 <- https://pixabay.com/get/g2bcf4a865db025d95bd916dd3cfcd955fb711ee765d9a036fe4e710180cb70ecbe0107a1af9b0518249af5ebf0cca3ad0ac56fed0519bd80de21e4390e983c20_1280.jpg
+  -> 1200x799, webp q=85 (53 KB)
+[fetch] 5367873 <- https://pixabay.com/get/g163311298c245266d448ab4039b54f7c5ffb586ab5c7e1aeeb3bdb6aa0ee790178cba1d73c818f68163cf44ddcf9e545d63757d0421ee656af6ed4485e8469d3_1280.jpg
+  -> 1200x799, webp q=85 (120 KB)
+[fetch] 2528363 <- https://pixabay.com/get/g86f3df8affe6a4e37353dfff002e2b550e548356f5139c35c0bdc42ac48f0a76ac548e93b953bcbd623156b7c83c835bcf38a21cdbb64fae14245c2ff826a1f8_1280.jpg
+  -> 1200x561, webp q=85 (136 KB)
+[fetch] 5496177 <- https://pixabay.com/get/gab61ecdd9ba5794ac37a9321bcd3bfa7ce5c17bcfddb33525940edc6edcedf56ef77f1be6ee4e7667cb4e2e3d237d78c41c0f7ecfe473ac5170c692cd03bd560_1280.jpg
+  -> 1200x762, webp q=80 (138 KB)
+
+[done] 69 images on disk
+[done] manifest written to /Users/isidro.rodriguez/Documents/Projects/Personal Brand/irodriguez-io.github.io/_data/images.yml
+
+Next: spot-check images in img/blog-hero/, then build the site.
