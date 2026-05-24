@@ -217,6 +217,51 @@ article ul li:before {
 hr{
   height: 2rem;
 }
+
+/*** Code blocks (restore defaults wiped by the reset) ***/
+
+article pre,
+article code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+article p code,
+article li code {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+article pre {
+  display: block;
+  white-space: pre;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1rem;
+  font-size: 14px;
+  line-height: 1.5;
+  tab-size: 2;
+}
+
+article pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  white-space: inherit;
+  color: inherit;
+}
+
+/* kramdown wraps fenced blocks in this container */
+article .highlighter-rouge {
+  margin: 1rem 0;
+}
+
 /*** Footer Section ***/
 
 footer{
