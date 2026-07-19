@@ -6,6 +6,7 @@ topic: iam
 lang: es
 description: "Un ingeniero de sistemas e IAM prueba Rust tras años con Python y C++ — dónde se gana un lugar en el trabajo real de automatización, dónde no, y por qué un lenguaje de moda nunca es por sí solo motivo para reescribir algo que ya funciona."
 translation: "/blog/2026/07/rust-vs-python-migration-plan/"
+image: /img/blog-hero/pixabay-5440620.jpg
 ---
 
 No empecé a evaluar Rust porque tuviera un problema que lo necesitara. Empecé porque suficiente gente a mi alrededor no dejaba de preguntarme por qué no lo había hecho.

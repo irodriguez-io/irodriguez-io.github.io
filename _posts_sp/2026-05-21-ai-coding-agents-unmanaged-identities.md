@@ -6,6 +6,7 @@ topic: iam
 lang: es
 description: "Los agentes de IA para programar como Cursor, Claude Code y Copilot son identidades no humanas que operan con credenciales humanas — sin alta-cambio-baja (JML), sin controles de sesión y con una vía de exfiltración incorporada. La solución es el manual de IAM que ya conocemos."
 translation: "/blog/2026/05/ai-coding-agents-unmanaged-identities/"
+image: /img/blog-hero/pixabay-2530814.jpg
 ---
 
 El asistente de IDE que tus desarrolladores instalaron la semana pasada incumple más cláusulas de tu política de control de accesos de las que cualquier contratista humano podría incumplir jamás.
