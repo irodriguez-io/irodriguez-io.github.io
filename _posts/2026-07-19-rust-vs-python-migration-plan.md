@@ -6,6 +6,7 @@ topic: iam
 lang: en
 description: "A systems and IAM engineer tries Rust after years of Python and C++ — where it earns a place in real automation work, where it doesn't, and why a trending language is never on its own a reason to rewrite something that works."
 translation: "/blog-es/2026/07/rust-vs-python-migration-plan/"
+image: /img/blog-hero/pixabay-5440620.jpg
 ---
 
 I didn't start looking at Rust because I had a problem that needed it. I started because enough people around me kept asking why I hadn't.
