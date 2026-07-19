@@ -48,8 +48,8 @@ except ImportError:
 # (search_query, [topic_tags_to_apply])
 # Edit freely. Re-run the script and _data/images.yml updates accordingly.
 SEARCH_GROUPS = [
-    ("identity authentication",   ["iam"]),
-    ("login fingerprint",         ["iam"]),
+    ("identity access management", ["iam"]),
+    ("fingerprint scanner",       ["iam"]),
     ("biometric access control",  ["iam"]),
     ("cybersecurity padlock",     ["infosec", "cybersec", "data-security"]),
     ("encryption shield",         ["infosec", "cybersec", "data-security"]),
