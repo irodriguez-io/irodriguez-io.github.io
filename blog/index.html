@@ -1,0 +1,64 @@
+---
+layout: null
+title: All writing — iRodriguez
+permalink: /blog/
+---
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="{{ '/img/logo-dark.png' | relative_url }}" type="image/x-icon">
+    <title>All writing — iRodriguez</title>
+    <meta name="author" content="Isidro Rodriguez"/>
+    <meta name="description" content="Essays on Identity & Access Management, secure automation, and cybersecurity fundamentals for growing businesses."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/css/article.css' | relative_url }}"/>
+    <style>
+      .post-list { max-width: 800px; margin: 12vh auto 4rem; padding: 0 1rem; }
+      .post-list h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+      .post-list > p.intro { opacity: 0.85; margin-bottom: 2rem; }
+      .post-list ul { display: grid; gap: 1rem; }
+      .post-list li {
+        background-color: var(--BGcolor2);
+        padding: 1rem 1.25rem;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+      }
+      .post-list li:hover { transform: translateY(-2px); }
+      .post-list li:nth-child(even) { background-color: var(--FontColor); color: var(--BGcolor1); }
+      .post-list a { display: block; font-size: 1.1rem; }
+      .post-list .date { display: block; font-size: 0.85rem; opacity: 0.75; margin-top: 0.25rem; }
+    </style>
+  </head>
+  <body>
+    <header class="header glass">
+      <a href="{{ '/' | relative_url }}" class="nav-logo brand-type" data-text="iRodriguez">iRodriguez</a>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/blog-es/' | relative_url }}">Español</a></li>
+      </ul>
+    </header>
+    <main>
+      <section class="post-list">
+        <h1>All writing.</h1>
+        <p class="intro">Essays on Identity &amp; Access Management, secure automation, and cybersecurity fundamentals. Newest first.</p>
+        <ul>
+          {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <img src="{{ '/img/me2.jpg' | relative_url }}">
+      <div class="decoLine"></div>
+      <h3>Identity &amp; Access · Secure Automation · Plain Language</h3>
+    </footer>
+  </body>
+</html>

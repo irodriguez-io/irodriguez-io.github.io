@@ -44,6 +44,21 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 
+/*** Brand wordmark typewriter — fire once when wordmark is fully visible
+     (i.e. the sticky header has reached its pinned position at the top). ***/
+const brandType = document.querySelectorAll(".brand-type");
+if (brandType.length && "IntersectionObserver" in window) {
+  const brandObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-typing");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 1 });
+  brandType.forEach(el => brandObserver.observe(el));
+}
+
 /*** rain effect ***/
 
 function lines (){
@@ -85,18 +100,16 @@ let textArr = []
 
 if (Lang == "en-US") {
   textArr = [
-  "Cyber Security",
-  "Risk Management",
-  "Business Continuity",
-  "Regulatory Compliance",
-  "Web Developement",
+  "Enterprise automation, built secure by default.",
+  "Identity, secured. Workflows, automated.",
+  "Most automation breaks on security. I do the opposite.",
+  "Built for SMBs that can't afford to be insecure.",
   ]
   }else { textArr = [
-  "Cyber Seguridad",
-  "Gestion de Riesgo",
-  "Continuidad del Negocio",
-  "Cumplimiento Normativo",
-  "Desarrollo Web",
+  "Automatización empresarial, segura desde el primer día.",
+  "Identidad protegida. Flujos automatizados.",
+  "La mayoría de automatizaciones se rompen en la seguridad. Yo hago lo contrario.",
+  "Construido para PYMES que no pueden permitirse ser inseguras.",
   ]}
 
 let currentTextIndex = -1
@@ -108,6 +121,16 @@ const addLetter = (letterIndex) => {
   //if reached the end of the text stop adding letters and animate cursor blink
   if (letterIndex >= textArr[currentTextIndex].length) {
     blinkTypeCursor()
+    return
+  }
+  //blink the cursor during the 1s pause before the first character appears
+  if (letterIndex === 0) {
+    typeCursor.classList.add("blinkAnim")
+    setTimeout(() => {
+      typeCursor.classList.remove("blinkAnim")
+      myText.textContent += textArr[currentTextIndex][letterIndex]
+      addLetter(letterIndex + 1)
+    }, 1000)
     return
   }
   setTimeout(() => {
