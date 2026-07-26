@@ -130,7 +130,7 @@ permalink: /
         <h1>Perspectives.</h1>
         <p>New writing on Identity & Access Management and secure automation is on the way. Below are earlier essays on cybersecurity fundamentals — NIST frameworks, threat landscapes, and the basics every growing business should understand before the IAM conversation starts.</p>
         <div class="article-grid">
-          {% assign posts_en = site.posts | where: "lang", "en" | slice: 0, 6 %}
+          {% assign posts_en = site.posts | where: "lang", "en" %}
           {% for post in posts_en %}
           <div class="article-item">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
