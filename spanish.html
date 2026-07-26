@@ -135,7 +135,7 @@ permalink: /spanish.html
         <h1>Perspectivas.</h1>
         <p>Nuevo contenido sobre Gestión de Identidad y Accesos y automatización segura está en camino. A continuación, ensayos anteriores sobre fundamentos de ciberseguridad — marcos del NIST, panorama de amenazas, y lo básico que todo negocio en crecimiento debería entender antes de empezar la conversación sobre IAM.</p>
         <div class="article-grid">
-          {% assign posts_es = site.posts_sp | slice: 0, 6 %}
+          {% assign posts_es = site.posts_sp %}
           {% for post in posts_es %}
           <div class="article-item">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
