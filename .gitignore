@@ -8,3 +8,4 @@ Gemfile.lock
 .DS_Store
 node_modules/
 .venv/
+.claude/settings.json
