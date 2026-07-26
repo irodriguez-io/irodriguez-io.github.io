@@ -203,6 +203,23 @@ article ul li{
   margin-bottom: 1rem;  
 }
 
+article li{
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+
+article ol{
+  margin: 1rem;
+  padding-left: 2rem;
+  line-height: 1.5rem;
+  list-style: decimal;
+}
+
+article ol li{
+  margin-bottom: 1rem;
+  padding-left: 0.25rem;
+}
+
 article ul li:before {
   content: '';
   display: inline-block;
