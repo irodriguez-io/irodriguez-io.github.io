@@ -1,0 +1,65 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# iRodriguez — Jekyll config
+# ─────────────────────────────────────────────────────────────────────────────
+# Note on collections: the Spanish blog lives in a custom collection.
+# Jekyll convention: the directory name MUST be `_<collection_key>` and the
+# Liquid access uses `site.<collection_key>`. Hyphens in collection keys force
+# bracket notation in Liquid (`site["posts-sp"]`), so we use underscores
+# (`posts_sp`) and the directory is therefore `_posts_sp/`.
+# ─────────────────────────────────────────────────────────────────────────────
+
+title: iRodriguez
+description: >-
+  Isidro Rodriguez — Identity & Access engineer writing about secure automation
+  for small businesses. Enterprise IAM thinking applied to n8n, AI agents, and
+  SaaS sprawl.
+author: Isidro Rodriguez
+url: "https://irodriguez.io"
+baseurl: ""
+
+# Pretty permalinks
+permalink: /blog/:year/:month/:slug/
+
+# Markdown engine
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Custom collection for Spanish posts
+# Access in Liquid: site.posts_sp
+# URL pattern: /blog-es/<year>/<month>/<slug>/
+# ─────────────────────────────────────────────────────────────────────────────
+collections:
+  posts_sp:
+    output: true
+    permalink: /blog-es/:year/:month/:slug/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Defaults — every post gets layout + lang automatically
+# ─────────────────────────────────────────────────────────────────────────────
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      lang: en
+  - scope:
+      path: ""
+      type: posts_sp
+    values:
+      layout: post-sp
+      lang: es
+
+# Files Jekyll should ignore
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .gitignore
+  - .DS_Store
+  - node_modules/
