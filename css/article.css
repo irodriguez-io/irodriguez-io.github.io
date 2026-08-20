@@ -111,6 +111,7 @@ header li:hover, header li:focus{
 main{
   flex-grow: 1;
   overflow-y: auto;
+  width: 100%;
 }
 
 h1{
@@ -186,8 +187,24 @@ em{
 article{
   display: flex;
   flex-flow: column nowrap;
-  margin-top: 10vh;
+  margin: 10vh auto 0;
+  width: 100%;
   max-width: 800px;
+}
+
+/* Wide content (code blocks, long words) must scroll inside itself
+   instead of widening the article and pushing the left margin off-screen. */
+article > *{
+  min-width: 0;
+  max-width: 100%;
+}
+
+article p,
+article li,
+article h1,
+article h2,
+article h3{
+  overflow-wrap: break-word;
 }
 
 img{
