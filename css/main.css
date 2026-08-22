@@ -459,11 +459,15 @@ em{
 .slide-arrow {
   position: absolute;
   display: flex;
-  bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
   height: 4rem;
   width: 2rem;
   background-color: var(--BGcolor1);
   font-size: 3rem;
+  line-height: 1;
   padding: 0;
   cursor: pointer;
   opacity: 0.4;
@@ -477,14 +481,12 @@ em{
 }
 
 .arrow-prev {
-  left: 50%;
-  padding-left: 0.25rem;
+  left: 0;
   border-radius: 0 2rem 2rem 0;
 }
 
 .arrow-next {
-  right: 50%;
-  padding-left: 0.75rem;
+  right: 0;
   border-radius: 2rem 0 0 2rem;
 }
 
@@ -633,6 +635,10 @@ em{
 /*** Footer Section ***/
 
 footer{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1.5rem;
   text-align: center;
   margin: 2rem 0;
   position: relative;
@@ -653,7 +659,7 @@ footer img{
   position: absolute;
   margin: 0 auto;
   width: 100%;
-  top: 40%;
+  top: 35%;
   z-index: -1;
 }
 
