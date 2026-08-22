@@ -100,16 +100,16 @@ let textArr = []
 
 if (Lang == "en-US") {
   textArr = [
-  "Enterprise automation, built secure by default.",
-  "Identity, secured. Workflows, automated.",
-  "Most automation breaks on security. I do the opposite.",
-  "Built for SMBs that can't afford to be insecure.",
+  "Access is a system. Design it like one.",
+  "Every workflow holds a credential. That makes it an identity.",
+  "Granting access is easy. Removing it is the test.",
+  "Identity engineering, and the automation around it.",
   ]
   }else { textArr = [
-  "Automatización empresarial, segura desde el primer día.",
-  "Identidad protegida. Flujos automatizados.",
-  "La mayoría de automatizaciones se rompen en la seguridad. Yo hago lo contrario.",
-  "Construido para PYMES que no pueden permitirse ser inseguras.",
+  "El acceso es un sistema. Diséñalo como tal.",
+  "Todo flujo guarda una credencial. Eso lo vuelve una identidad.",
+  "Dar acceso es fácil. Quitarlo es la prueba.",
+  "Ingeniería de identidad, y la automatización a su alrededor.",
   ]}
 
 let currentTextIndex = -1
@@ -189,17 +189,17 @@ const slide = document.querySelector(".slide");
 const prevButton = document.querySelector(".arrow-prev");
 const nextButton = document.querySelector(".arrow-next");
 
-nextButton.addEventListener("click", foward)
-                            
-function foward() {
+prevButton.addEventListener("click", backward)
+
+function backward() {
   const slideWidth = slide.clientWidth;
   slidesContainer.scrollLeft -= slideWidth;
 }
 
-prevButton.addEventListener("click", backward)
-    
-function backward(){
+nextButton.addEventListener("click", forward)
+
+function forward() {
   const slideWidth = slide.clientWidth;
   slidesContainer.scrollLeft += slideWidth;
-};
+}
 
