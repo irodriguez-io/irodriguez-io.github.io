@@ -90,47 +90,75 @@ em{
 }
 
 /*** Background Animation ***/
+/* Static pool of drops built once at page render (Liquid loop in index.html /
+   spanish.html) and animated purely in CSS. Replaces the old JS that created
+   and destroyed a div every 200ms forever. Nothing here touches the DOM after
+   first paint; the compositor just moves 24 existing layers. */
 
-.circle {
-  position: absolute;
-  top: 0;
-  width: 20px;
-  aspect-ratio: 1/1;
-  background: var(--Circle);
-  box-shadow: 0 0 10px var(--Circle),
-    0 0 20px var(--Circle),
-    0 0 30px var(--Circle),
-    0 0 50px var(--Circle);
-  border-radius: 50%;
-  animation: animate 5s linear forwards;
+.rain {
+  position: fixed;
+  inset: 0;
   z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  contain: strict;          /* rain can never invalidate page layout */
 }
 
-@keyframes animate {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
+.rain span {
+  position: absolute;
+  top: -6vh;
+  left: var(--x);
+  width: var(--w);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--Circle);
+  /* Two shadows, not four: each is a separate blur pass and 12/28 carries the
+     glow just as well. */
+  box-shadow: 0 0 12px var(--Circle),
+    0 0 28px var(--Circle);
+  animation: drop var(--dur) linear var(--delay) infinite;
+  /* Safe only because the pool is fixed — never put will-change on nodes you
+     create and destroy. */
+  will-change: transform, opacity;
 }
 
-.circle:before {
+/* The trail. Was 100vh, which made every drop's layer taller than the viewport
+   and forced a full-height gradient repaint on each new drop. */
+.rain span::before {
   content: '';
   position: absolute;
   left: 25%;
   bottom: 100%;
   width: 50%;
-  height: 100vh;
+  height: 22vh;
   opacity: 0.5;
   background: linear-gradient( var(--Circle), transparent);
+}
+
+@keyframes drop {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, 115vh, 0);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rain {
+    display: none;
+  }
 }
 
 /*** Utilities Classes ***/

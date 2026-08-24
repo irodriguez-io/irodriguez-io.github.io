@@ -59,29 +59,6 @@ if (brandType.length && "IntersectionObserver" in window) {
   brandType.forEach(el => brandObserver.observe(el));
 }
 
-/*** rain effect ***/
-
-function lines (){
-    let sizeW = Math.random() * 12;
-    let duration = Math.random () * 3;
-    let e = document.createElement ('div');
-    e.setAttribute ('class', 'circle');
-    document.body.appendChild (e)
-    
-    e.style.width = 2+ sizeW+'px';
-    e.style.left = Math.random () * ( innerWidth - 6 )+'px';
-    e.style.animationDuration = 2 + duration + 's';
-
-    setTimeout(function() {
-        document.body.removeChild(e)
-    }, 5000);
-}
-
-setInterval (function(){
-    lines ();
-},200) 
-
-
 /*** Text Animation ***/
 
 //speed at which text appears and disappears
