@@ -18,10 +18,19 @@ permalink: /
     <script src="js/main.js" defer></script>
   </head>
   <body>
+    <!-- Decorative rain. Static pool of 24 drops, animated entirely in CSS;
+         see .rain in css/main.css. No JS, no DOM churn. -->
+    <div class="rain" aria-hidden="true">
+{% for i in (1..24) %}      {%- assign x = i | times: 37 | modulo: 97 -%}
+      {%- assign w = i | times: 13 | modulo: 9 | plus: 3 -%}
+      {%- assign dur = i | times: 29 | modulo: 30 | plus: 24 -%}
+      {%- assign del = i | times: 41 | modulo: 50 -%}
+      <span style="--x:{{ x }}%;--w:{{ w }}px;--dur:{{ dur | divided_by: 10.0 }}s;--delay:-{{ del | divided_by: 10.0 }}s"></span>
+{% endfor %}    </div>
     <section class="hero flexy">
       <div class="lottie glass">
-        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-        <dotlottie-player src="https://lottie.host/40e5933f-18e6-443a-aed2-394d88bd7119/de7oMybouy.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
+        <script src="js/lottie/dotlottie-player.js" type="module"></script>
+        <dotlottie-player src="js/lottie/hero-identity.json" renderer="svg" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
       </div>
       <div class="hero-content">
         <p>
