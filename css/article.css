@@ -40,16 +40,18 @@
 
 :root{
   --FontColor: whitesmoke;
-  --BGcolor1: darkblue;
-  --BGcolor2: slateblue;
+  /* Keep in step with css/main.css -- the homepages and the article pages
+     share this gradient. */
+  --BGcolor1: #070B2B;
+  --BGcolor2: #2B2170;
   --Circle: #877ad7;
-  --Shadow1: black;
+  --content-max: 1500px;
 }
 
 /*** Utily Classes ***/
 
 .glass {
-  background: rgba(109, 103, 228, 0.5);
+  background: rgba(109, 103, 228, 0.38);
   border: 1px solid rgba(109, 103, 228, 0.3);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -85,7 +87,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95vw;
+  width: min(95%, var(--content-max));
   text-align: center;
   margin-top: 10px;
   padding: 5px;

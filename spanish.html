@@ -19,7 +19,12 @@ permalink: /spanish.html
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="css/main.css"/>
-    <!-- JavaScript -->
+    <!-- Hero animation. Preloaded so the JSON downloads in parallel with the
+         player instead of waiting for it to execute and ask. -->
+    <link rel="preload" href="js/lottie/hero-identity.json" as="fetch" type="application/json"/>
+    <!-- JavaScript. lottie_light first: deferred scripts run in document order,
+         and main.js calls lottie.loadAnimation(). -->
+    <script src="js/lottie/lottie_light.min.js" defer></script>
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -34,8 +39,7 @@ permalink: /spanish.html
 {% endfor %}    </div>
     <section class="hero flexy">
       <div class="lottie glass">
-        <script src="js/lottie/dotlottie-player.js" type="module"></script>
-        <dotlottie-player src="js/lottie/hero-identity.json" renderer="svg" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
+        <div id="hero-lottie" class="hero-lottie" aria-hidden="true"></div>
       </div>
       <div class="hero-content">
         <p>
@@ -86,7 +90,7 @@ permalink: /spanish.html
     <main class="main">
       <section id="about" class="flexy">
         <img class="owner-pic border" alt="Isidro's picture" src="img/me.png">
-        <article class="description">
+        <article class="description prose-panel">
           <h1>Ing. Isidro Rodríguez</h1>
           <p>Diecinueve años como ingeniero en sistemas, la última década en gestión de identidad y accesos. Mi trabajo diario está en proveedores de identidad corporativos a escala empresarial: políticas de autenticación, factores resistentes a phishing, el ciclo joiner-mover-leaver, cuentas de servicio y la automatización que sostiene todo eso. Okta Certified Professional.</p>
           <p>La identidad es donde los sistemas se mantienen unidos o se desmoronan en silencio. La automatización que le ahorra veinte horas semanales a un equipo está a una API key olvidada de convertirse en el informe de incidente.</p>
@@ -100,7 +104,7 @@ permalink: /spanish.html
         </button>
       </section>
       <section id="services">
-        <article class="services-content">
+        <article class="services-content prose-panel">
           <h1>Especialización.</h1>
           <p>Donde pasa mi tiempo. El hilo conductor es la identidad: qué puede alcanzar un sistema, cómo se otorga y se quita ese acceso, y cuánto de eso se puede automatizar sin perder la trazabilidad. Los marcos son los de siempre, privilegio mínimo y joiner-mover-leaver y Zero Trust, ISO 27001 y SOX y PCI DSS. Los problemas interesantes están siempre más abajo, en la implementación.</p>
         </article>
@@ -140,8 +144,10 @@ permalink: /spanish.html
         </ul>
       </section>
       <section id="articles">
-        <h1>Perspectivas.</h1>
-        <p>Escritos sobre ingeniería de identidad, automatización del ciclo de vida y las preguntas de seguridad que se saltan cuando la automatización avanza más rápido que el gobierno. Los ensayos más antiguos cubren fundamentos, NIST CSF y el RMF y los ocho dominios, que siguen siendo la base de todo lo que viene después.</p>
+        <div class="prose-panel">
+          <h1>Perspectivas.</h1>
+          <p>Escritos sobre ingeniería de identidad, automatización del ciclo de vida y las preguntas de seguridad que se saltan cuando la automatización avanza más rápido que el gobierno. Los ensayos más antiguos cubren fundamentos, NIST CSF y el RMF y los ocho dominios, que siguen siendo la base de todo lo que viene después.</p>
+        </div>
         <div class="article-grid">
           {% assign posts_es = site.posts_sp %}
           {% for post in posts_es %}
