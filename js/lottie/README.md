@@ -1,6 +1,6 @@
-# Vendored dotLottie player
+# Vendored Lottie player
 
-Self-hosted so the site pulls no third-party script at runtime. Previously this
+Self-hosted so the site pulls no third-party script at runtime. Originally this
 loaded `@latest` from unpkg.com and the animation JSON from lottie.host, which
 meant an unpinned third-party module executing on our own origin and two extra
 origins on the hero's critical path.
@@ -9,45 +9,61 @@ origins on the hero's critical path.
 
 | File(s) | Source | Version |
 |---|---|---|
-| `dotlottie-player.js`, `chunk-*.js`, `lottie_svg-*.js`, `dotlottie-audio-*.js`, `dotlottie-state-machine-manager-*.js` | `https://unpkg.com/@dotlottie/player-component@2.7.12/dist/` | **2.7.12** (pinned) |
+| `lottie_light.min.js` | `https://unpkg.com/lottie-web@5.12.2/build/player/` | **5.12.2** (pinned) |
 | `hero-identity.json` | `https://lottie.host/40e5933f-18e6-443a-aed2-394d88bd7119/de7oMybouy.json` | fetched 2026-08-24 |
 
-Two edits were applied to every vendored file:
+One edit was applied: the `//# sourceMappingURL=` comment was stripped, since
+the `.map` file is not vendored.
 
-1. `.mjs` -> `.js` on the extension and on every internal `import()` specifier.
-   GitHub Pages does not reliably serve `.mjs` as a JavaScript MIME type, and a
-   module script rejected on MIME grounds fails silently. The browser only cares
-   about the `Content-Type`, not the extension, so `.js` is strictly safer.
-2. `//# sourceMappingURL=` comments stripped — the `.map` files are not vendored.
+## Why `lottie_light`, and why not `<dotlottie-player>`
 
-## Why only the SVG renderer
+The hero used to run `@dotlottie/player-component`, a web component wrapping
+lottie-web in Lit, xstate, howler and dotLottie zip handling. The hero uses none
+of that — no audio, no state machines, no `.lottie` archive, no playback
+controls. Worse, the component resolved its renderer through a **three-deep chain
+of imports**: `dotlottie-player.js` statically pulled four chunks, and only once
+those had executed did one of them fire a dynamic `import()` for the 64KB module
+that does the actual drawing. Browsers do not speculatively fetch dynamic
+imports, so the largest file on the path started downloading after two full
+round trips had already finished.
 
-`chunk-TRZ6EGBZ.js` picks a renderer at runtime with a dynamic `import()`.
-`<dotlottie-player>` defaults to `renderer="svg"` with `_light=false` and
-`_worker=false`, so `lottie_svg-MJGYILXD-NRTSROOT.js` is the only variant that
-can ever load. The other six (`lottie_light`, `lottie_light_canvas`,
-`lottie_light_html`, `lottie_canvas`, `lottie_html`, `lottie_worker`, ~1.4 MB)
-were pruned.
+`lottie_light.min.js` is one classic script with no waterfall:
 
-`index.html` and `spanish.html` set `renderer="svg"` **explicitly** so this stays
-true rather than relying on a default that a future version could change. If you
-ever set `renderer` to something else, or add the `light` or `worker` attribute,
-re-vendor the matching variant first or the dynamic import will 404 at runtime.
+| | files | gzipped JS |
+|---|---|---|
+| `@dotlottie/player-component` 2.7.12 | 6 (3 levels deep) | 99 KB |
+| `lottie-web` 5.12.2 `lottie_light` | 1 | 46 KB |
+
+`light` is the SVG-renderer build **without expression support**.
+`hero-identity.json` contains zero expressions — 16 shape layers plus one null,
+no masks, no mattes, no text, no images, no precomps — so it renders
+identically. Verified by pixel-diffing both players pinned to frame 30: the only
+difference was a 2px vertical offset, because the old custom element was
+`display: inline` and sat on a text baseline.
+
+**If the hero animation is ever replaced, check the new file for expressions
+first** (`"x"` string properties on animated values). If it has any, switch to
+`lottie_svg.min.js` (62 KB gzipped) — `lottie_light` silently ignores them.
 
 ## Re-vendoring / upgrading
 
 ```sh
-V=2.7.12   # bump this
+V=5.12.2   # bump this
 cd js/lottie
-for f in dotlottie-player chunk-HDDX7F4A chunk-ODPU3M3Z chunk-TRZ6EGBZ chunk-ZWH2ESXT \
-         lottie_svg-MJGYILXD-NRTSROOT dotlottie-audio-75C54RUV \
-         dotlottie-state-machine-manager-2E7RUGJG-NTQ25VSR; do
-  curl -sfL -o "$f.js" "https://unpkg.com/@dotlottie/player-component@$V/dist/$f.mjs"
-done
-# rewrite import specifiers and drop sourcemap comments
-sed -i '' -E "s|(['\"]\./[A-Za-z0-9_.$-]+)\.mjs(['\"])|\1.js\2|g; /sourceMappingURL=/d" *.js
+curl -sfL -o lottie_light.min.js \
+  "https://unpkg.com/lottie-web@$V/build/player/lottie_light.min.js"
+sed -i '' '/sourceMappingURL=/d' lottie_light.min.js
 ```
 
-Chunk hashes change between versions. After bumping, grep the new
-`dotlottie-player.js` and `chunk-*.js` for `import('./` and confirm every
-referenced file exists locally.
+`index.html` and `spanish.html` load it with `defer` from `<head>`, **before**
+`js/main.js`. Deferred scripts execute in document order, so that ordering is
+what guarantees the global `lottie` exists when `main.js` calls
+`lottie.loadAnimation()`. Both pages also `<link rel="preload">` the JSON so it
+downloads alongside the player rather than after it.
+
+## Retained but unused
+
+`dotlottie-player.js`, `chunk-*.js`, `lottie_svg-*.js`, `dotlottie-audio-*.js`
+and `dotlottie-state-machine-manager-*.js` are the old pinned 2.7.12 component
+(~600KB). Nothing references them; they are kept only to make reverting easy and
+can be deleted.
