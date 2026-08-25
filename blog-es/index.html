@@ -15,25 +15,24 @@ permalink: /blog-es/
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/css/base.css' | relative_url }}"/>
     <link rel="stylesheet" href="{{ '/css/article.css' | relative_url }}"/>
     <style>
-      .post-list { max-width: 800px; margin: 12vh auto 4rem; padding: 0 1rem; }
-      .post-list h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-      .post-list > p.intro { opacity: 0.85; margin-bottom: 2rem; }
-      .post-list ul { display: grid; gap: 1rem; }
-      .post-list li {
-        background-color: var(--BGcolor2);
-        padding: 1rem 1.25rem;
-        border-radius: 12px;
-        transition: transform 0.3s ease;
-      }
-      .post-list li:hover { transform: translateY(-2px); }
-      .post-list li:nth-child(even) { background-color: var(--FontColor); color: var(--BGcolor1); }
-      .post-list a { display: block; font-size: 1.1rem; }
-      .post-list .date { display: block; font-size: 0.85rem; opacity: 0.75; margin-top: 0.25rem; }
+      /* Page frame only -- the cards themselves are .article-card in base.css,
+         shared with the Perspectives grid on the home pages. */
+      /* px throughout: article.css sets html { font-size: clamp(1rem, 2.5vw,
+         2rem) }, so a rem here is ~32px on a desktop viewport. */
+      .post-list { max-width: 800px; margin: 12vh auto 64px; }
+      .post-list h1 { font-size: clamp(24px, 3.5vw, 34px); line-height: 1.2; margin: 0 0 8px; }
+      /* article.css insets bare <p> by 1rem; the panel's padding already does
+         that job here, so drop the horizontal half. */
+      .post-list .prose-panel p { margin-inline: 0; line-height: 1.6; }
+      .post-list p.intro { opacity: 0.85; margin-bottom: 0; }
+      .post-list .article-grid { margin: 24px 0 0; }
     </style>
   </head>
   <body>
+{% include rain.html %}
     <header class="header glass">
       <a href="{{ '/spanish.html' | relative_url }}" class="nav-logo brand-type" data-text="iRodriguez">iRodriguez</a>
       <ul>
@@ -43,17 +42,22 @@ permalink: /blog-es/
     </header>
     <main>
       <section class="post-list">
-        <h1>Todos los artículos.</h1>
-        <p class="intro">Ensayos sobre Gestión de Identidad y Accesos, automatización segura, y fundamentos de ciberseguridad. Más recientes primero.</p>
-        <ul>
+        <div class="prose-panel">
+          <h1>Todos los artículos.</h1>
+          <p class="intro">Ensayos sobre Gestión de Identidad y Accesos, automatización segura, y fundamentos de ciberseguridad. Más recientes primero.</p>
+        </div>
+        <div class="article-grid">
           {% assign posts_es = site.posts_sp | sort: 'date' | reverse %}
           {% for post in posts_es %}
-          <li>
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            <span class="date">{{ post.date | date: "%-d de %B, %Y" }}</span>
-          </li>
+          <a class="article-card" href="{{ post.url | relative_url }}">
+            <h2 class="article-card-title">{{ post.title }}</h2>
+            <span class="article-card-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d de %b, %Y" }}</time>
+              <span class="article-card-arrow" aria-hidden="true">&#8594;</span>
+            </span>
+          </a>
           {% endfor %}
-        </ul>
+        </div>
       </section>
     </main>
     <footer>
