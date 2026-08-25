@@ -180,3 +180,38 @@ function forward() {
   slidesContainer.scrollLeft += slideWidth;
 }
 
+/*** Hero animation ***/
+/* Was <dotlottie-player>: a web component that pulled its renderer through a
+   three-deep chain of dynamic imports, so the 64KB that does the actual drawing
+   only started downloading after two round trips had already completed. This is
+   lottie-web's light build instead -- one file, no waterfall, and the animation
+   has no expressions, so the light build renders it identically.
+
+   .lottie holds a reserved box and a CSS ring (see main.css) until the SVG is
+   built. Failures and a hard timeout clear it too, so a load that never
+   finishes does not leave the ring spinning forever. */
+
+const lottieBox = document.querySelector(".lottie");
+const lottieMount = document.getElementById("hero-lottie");
+
+if (lottieBox && lottieMount && typeof lottie !== "undefined") {
+  const lottieReady = () => lottieBox.classList.add("is-loaded");
+
+  const heroAnimation = lottie.loadAnimation({
+    container: lottieMount,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "js/lottie/hero-identity.json",
+  });
+
+  // DOMLoaded is the point the SVG exists in the document; the other two are
+  // there so a failed fetch or a malformed file still clears the ring.
+  ["DOMLoaded", "data_failed", "error"].forEach(ev =>
+    heroAnimation.addEventListener(ev, lottieReady)
+  );
+  setTimeout(lottieReady, 10000);
+} else if (lottieBox) {
+  // No player at all -- don't leave a ring spinning over an empty box.
+  lottieBox.classList.add("is-loaded");
+}

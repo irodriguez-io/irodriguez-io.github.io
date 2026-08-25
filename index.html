@@ -14,7 +14,12 @@ permalink: /
     <meta name="description" content="Isidro Rodriguez, identity and access engineer. Writing on identity lifecycle, authentication design, and building process automation that does not turn into an unmanaged access path."/>
     <!-- CSS -->
     <link rel="stylesheet" href="css/main.css"/>
-    <!-- JavaScript -->
+    <!-- Hero animation. Preloaded so the JSON downloads in parallel with the
+         player instead of waiting for it to execute and ask. -->
+    <link rel="preload" href="js/lottie/hero-identity.json" as="fetch" type="application/json"/>
+    <!-- JavaScript. lottie_light first: deferred scripts run in document order,
+         and main.js calls lottie.loadAnimation(). -->
+    <script src="js/lottie/lottie_light.min.js" defer></script>
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -29,8 +34,7 @@ permalink: /
 {% endfor %}    </div>
     <section class="hero flexy">
       <div class="lottie glass">
-        <script src="js/lottie/dotlottie-player.js" type="module"></script>
-        <dotlottie-player src="js/lottie/hero-identity.json" renderer="svg" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></dotlottie-player>
+        <div id="hero-lottie" class="hero-lottie" aria-hidden="true"></div>
       </div>
       <div class="hero-content">
         <p>
@@ -81,7 +85,7 @@ permalink: /
     <main class="main">
       <section id="about" class="flexy">
         <img class="owner-pic border" alt="Isidro's picture" src="img/me.png">
-        <article class="description">
+        <article class="description prose-panel">
           <h1>Isidro Rodríguez</h1>
           <p>Nineteen years as a systems engineer, the last decade in identity and access management. Day to day I work on corporate identity providers at enterprise scale: authentication policy, phishing-resistant factors, joiner-mover-leaver lifecycle, service accounts, and the automation that runs all of it. Okta Certified Professional.</p>
           <p>Identity is where systems either hold together or quietly fall apart. The automation that saves a team twenty hours a week is one forgotten API key away from being the incident report.</p>
@@ -95,7 +99,7 @@ permalink: /
         </button>
       </section>
       <section id="services">
-        <article class="services-content">
+        <article class="services-content prose-panel">
           <h1>Expertise.</h1>
           <p>Where I spend my time. The through-line is identity: what can reach a system, how that access gets granted and taken away, and how much of it can be automated without losing the audit trail. The frameworks are the enterprise ones, least privilege and joiner-mover-leaver and Zero Trust, ISO 27001 and SOX and PCI DSS. The interesting problems are always further down, in the implementation.</p>
         </article>
@@ -135,8 +139,10 @@ permalink: /
         </ul>
       </section>
       <section id="articles">
-        <h1>Perspectives.</h1>
-        <p>Writing on identity engineering, lifecycle automation, and the security questions that get skipped when automation moves faster than governance. The earlier essays cover fundamentals, NIST CSF and the RMF and the eight domains, which are still the groundwork for everything after them.</p>
+        <div class="prose-panel">
+          <h1>Perspectives.</h1>
+          <p>Writing on identity engineering, lifecycle automation, and the security questions that get skipped when automation moves faster than governance. The earlier essays cover fundamentals, NIST CSF and the RMF and the eight domains, which are still the groundwork for everything after them.</p>
+        </div>
         <div class="article-grid">
           {% assign posts_en = site.posts | where: "lang", "en" %}
           {% for post in posts_en %}
