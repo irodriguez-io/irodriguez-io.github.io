@@ -293,6 +293,7 @@ article .highlighter-rouge {
 footer{
   text-align: center;
   margin-top: 3rem;
+  position: relative;
 }
 
 footer img{
@@ -304,21 +305,22 @@ footer img{
 }
 
 .decoLine{
-  padding-bottom: 10px;
   border-bottom: 2px solid var(--FontColor);
   opacity: 0.6;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
   margin: 0 auto;
   width: 80%;
-  bottom: 4em;
+  /* Centered on the avatar, not on the footer: the avatar is the first
+     child, so its midpoint is half its rendered height from the top.
+     me2.jpg is 2232x2975, so height = width * 1.3329. */
+  top: calc(min(20vw, 100px) * 0.6664);
+  transform: translateY(-1px);
   z-index: -1;
 }
 
 @media (min-width: 700px) {
-
-  .decoLine{
-  bottom: 2.5em;
-  }
 
   p{
   font-size: 16px;
