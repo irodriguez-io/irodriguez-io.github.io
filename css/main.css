@@ -632,13 +632,16 @@ footer img{
 }
 
 .decoLine{
-  padding-bottom: 10px;
   border-bottom: 2px solid var(--FontColor);
   opacity: 0.6;
   position: absolute;
   margin: 0 auto;
   width: 100%;
-  top: 35%;
+  /* Centered on the avatar, not on the footer: the avatar is the first
+     child, so its midpoint is half its rendered height from the top.
+     me2.jpg is 2232x2975, so height = width * 1.3329. */
+  top: calc(min(20vw, 100px) * 0.6664);
+  transform: translateY(-1px);
   z-index: -1;
 }
 
