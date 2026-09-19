@@ -1,69 +1,8 @@
-/*** The new CSS Reset  ***/
-
-/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
-*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
-    all: unset;
-    display: revert;
-  }
-  
-  /* Preferred box-sizing value */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  
-  /*
-    Remove list styles (bullets/numbers)
-    in case you use it with normalize.css
-  */
-  ol, ul {
-    list-style: none;
-  }
-  
-  /* For images to not be able to exceed their container */
-  img {
-    max-width: 100%;
-  }
-  
-  /* Removes spacing between cells in tables */
-  table {
-    border-collapse: collapse;
-  }
-  
-  /* Revert the 'white-space' property for textarea elements on Safari */
-  textarea {
-    white-space: revert;
-  }
-
-/*** Variables ***/
-
-:root{
-  --FontColor: whitesmoke;
-  /* Keep in step with css/main.css -- the homepages and the article pages
-     share this gradient. */
-  --BGcolor1: #070B2B;
-  --BGcolor2: #2B2170;
-  --Circle: #877ad7;
-  --content-max: 1500px;
-}
-
-/*** Utily Classes ***/
-
-.glass {
-  background: rgba(109, 103, 228, 0.38);
-  border: 1px solid rgba(109, 103, 228, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-
-}
-
-.border{
-  border: 1px solid rgba(109, 103, 228);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-}
+/*** article.css ***
+ * Blog posts and the /blog/ + /blog-es/ indexes. Loaded after css/base.css,
+ * which supplies the reset, the design tokens, the surface utilities
+ * (.glass/.border/.prose-panel), the rain and the article cards.
+ */
 
 /*** Main CSS Styles  ***/
 
@@ -112,8 +51,10 @@ header li:hover, header li:focus{
 
 main{
   flex-grow: 1;
-  overflow-y: auto;
   width: 100%;
+  /* The page gutter. Same token the home pages use, so both inset identically
+     at every viewport -- article copy used to run to within 1rem of the edge. */
+  padding-inline: var(--gutter);
 }
 
 h1{
@@ -156,42 +97,91 @@ em{
 }
 
 /*** Brand wordmark typewriter effect (article pages) ***/
+/* Base rule and keyframes are in css/base.css. Article pages ship no JS, so
+   unlike the home pages there is no .is-typing gate -- run it on load. */
 
 .brand-type {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
-  white-space: nowrap;
-  border-right: 2px solid var(--FontColor);
-  width: 0;
   animation:
     brand-type-in 1.4s steps(10, end) 0.4s forwards,
-    brand-type-blink 0.85s step-end infinite;
-}
-
-@keyframes brand-type-in {
-  from { width: 0; }
-  to   { width: 10ch; }
-}
-
-@keyframes brand-type-blink {
-  50% { border-color: transparent; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .brand-type {
-    animation: none;
-    width: auto;
-    border-right: none;
-  }
+    brand-type-blink 0.85s step-end 1.8s 3 forwards;
 }
 
 article{
   display: flex;
   flex-flow: column nowrap;
-  margin: 10vh auto 0;
+  margin: 12vh auto 4rem;
   width: 100%;
   max-width: 800px;
+}
+
+/*** Post body ***/
+/* The post sits on the same translucent panel the home page uses for prose,
+   so the rain stays visible behind it without costing contrast. The panel's
+   padding is the copy's inset, which is why every element below drops its own
+   horizontal margin. */
+
+/* <article> is a flex column, so adjacent margins do NOT collapse -- a
+   0.75rem margin on both sides of a paragraph reads as a 1.5rem gap. Spacing
+   is therefore a single `gap` on the container; children only add the extra
+   space a heading needs above itself. Sizes stay in px like the rest of this
+   file: html sets font-size: clamp(1rem, 2.5vw, 2rem), so 1rem is 32px on a
+   desktop viewport and rem-based type would render at double the body copy. */
+
+.post.prose-panel{
+  padding: clamp(20px, 3.5vw, 40px);
+  gap: 18px;
+}
+
+.post h1{
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.25;
+  margin: 12px 0 0;
+  text-wrap: balance;
+}
+
+.post h2{
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 20px 0 0;
+}
+
+.post h3{
+  margin: 14px 0 0;
+}
+
+.post p{
+  margin: 0;
+  line-height: 1.65;
+}
+
+.post ul,
+.post ol,
+.post pre,
+.post .highlighter-rouge,
+.post hr{
+  margin: 0;
+}
+
+.post hr{
+  height: 1rem;
+}
+
+.post-date{
+  opacity: 0.7;
+  font-size: 14px;
+  margin: 0;
+}
+
+.post-date em{
+  font-size: inherit;
+}
+
+/* The hero fills the panel's content box. .border already gives it the edge. */
+.post > picture img,
+.post > img{
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 /* Wide content (code blocks, long words) must scroll inside itself

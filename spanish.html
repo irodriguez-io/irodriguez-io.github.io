@@ -18,6 +18,7 @@ permalink: /spanish.html
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
     <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <!-- Hero animation. Preloaded so the JSON downloads in parallel with the
          player instead of waiting for it to execute and ask. -->
@@ -28,15 +29,7 @@ permalink: /spanish.html
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <!-- Decorative rain. Static pool of 24 drops, animated entirely in CSS;
-         see .rain in css/main.css. No JS, no DOM churn. -->
-    <div class="rain" aria-hidden="true">
-{% for i in (1..24) %}      {%- assign x = i | times: 37 | modulo: 97 -%}
-      {%- assign w = i | times: 13 | modulo: 9 | plus: 3 -%}
-      {%- assign dur = i | times: 29 | modulo: 30 | plus: 24 -%}
-      {%- assign del = i | times: 41 | modulo: 50 -%}
-      <span style="--x:{{ x }}%;--w:{{ w }}px;--dur:{{ dur | divided_by: 10.0 }}s;--delay:-{{ del | divided_by: 10.0 }}s"></span>
-{% endfor %}    </div>
+{% include rain.html %}
     <section class="hero flexy">
       <div class="lottie glass">
         <div id="hero-lottie" class="hero-lottie" aria-hidden="true"></div>
@@ -108,40 +101,42 @@ permalink: /spanish.html
           <h1>Especialización.</h1>
           <p>Donde pasa mi tiempo. El hilo conductor es la identidad: qué puede alcanzar un sistema, cómo se otorga y se quita ese acceso, y cuánto de eso se puede automatizar sin perder la trazabilidad. Los marcos son los de siempre, privilegio mínimo y joiner-mover-leaver y Zero Trust, ISO 27001 y SOX y PCI DSS. Los problemas interesantes están siempre más abajo, en la implementación.</p>
         </article>
-        <button class="slide-arrow arrow-prev">&#8249;</button>
-        <button class="slide-arrow arrow-next">&#8250;</button>
-        <ul class="slides-container glass">
-          <li class="slide border">
-            <img src="img/risk.svg">
-            <div>
-              <h2>Ciclo de Vida y Gobierno de Identidades</h2>
-              <p>
-                <em>Joiner-mover-leaver como problema de ingeniería, no como cola de tickets.</em>
-                Aprovisionamiento y desaprovisionamiento sobre SCIM, revisiones de acceso que producen evidencia en lugar de hojas de cálculo, y gobierno para esas cuentas de servicio que nadie recuerda haber creado. Otorgar el acceso es la mitad fácil. La difícil es demostrar que la baja ocurrió de verdad, dentro de la ventana que le prometiste al auditor.
-              </p>
-            </div>
-          </li>
-          <li class="slide border">
-            <img src="img/cyber.svg">
-            <div>
-              <h2>Diseño de Autenticación y Accesos</h2>
-              <p>
-                <em>Política, factores y privilegio, en el orden en que tienen que ocurrir.</em>
-                Políticas de autenticación, factores resistentes a phishing, accesos privilegiados y los patrones Zero Trust de NIST 800-207 aplicados a entornos que ya existen y no pueden dejar de funcionar. Mover a toda una plantilla fuera de contraseñas y SMS es menos una decisión técnica que una de secuencia, y la secuencia es donde se atascan casi todos los despliegues.
-              </p>
-            </div>
-          </li>
-          <li class="slide border">
-            <img src="img/appdev.svg">
-            <div>
-              <h2>Automatización Con Modelo de Identidad <em>(n8n, Okta Workflows, agentes de IA)</em></h2>
-              <p>
-                <em>Todo flujo guarda una credencial, y eso convierte a todo flujo en una identidad.</em>
-                Automatización de procesos construida con credenciales de alcance limitado, rotación y registro de auditoría desde la primera versión y no desde la tercera. Tratar un flujo como una identidad es toda la diferencia entre una automatización y una ruta de acceso que nadie está mirando, y cuesta casi nada si se hace desde el inicio.
-              </p>
-            </div>
-          </li>
-        </ul>
+        <div class="carousel">
+          <button type="button" class="slide-arrow arrow-prev" aria-label="Diapositiva anterior"><span aria-hidden="true">&#8249;</span></button>
+          <button type="button" class="slide-arrow arrow-next" aria-label="Siguiente diapositiva"><span aria-hidden="true">&#8250;</span></button>
+          <ul class="slides-container glass">
+            <li class="slide border">
+              <img src="img/risk.svg">
+              <div>
+                <h2>Ciclo de Vida y Gobierno de Identidades</h2>
+                <p>
+                  <em>Joiner-mover-leaver como problema de ingeniería, no como cola de tickets.</em>
+                  Aprovisionamiento y desaprovisionamiento sobre SCIM, revisiones de acceso que producen evidencia en lugar de hojas de cálculo, y gobierno para esas cuentas de servicio que nadie recuerda haber creado. Otorgar el acceso es la mitad fácil. La difícil es demostrar que la baja ocurrió de verdad, dentro de la ventana que le prometiste al auditor.
+                </p>
+              </div>
+            </li>
+            <li class="slide border">
+              <img src="img/cyber.svg">
+              <div>
+                <h2>Diseño de Autenticación y Accesos</h2>
+                <p>
+                  <em>Política, factores y privilegio, en el orden en que tienen que ocurrir.</em>
+                  Políticas de autenticación, factores resistentes a phishing, accesos privilegiados y los patrones Zero Trust de NIST 800-207 aplicados a entornos que ya existen y no pueden dejar de funcionar. Mover a toda una plantilla fuera de contraseñas y SMS es menos una decisión técnica que una de secuencia, y la secuencia es donde se atascan casi todos los despliegues.
+                </p>
+              </div>
+            </li>
+            <li class="slide border">
+              <img src="img/appdev.svg">
+              <div>
+                <h2>Automatización Con Modelo de Identidad <em>(n8n, Okta Workflows, agentes de IA)</em></h2>
+                <p>
+                  <em>Todo flujo guarda una credencial, y eso convierte a todo flujo en una identidad.</em>
+                  Automatización de procesos construida con credenciales de alcance limitado, rotación y registro de auditoría desde la primera versión y no desde la tercera. Tratar un flujo como una identidad es toda la diferencia entre una automatización y una ruta de acceso que nadie está mirando, y cuesta casi nada si se hace desde el inicio.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
       <section id="articles">
         <div class="prose-panel">
@@ -151,9 +146,13 @@ permalink: /spanish.html
         <div class="article-grid">
           {% assign posts_es = site.posts_sp %}
           {% for post in posts_es %}
-          <div class="article-item">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </div>
+          <a class="article-card" href="{{ post.url | relative_url }}">
+            <h3 class="article-card-title">{{ post.title }}</h3>
+            <span class="article-card-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d de %b, %Y" }}</time>
+              <span class="article-card-arrow" aria-hidden="true">&#8594;</span>
+            </span>
+          </a>
           {% endfor %}
         </div>
         <p style="text-align:center; margin-top: 1rem;">

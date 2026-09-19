@@ -1,56 +1,8 @@
-/*** The new CSS Reset  ***/
-
-*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
-    all: unset;
-    display: revert;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  
-  ol, ul {
-    list-style: none;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  table {
-    border-collapse: collapse;
-  }
-  
-  textarea {
-    white-space: revert;
-  }
-
-/*** Variables ***/
-
-:root{
-  --FontColor: whitesmoke;
-  /* Deep navy -> indigo. The old darkblue/slateblue pair put whitesmoke body
-     text at 4.9:1, and a rain drop crossing a line dropped it to 3.2:1. */
-  --BGcolor1: #070B2B;
-  --BGcolor2: #2B2170;
-  --Circle: #877ad7;
-  --Panel: 9, 12, 46;       /* .prose-panel base, raw channels for rgba() */
-
-  --content-max: 1500px;
-  --gutter: clamp(1rem, 5vw, 3rem);
-}
-
-@font-face {
-  font-family: "Ubuntu";
-  src: url("../css/Ubuntu-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Sacramento";
-  src: url("../css/Sacramento.ttf");
-}
+/*** main.css ***
+ * Home pages only (index.html, spanish.html). Loaded after css/base.css,
+ * which supplies the reset, the design tokens, the surface utilities
+ * (.glass/.border/.prose-panel), the rain and the article cards.
+ */
 
 /*** Main CSS Styles  ***/
 
@@ -97,99 +49,9 @@ em{
   font-size: 17px;
 }
 
-/*** Background Animation ***/
-/* Static pool of drops built once at page render (Liquid loop in index.html /
-   spanish.html) and animated purely in CSS. Replaces the old JS that created
-   and destroyed a div every 200ms forever. Nothing here touches the DOM after
-   first paint; the compositor just moves 24 existing layers. */
-
-.rain {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-  contain: strict;          /* rain can never invalidate page layout */
-}
-
-.rain span {
-  position: absolute;
-  top: -6vh;
-  left: var(--x);
-  width: var(--w);
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background: var(--Circle);
-  /* Two shadows, not four: each is a separate blur pass. Dialled down from
-     12/28 at full --Circle opacity, which bloomed over body text. */
-  box-shadow: 0 0 8px rgba(135, 122, 215, 0.7),
-    0 0 20px rgba(135, 122, 215, 0.3);
-  animation: drop var(--dur) linear var(--delay) infinite;
-  /* Safe only because the pool is fixed — never put will-change on nodes you
-     create and destroy. */
-  will-change: transform, opacity;
-}
-
-/* The trail. Was 100vh, which made every drop's layer taller than the viewport
-   and forced a full-height gradient repaint on each new drop. */
-.rain span::before {
-  content: '';
-  position: absolute;
-  left: 25%;
-  bottom: 100%;
-  width: 50%;
-  height: 22vh;
-  opacity: 0.35;
-  background: linear-gradient( var(--Circle), transparent);
-}
-
-@keyframes drop {
-  0% {
-    transform: translate3d(0, 0, 0);
-    opacity: 0;
-  }
-
-  8% {
-    opacity: 1;
-  }
-
-  75% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate3d(0, 115vh, 0);
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .rain {
-    display: none;
-  }
-}
-
-/* 24 drops across a 375px viewport reads as noise behind text, not depth.
-   Thin the pool and shorten the trails instead of dropping the effect. */
-@media (max-width: 700px) {
-  .rain span:nth-child(3n) {
-    display: none;
-  }
-
-  .rain span::before {
-    opacity: 0.25;
-  }
-}
-
 /*** Utilities Classes ***/
-
-.glass {
-  background: rgba(109, 103, 228, 0.38);
-  border: 1px solid rgba(109, 103, 228);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
-}
+/* .glass, .border and .prose-panel live in css/base.css. Only the home-page
+   layout tweaks on top of them stay here. */
 
 .flexy {
   display: flex;
@@ -198,40 +60,9 @@ em{
   align-items: center;
 }
 
-.border{
-  border: 1px solid rgba(109, 103, 228);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-}
-
-/* Readability panel for prose that would otherwise sit directly on the rain.
-   Same construction as .glass, tuned dark instead of violet: the blur softens
-   the drops passing behind the text without hiding them. The rgba background
-   carries the contrast on its own, so no-backdrop-filter browsers degrade to a
-   flat panel rather than to unreadable text. */
-.prose-panel {
-  background: rgba(var(--Panel), 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 1.5rem clamp(1rem, 4vw, 2.5rem);
-  backdrop-filter: blur(6px);
-}
-
-/* The panel's own padding is the top inset -- don't double it with the
-   heading's margin, and leave a gap so the rain shows between panels. */
-.prose-panel > :first-child {
-  margin-top: 0;
-}
-
 #services .prose-panel,
 #articles .prose-panel {
   margin-block: 2rem 1.5rem;
-}
-
-@media (max-width: 700px) {
-  .prose-panel {
-    background: rgba(var(--Panel), 0.68);
-  }
 }
 
 /*** Header Section ***/
@@ -309,18 +140,9 @@ em{
 }
 
 /*** Brand wordmark typewriter effect ***/
-/* Applies wherever .brand-type wraps the "iRodriguez" wordmark.
-   CSS-only: animates width from 0 to full text width using steps(),
-   with a blinking border-right serving as the typing cursor. */
-
-.brand-type {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
-  white-space: nowrap;
-  border-right: 2px solid var(--FontColor);
-  width: 0;
-}
+/* Base rule and keyframes are in css/base.css. Here the animation is gated on
+   .is-typing, which an IntersectionObserver in js/main.js adds when the
+   wordmark scrolls into view. */
 
 .brand-type.is-typing {
   animation:
@@ -328,25 +150,6 @@ em{
     brand-type-blink 0.85s step-end 1.8s 3 forwards;
 }
 
-@keyframes brand-type-in {
-  from { width: 0; }
-  to   { width: 10ch; }
-}
-
-@keyframes brand-type-blink {
-  0%   { border-color: var(--FontColor); }
-  50%  { border-color: transparent; }
-  100% { border-color: transparent; }
-}
-
-/* Respect users who prefer reduced motion — show the wordmark instantly. */
-@media (prefers-reduced-motion: reduce) {
-  .brand-type {
-    animation: none;
-    width: auto;
-    border-right: none;
-  }
-}
 
 .navbar li {
   text-align: center;
@@ -612,6 +415,12 @@ em{
 #services {
   scroll-margin-top: 10vh;
   width: 100%;
+}
+
+/* The arrows' containing block. Without it they resolve against #services,
+   whose height includes the intro panel above the slides -- top: 50% then
+   centres them on the section and they land near the top edge of the card. */
+.carousel {
   position: relative;
 }
 
@@ -629,37 +438,60 @@ em{
   justify-content: center;
   top: 50%;
   transform: translateY(-50%);
-  height: 4rem;
-  width: 2rem;
-  background-color: var(--BGcolor2);
-  font-size: 3rem;
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 50%;
+  background: rgba(var(--Panel), 0.7);
+  border: 1px solid rgba(var(--Edge), 0.6);
+  backdrop-filter: blur(6px);
+  font-size: 1.75rem;
   line-height: 1;
-  padding: 0;
+  padding: 0 0 0.15em;   /* the chevron glyph sits high in its em box */
   cursor: pointer;
-  opacity: 0.55;
-  transition: opacity 100ms;
+  opacity: 0.8;
+  transition: opacity 150ms ease, transform 150ms ease, background 150ms ease;
   z-index: 1;
 }
 
+/* The old 0.55 -> 0.60 opacity step read as no feedback at all. */
 .slide-arrow:hover,
-.slide-arrow:focus {
-  opacity: 0.6;
+.slide-arrow:focus-visible {
+  opacity: 1;
+  background: rgba(var(--Panel), 0.9);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.slide-arrow:focus-visible {
+  outline: 2px solid var(--Circle);
+  outline-offset: 3px;
 }
 
 .arrow-prev {
-  left: 0;
-  border-radius: 0 2rem 2rem 0;
+  left: 0.75rem;
 }
 
 .arrow-next {
-  right: 0;
-  border-radius: 2rem 0 0 2rem;
+  right: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-arrow {
+    transition: none;
+  }
+
+  .slide-arrow:hover,
+  .slide-arrow:focus-visible {
+    transform: translateY(-50%);
+  }
 }
 
 .slide {
   display: flex;
   flex-flow: column nowrap;
   flex: 1 0 100%;
+  /* Gutter for the overlaid arrows. Without it the arrows sit on top of the
+     slide's own content instead of beside it. */
+  padding-inline: 2.75rem;
 }
 
 .slide h2{
@@ -670,6 +502,17 @@ em{
   padding: 1rem 2rem;
 }
 
+@media (max-width: 700px) {
+  .slide-arrow {
+    height: 2.25rem;
+    width: 2.25rem;
+    font-size: 1.4rem;
+  }
+
+  .arrow-prev { left: 0.25rem; }
+  .arrow-next { right: 0.25rem; }
+}
+
 /*** Article Grid ***/
 
 #articles {
@@ -678,39 +521,15 @@ em{
   width: 100%;
 }
 
-#articles p{
+/* Scoped to the intro panel so it doesn't reach into the cards, which set
+   their own spacing. */
+#articles > .prose-panel p{
   margin-bottom: 1rem;
-  max-width: 1500px;
+  max-width: var(--content-max);
 }
 
-.article-grid{
-  display: grid;
-  max-width: 1500px;
-  margin: 2rem auto;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1rem;
-  justify-items: center;
-}
-
-.article-item{
-  width: 90%;
-  background-color: var(--BGcolor2);
-  text-align: center;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 20px;
-  transition: transform 0.5s ease-in-out;
-  backface-visibility: hidden;
-}
-
-.article-item:hover, article-item:focus{
-  transform: scale(110%);  
-}
-
-.article-item:nth-child(even){
-  background-color: var(--FontColor);
-  color: var(--BGcolor1);
-}
+/* .article-grid and .article-card are in css/base.css -- the /blog/ index
+   uses the same cards and only loads article.css. */
 
 /*** Contact Form ***/
 
@@ -843,6 +662,8 @@ footer img{
 
   .slide {
     flex-flow: row nowrap;
+    align-items: center;
+    padding-inline: 3.5rem;
   }
 
   .slide img{
