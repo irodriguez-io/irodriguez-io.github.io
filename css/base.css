@@ -1,0 +1,321 @@
+/*** base.css ***
+ * Everything every page shares: the reset, the design tokens, the surface
+ * utilities, the rain, the brand wordmark, and the article card.
+ *
+ * Load order is base.css -> main.css (home pages) or base.css -> article.css
+ * (posts and the blog indexes). Those two files hold only what is specific to
+ * their page type. Nothing in here should need a hand-synced twin.
+ */
+
+/*** The new CSS Reset ***/
+
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+textarea {
+  white-space: revert;
+}
+
+/*** Variables ***/
+
+:root {
+  --FontColor: whitesmoke;
+  /* Deep navy -> indigo. The old darkblue/slateblue pair put whitesmoke body
+     text at 4.9:1, and a rain drop crossing a line dropped it to 3.2:1. */
+  --BGcolor1: #070B2B;
+  --BGcolor2: #2B2170;
+  --Circle: #877ad7;
+  --Panel: 9, 12, 46;       /* .prose-panel base, raw channels for rgba() */
+  --Edge: 109, 103, 228;    /* glass border / hover accent, raw channels */
+
+  --content-max: 1500px;
+  /* px, not rem: article.css sets html { font-size: clamp(1rem, 2.5vw, 2rem) },
+     so a rem is ~32px there and ~16px on the home pages. Anything shared by
+     both stylesheets has to be absolute or it renders at two different sizes. */
+  --gutter: clamp(16px, 5vw, 48px);
+  --radius: 16px;
+}
+
+/*** Fonts ***/
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../css/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Sacramento";
+  src: url("../css/Sacramento.ttf");
+}
+
+/*** Background Animation ***/
+/* Static pool of drops built once at page render (see _includes/rain.html) and
+   animated purely in CSS. Replaces the old JS that created and destroyed a div
+   every 200ms forever. Nothing here touches the DOM after first paint; the
+   compositor just moves 24 existing layers. */
+
+.rain {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  contain: strict;          /* rain can never invalidate page layout */
+}
+
+.rain span {
+  position: absolute;
+  top: -6vh;
+  left: var(--x);
+  width: var(--w);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--Circle);
+  /* Two shadows, not four: each is a separate blur pass. Dialled down from
+     12/28 at full --Circle opacity, which bloomed over body text. */
+  box-shadow: 0 0 8px rgba(135, 122, 215, 0.7),
+    0 0 20px rgba(135, 122, 215, 0.3);
+  animation: drop var(--dur) linear var(--delay) infinite;
+  /* Safe only because the pool is fixed — never put will-change on nodes you
+     create and destroy. */
+  will-change: transform, opacity;
+}
+
+/* The trail. Was 100vh, which made every drop's layer taller than the viewport
+   and forced a full-height gradient repaint on each new drop. */
+.rain span::before {
+  content: '';
+  position: absolute;
+  left: 25%;
+  bottom: 100%;
+  width: 50%;
+  height: 22vh;
+  opacity: 0.35;
+  background: linear-gradient( var(--Circle), transparent);
+}
+
+@keyframes drop {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, 115vh, 0);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rain {
+    display: none;
+  }
+}
+
+/* 24 drops across a 375px viewport reads as noise behind text, not depth.
+   Thin the pool and shorten the trails instead of dropping the effect. */
+@media (max-width: 700px) {
+  .rain span:nth-child(3n) {
+    display: none;
+  }
+
+  .rain span::before {
+    opacity: 0.25;
+  }
+}
+
+/*** Surface Utilities ***/
+
+.glass {
+  background: rgba(var(--Edge), 0.38);
+  border: 1px solid rgb(var(--Edge));
+  border-radius: var(--radius);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.border {
+  border: 1px solid rgb(var(--Edge));
+  border-radius: var(--radius);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Readability panel for prose that would otherwise sit directly on the rain.
+   Same construction as .glass, tuned dark instead of violet: the blur softens
+   the drops passing behind the text without hiding them. The rgba background
+   carries the contrast on its own, so no-backdrop-filter browsers degrade to a
+   flat panel rather than to unreadable text. */
+.prose-panel {
+  background: rgba(var(--Panel), 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 24px clamp(16px, 4vw, 40px);
+  backdrop-filter: blur(6px);
+}
+
+/* The panel's own padding is the top inset -- don't double it with the
+   heading's margin, and leave a gap so the rain shows between panels. */
+.prose-panel > :first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .prose-panel {
+    background: rgba(var(--Panel), 0.68);
+  }
+}
+
+/*** Brand wordmark typewriter effect ***/
+/* CSS-only: animates width from 0 to full text width using steps(), with a
+   blinking border-right serving as the typing cursor. The home pages gate the
+   animation on .is-typing (added by an IntersectionObserver in js/main.js);
+   the article pages ship no JS and run it on load — see article.css. */
+
+.brand-type {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  white-space: nowrap;
+  border-right: 2px solid var(--FontColor);
+  width: 0;
+}
+
+@keyframes brand-type-in {
+  from { width: 0; }
+  to   { width: 10ch; }
+}
+
+@keyframes brand-type-blink {
+  0%   { border-color: var(--FontColor); }
+  50%  { border-color: transparent; }
+  100% { border-color: transparent; }
+}
+
+/* Respect users who prefer reduced motion — show the wordmark instantly. */
+@media (prefers-reduced-motion: reduce) {
+  .brand-type {
+    animation: none;
+    width: auto;
+    border-right: none;
+  }
+}
+
+/*** Article Cards ***/
+/* Used by the Perspectives grid on the home pages and by the full index at
+   /blog/ and /blog-es/. The whole card is the anchor, so the hit area, the
+   cursor and the focus ring all agree with each other. */
+
+.article-grid {
+  display: grid;
+  max-width: var(--content-max);
+  margin: 32px auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.article-card {
+  /* The reset unsets <a>, so every one of these is load-bearing. */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 20px 22px;
+  text-align: left;
+  color: var(--FontColor);
+  cursor: pointer;
+  background: rgba(var(--Panel), 0.55);
+  border: 1px solid rgba(var(--Edge), 0.35);
+  border-radius: var(--radius);
+  backdrop-filter: blur(6px);
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.article-card:hover,
+.article-card:focus-visible {
+  /* translateY, not scale: the old scale(110%) grew cards into their
+     neighbours and blurred the text mid-transition. */
+  transform: translateY(-4px);
+  border-color: rgba(var(--Edge), 0.9);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.article-card:focus-visible {
+  outline: 2px solid var(--Circle);
+  outline-offset: 3px;
+}
+
+.article-card-title {
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 700;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.article-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.7;
+}
+
+.article-card-arrow {
+  transition: transform 200ms ease;
+}
+
+.article-card:hover .article-card-arrow,
+.article-card:focus-visible .article-card-arrow {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-card,
+  .article-card-arrow {
+    transition: none;
+  }
+
+  .article-card:hover,
+  .article-card:focus-visible {
+    transform: none;
+  }
+
+  .article-card:hover .article-card-arrow,
+  .article-card:focus-visible .article-card-arrow {
+    transform: none;
+  }
+}

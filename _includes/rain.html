@@ -1,0 +1,18 @@
+{%- comment -%}
+rain.html
+---------
+Decorative background rain. Static pool of 24 drops, animated entirely in CSS;
+see .rain in css/base.css. No JS, no DOM churn after first paint.
+
+Each drop gets its horizontal position, size, duration and a negative delay
+from the loop index, so the pool looks random but renders identically on every
+build. The negative delay starts each drop partway through its cycle, which
+avoids all 24 falling in lockstep on load.
+{%- endcomment -%}
+    <div class="rain" aria-hidden="true">
+{% for i in (1..24) %}      {%- assign x = i | times: 37 | modulo: 97 -%}
+      {%- assign w = i | times: 13 | modulo: 9 | plus: 3 -%}
+      {%- assign dur = i | times: 29 | modulo: 30 | plus: 24 -%}
+      {%- assign del = i | times: 41 | modulo: 50 -%}
+      <span style="--x:{{ x }}%;--w:{{ w }}px;--dur:{{ dur | divided_by: 10.0 }}s;--delay:-{{ del | divided_by: 10.0 }}s"></span>
+{% endfor %}    </div>
