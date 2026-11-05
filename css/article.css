@@ -338,3 +338,54 @@ footer img{
     font-size: 1rem;
   }
 }
+/*** Tables, blockquotes and footnotes (restore what the reset wipes) ***/
+
+/* display: block lets a wide table scroll inside itself on a phone instead of
+   widening the article, same as the pre blocks above. */
+.post table{
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.post th,
+.post td{
+  border: 1px solid rgba(var(--Edge), 0.35);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.post th{
+  font-weight: bold;
+  background: rgba(var(--Edge), 0.15);
+}
+
+.post blockquote{
+  border-left: 3px solid rgba(var(--Edge), 0.8);
+  padding: 4px 0 4px 16px;
+  font-style: italic;
+}
+
+/* kramdown footnotes: <sup><a class="footnote"> in the text, div.footnotes at the end */
+.post sup{
+  vertical-align: super;
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+.post .footnote,
+.post .footnotes a{
+  text-decoration: underline;
+}
+
+.post .footnotes{
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.post .footnotes p{
+  line-height: 1.5;
+}
